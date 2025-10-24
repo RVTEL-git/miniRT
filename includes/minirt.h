@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/23 19:25:02 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/24 17:38:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 /*=== CODE ERREUR ===*/
 # define EXIT_FAILURE			1
 # define EXIT_SUCCESS			0
+/**/
 
 /*=== STRUCTURES ===*/
 /*DATA*/
@@ -51,7 +52,7 @@ typedef struct s_cam
 {
 	char	id;
 	t_coor	view;
-	t_coor	vector;
+	t_coor	vec3;
 	int		fov;
 }t_cam;
 
@@ -66,7 +67,7 @@ typedef struct t_obj
 {
 	char			*id;
 	t_coor			pos;
-	t_coor			vector;
+	t_coor			vec3;
 	t_rgb			color;
 	float			diameter;
 	struct t_obj	*next;
@@ -84,5 +85,7 @@ typedef struct s_scene
 /*=== FUNCTIONS ===*/
 /*INIT*/
 bool	init_struct(char *rt_file);
+bool	is_dir(char *rt_file);
+bool	is_valid(char *gnl_line);
 
 #endif
