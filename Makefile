@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/23 18:55:08 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/27 10:14:38 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ SRCS = $(SRCS_DIR)/main.c
 
 INIT_DIR = init
 INIT = $(SRCS_DIR)/$(INIT_DIR)/init.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c
+		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c \
+		$(SRCS_DIR)/$(INIT_DIR)/check_by_id.c \
+		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_2.c \
+		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_utils.c 
 
 # SMU_DIR = simu
 # SIMU = $(SRCS_DIR)/$(SMU_DIR)/launch_simu.c \

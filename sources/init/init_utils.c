@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/24 18:42:02 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 10:43:04 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static bool	is_valid_identifier(char *c, char *id)
 	}
 	else if (c[0] == 's' && c[1] == 'p' && ft_isspace(c[2]))
 		id = 'sp';
-
 	else if (c[0] == 'p' && c[1] == 'l' && ft_isspace(c[2]))
 		id = 'pl';
 	else if (c[0] == 'c' && c[1] == 'y' && ft_isspace(c[2]))
@@ -52,17 +51,17 @@ bool	is_valid(char *gnl_line)
 			index++;
 		is_valid_identifier(&gnl_line[index], &id);
 		index++;
-		if (!ft_strncmp(id, "A", 1) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "A", 1) && !check_amb_line(&gnl_line[index]))
 			return (false);
-		if (!ft_strncmp(id, "C", 1) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "C", 1) && !check_cam_line(&gnl_line[index]))
 			return (false);
-		if (!ft_strncmp(id, "L", 1) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "L", 1) && !check_light_line(&gnl_line[index]))
 			return (false);
-		if (!ft_strncmp(id, "sp", 2) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "sp", 2) && !check_spher_line(&gnl_line[index]))
 			return (false);
-		if (!ft_strncmp(id, "pl", 2) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "pl", 2) && !check_plane_line(&gnl_line[index]))
 			return (false);
-		if (!ft_strncmp(id, "cy", 2) && !is_valid_data(&gnl_line[index]))
+		if (!ft_strncmp(id, "cy", 2) && !check_cylin_line(&gnl_line[index]))
 			return (false);
 	}
 	return (true);

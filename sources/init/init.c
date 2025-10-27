@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/24 17:24:21 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 09:48:46 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,13 @@ static bool	extract_file_data(char *rt_file, t_scene *scene)
 	if (fd_rt < 0)
 		ft_putendl_fd(2, "Error\nOpen failure");
 	buff_temp = get_next_line(fd_rt);
-	if (!is_valid)
+	while (buff_temp)
+	{
+		if (!is_valid)
+			return (false);
+		
+	}
+	
 }
 
 bool	init_struct(char *rt_file)

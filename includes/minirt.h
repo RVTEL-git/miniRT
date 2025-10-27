@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/24 17:38:50 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:04:40 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ typedef struct s_scene
 bool	init_struct(char *rt_file);
 bool	is_dir(char *rt_file);
 bool	is_valid(char *gnl_line);
+int		ft_isfloat(char *line);
 
 #endif
