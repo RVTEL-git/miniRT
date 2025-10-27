@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/27 10:14:38 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/27 21:55:23 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,54 +18,53 @@ NAME = miniRT
 SRCS_DIR = sources
 HEADER = includes/minirt.h
 
-INCLUDES := -Iinclude -Iinclude/libft -Iinclude/libft/ft_printf -Iinclude/libft/ft_printf/src -Iinclude/libft/ft_printf/conversions
+INCLUDES = -Iincludes -Iincludes/libft -Iincludes/libft/ft_printf -Iincludes/libft/ft_printf/src -Iincludes/libft/ft_printf/conversions -Iincludes/minilibx-linux
 
-MLX_DIR := include/minilibx-linux
-MLX_LIB := $(MLX_DIR)/libmlx.a
-MLX_FLAGS := -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
+MLX_DIR = includes/minilibx-linux
+MLX_LIB = $(MLX_DIR)/libmlx_Linux.a
+MLX_LDFLAGS = -L$(MLX_DIR) -lXext -lX11 -lm -lz
 
-LIBFT_DIR := include/libft
-LIBFT := $(LIBFT_DIR)/libft.a
+LIBFT_DIR = includes/libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = $(SRCS_DIR)/main.c
-
-# UTL_DIR = utils
-# UTL = $(SRCS_DIR)/$(UTL_DIR)/ft_utils.c \
-# 		$(SRCS_DIR)/$(UTL_DIR)/ft_utils_2.c
 
 INIT_DIR = init
 INIT = $(SRCS_DIR)/$(INIT_DIR)/init.c \
 		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c \
 		$(SRCS_DIR)/$(INIT_DIR)/check_by_id.c \
 		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_utils.c 
+		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_utils.c
 
-# SMU_DIR = simu
-# SIMU = $(SRCS_DIR)/$(SMU_DIR)/launch_simu.c \
-# 		$(SRCS_DIR)/$(SMU_DIR)/simu_utils.c \
-# 		$(SRCS_DIR)/$(SMU_DIR)/routine_utils.c \
-# 		$(SRCS_DIR)/$(SMU_DIR)/routine.c
+SRCS_FILES = $(SRCS) $(INIT)
 
-# SRCS_FILES = $(SRCS) $(UTL) $(INIT) $(SIMU)
-
-# OBJ_DIR = obj
-# OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)
+OBJ_DIR = obj
+OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(MLX_LIB)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_LIB) $(MLX_LDFLAGS) -o $(NAME)
 	@echo "Compilation done"
 
-$(OBJ_DIR)/%.o: %.c
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(MLX_LIB):
+	$(MAKE) -C $(MLX_DIR)
+
+$(OBJ_DIR)/%.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
+	-$(MAKE) -C $(LIBFT_DIR) clean
+	-$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
 	@rm -f $(NAME)
+	-$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 16:36:28 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/25 17:03:24 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:58:47 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ int	print_string(char *str)
 	dup = str;
 	if (!dup)
 	{
-		ft_putstr_fd("(null)", 1);
+		ft_putstr_fd(1, "(null)");
 		return (6);
 	}
 	i = ft_strlen(dup);
-	ft_putstr_fd(dup, 1);
+	ft_putstr_fd(1, dup);
 	return (i);
 }
 
@@ -41,12 +41,12 @@ int	print_ptr(void	*ptr)
 
 	if (ptr == NULL)
 	{
-		ft_putstr_fd("(nil)", 1);
+		ft_putstr_fd(1, "(nil)");
 		return (5);
 	}
 	adrr = (uintptr_t)ptr;
 	size = ptr_size(adrr);
-	ft_putstr_fd("0x", 1);
+	ft_putstr_fd(1, "0x");
 	print_adress(adrr);
 	return (size + 2);
 }

@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:57:32 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/24 15:40:43 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:30:06 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../includes/minirt.h>
+#include "../includes/minirt.h"
 
 int	main(int ac, char **av)
 {

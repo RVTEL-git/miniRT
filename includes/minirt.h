@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/27 11:04:40 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/27 21:44:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,16 @@ typedef struct s_scene
 /*INIT*/
 bool	init_struct(char *rt_file);
 bool	is_dir(char *rt_file);
-bool	is_valid(char *gnl_line);
-int		ft_isfloat(char *line);
+bool	is_valid_line(char *gnl_line);
+bool	check_by_id(char *line, char id[3]);
+bool	check_amb_line(char *line);
+bool	check_cam_line(char *line);
+bool	check_light_line(char *line);
+bool	check_spher_line(char *line);
+bool	check_plane_line(char *line);
+bool	check_cylin_line(char *line);
+int		ft_isfloat(char *line, int charset);
+int		check_n_pass_float(char *line);
+int		three_follow_value(char *line, int charset);
 
 #endif
