@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:04:52 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/23 18:48:20 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/28 23:17:29 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int			ft_abs(int n);
 int			ft_isalnum(int c);
 int			ft_isprint(int c);
 int			ft_isascii(int c);
+int			ft_isfloat(char *line, int charset);
 int			ft_isdigit(int c);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);

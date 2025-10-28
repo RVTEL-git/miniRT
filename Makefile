@@ -6,12 +6,12 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/27 21:55:23 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/28 23:33:10 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 NAME = miniRT
 
@@ -29,14 +29,18 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS = $(SRCS_DIR)/main.c
 
+PARS_DIR = parsing
+PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c \
+		$(SRCS_DIR)/$(PARS_DIR)/parsing_utils.c \
+		$(SRCS_DIR)/$(PARS_DIR)/check_by_id.c \
+		$(SRCS_DIR)/$(PARS_DIR)/check_by_id_2.c \
+		$(SRCS_DIR)/$(PARS_DIR)/check_by_id_utils.c
+		
 INIT_DIR = init
 INIT = $(SRCS_DIR)/$(INIT_DIR)/init.c \
 		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c \
-		$(SRCS_DIR)/$(INIT_DIR)/check_by_id.c \
-		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/check_by_id_utils.c
 
-SRCS_FILES = $(SRCS) $(INIT)
+SRCS_FILES = $(SRCS) $(INIT) $(PARS)
 
 OBJ_DIR = obj
 OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)
@@ -58,12 +62,12 @@ $(OBJ_DIR)/%.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 	-$(MAKE) -C $(LIBFT_DIR) clean
 	-$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 	-$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all

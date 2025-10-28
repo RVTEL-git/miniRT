@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:14:04 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/27 21:30:33 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:31:23 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,17 @@ static int	first_value(char *line, int charset)
 			is_float++;
 		return (is_float);
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
 	if (line[index] && line[index] == ',')
 		index++;
 	else
+	{
+		ft_putendl_fd(2, "Error\nBad separartors");
 		return (0);
+	}
 	return (index);
 }
 
@@ -69,6 +74,8 @@ static int	second_value(char *line, int charset)
 			is_float++;
 		return (is_float);
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
 	if (line[index] && line[index] == ',')
@@ -91,6 +98,8 @@ static int	third_value(char *line, int charset)
 			is_float++;
 		return (is_float);
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
 	if (is_float)
