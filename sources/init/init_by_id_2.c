@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   init_by_id_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 20:42:21 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 14:21:13 by barmarti         ###   ########.fr       */
+/*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
+/*   Updated: 2025/10/29 15:23:57 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/minirt.h"
 
-char	*ft_strnstr(const char *needle, const char *haystack, size_t len)
+void	init_spher_line(char *line, t_scene *scene)
 {
-	size_t	i;
-	size_t	j;
+	
+}
 
-	i = 0;
-	j = 0;
-	if (needle[0] == 0)
-		return ((char *) haystack);
-	while (haystack[i] && i < len)
-	{
-		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
-		{
-			j++;
-			if (needle[j] == 0)
-				return ((char *) haystack + i);
-		}
-		i++;
-		j = 0;
-	}
-	return (0);
+void	init_plane_line(char *line, t_scene *scene)
+{
+	
+}
+
+void	init_cylin_line(char *line, t_scene *scene)
+{
+	
 }

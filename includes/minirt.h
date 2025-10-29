@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/28 23:28:44 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:03:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include "libft/libft.h"
 
 /*=== CODE ERREUR ===*/
-# define EXIT_FAILURE			1
-# define EXIT_SUCCESS			0
+# define EXIT_FAILURE	1
+# define EXIT_SUCCESS	0
 /**/
 
 /*=== STRUCTURES ===*/
@@ -80,15 +80,23 @@ typedef struct s_scene
 	t_light	light;
 	t_cam	camera;
 	t_obj	*object;
+	t_coor	temp;
 }t_scene;
 
 /*=== FUNCTIONS ===*/
 /*INIT*/
+
 bool	init_struct(char *rt_file);
 bool	is_dir(char *rt_file);
 bool	check_file_format(char *rt_file);
+void	pass_float(char *line, int *index);
+void	convert_three_value(t_scene *scene, char *line, bool use_float);
+void	convert_three_int(t_coor temp, char *line);
+void	convert_three_float(t_coor temp, char *line);
+
 /*PARSING*/
-bool	is_valid_line(char *gnl_line);
+
+bool	is_valid(char *gnl_line, char *id);
 void	move_index(char *line, int *index, char *id);
 bool	already_in_file(char *id, int *a_id, int *c_id, int *l_id);
 bool	check_by_id(char *line, char id[3]);
@@ -99,7 +107,12 @@ bool	check_spher_line(char *line);
 bool	check_plane_line(char *line);
 bool	check_cylin_line(char *line);
 int		check_n_pass_float(char *line);
-int		three_follow_value(char *line, int charset);
+int		three_follow_value(char *line, int charset, bool include_float);
+
+/*ERROR*/
+
 void	error_by_id(char *id);
+void	manage_gnl_error(int fd, char *line);
+void	manage_exctract_error(t_scene *scene);
 
 #endif

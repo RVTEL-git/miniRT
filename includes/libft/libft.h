@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:04:52 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/28 23:17:29 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/29 16:10:00 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <limits.h>
 # include <stdbool.h>
+# include <errno.h>
+# include <float.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf/ft_printf.h"
@@ -27,6 +29,7 @@ typedef struct s_list
 }	t_dble_list;
 
 char		*ft_itoa(int n);
+double		ft_atof(const char *nptr);
 char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(char *src);

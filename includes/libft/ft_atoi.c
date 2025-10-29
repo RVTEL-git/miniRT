@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:08:18 by barmarti          #+#    #+#             */
-/*   Updated: 2025/07/03 12:20:47 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/29 15:31:20 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ long	ft_atoi(const char *nptr)
 	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
 		nbr = nbr * 10 + (nptr[i] - 48);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+			errno = EOVERFLOW;
 		i++;
 	}
 	return (nbr * sign);

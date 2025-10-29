@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:13:27 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/28 23:36:20 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/29 14:16:59 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ void	move_index(char *line, int *index, char *id)
 		*index += 1;
 }
 
+/**
+ * @brief Check if there's already one of supposed unique
+ * reference find in the file
+ * 
+ * @param id the buffer with the id of the current ellement
+ * @param X_id a static int incrased if the X element has already been found
+ * @return true if there's already one of the element in the current file
+ * @return false if there's not
+ */
 bool	already_in_file(char *id, int *a_id, int *c_id, int *l_id)
 {
 	if (id[0] == 'A' && *a_id == 0)
@@ -106,16 +115,14 @@ static bool	is_valid_identifier(char *str, char id[3])
  * @return true if the line have a good format
  * @return false if some misconfigurated information
  */
-bool	is_valid_line(char *gnl_line)
+bool	is_valid(char *gnl_line, char *id)
 {
 	int			index;
-	char		id[3];
 	static int	a_id;
 	static int	c_id;
 	static int	l_id;
 
 	index = 0;
-	ft_bzero(id, 3);
 	while (ft_isspace(gnl_line[index]))
 		index++;
 	if (!is_valid_identifier(&gnl_line[index], id))

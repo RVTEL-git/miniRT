@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:14:04 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/28 21:31:23 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:39:25 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,48 +34,24 @@ int	check_n_pass_float(char *line)
 	return (0);
 }
 
-static int	first_value(char *line, int charset)
+static int	first_value(char *line, int charset, bool include_float)
 {
 	int	is_float;
 	int	index;
 
 	index = 0;
-	is_float = ft_isfloat(line, charset);
-	if (is_float)
+	if (include_float == true)
 	{
-		if (line[is_float] && line[is_float] == ',')
-			is_float++;
-		return (is_float);
+		is_float = ft_isfloat(line, charset);
+		if (is_float)
+		{
+			if (line[is_float] && line[is_float] == ',')
+				is_float++;
+			return (is_float);
+		}
 	}
-	if (line[index] && line[index] == '-')
-		index++;
-	while (line[index] && ft_isdigit(line[index]))
-		index++;
-	if (line[index] && line[index] == ',')
-		index++;
-	else
-	{
-		ft_putendl_fd(2, "Error\nBad separartors");
+	if (line[index] && !ft_isdigit(line[index]))
 		return (0);
-	}
-	return (index);
-}
-
-static int	second_value(char *line, int charset)
-{
-	int	is_float;
-	int	index;
-
-	index = 0;
-	is_float = ft_isfloat(&line[index], charset);
-	if (is_float)
-	{
-		if (line[is_float] && line[is_float] == ',')
-			is_float++;
-		return (is_float);
-	}
-	if (line[index] && line[index] == '-')
-		index++;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
 	if (line[index] && line[index] == ',')
@@ -85,21 +61,51 @@ static int	second_value(char *line, int charset)
 	return (index);
 }
 
-static int	third_value(char *line, int charset)
+static int	second_value(char *line, int charset, bool include_float)
 {
 	int	is_float;
 	int	index;
 
 	index = 0;
-	is_float = ft_isfloat(&line[index], charset);
-	if (is_float)
+	if (include_float == true)
 	{
-		if (line[is_float] && line[is_float] == ',')
-			is_float++;
-		return (is_float);
+		is_float = ft_isfloat(line, charset);
+		if (is_float)
+		{
+			if (line[is_float] && line[is_float] == ',')
+				is_float++;
+			return (is_float);
+		}
 	}
-	if (line[index] && line[index] == '-')
+	if (line[index] && !ft_isdigit(line[index]))
+		return (0);
+	while (line[index] && ft_isdigit(line[index]))
 		index++;
+	if (line[index] && line[index] == ',')
+		index++;
+	else
+		return (0);
+	return (index);
+}
+
+static int	third_value(char *line, int charset, bool include_float)
+{
+	int	is_float;
+	int	index;
+
+	index = 0;
+	if (include_float == true)
+	{
+		is_float = ft_isfloat(line, charset);
+		if (is_float)
+		{
+			if (line[is_float] && line[is_float] == ',')
+				is_float++;
+			return (is_float);
+		}
+	}
+	if (line[index] && !ft_isdigit(line[index]))
+		return (0);
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
 	if (is_float)
@@ -109,23 +115,21 @@ static int	third_value(char *line, int charset)
 	return (0);
 }
 
-int	three_follow_value(char *line, int charset)
+int	three_follow_value(char *line, int charset, bool include_float)
 {
 	int	index;
 	int	index_to_comp;
 
-	index = first_value(line, charset);
+	index = first_value(line, charset, include_float);
 	if (index == 0)
 		return (0);
-	index_to_comp = second_value(&line[index], charset);
+	index_to_comp = second_value(&line[index], charset, include_float);
 	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;
-	index_to_comp = third_value(&line[index], charset);
-	if (index == 0)
+	index_to_comp = third_value(&line[index], charset, include_float);
+	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;
-	while (line[index] && ft_isspace(line[index]))
-		index++;
 	return (index);
 }

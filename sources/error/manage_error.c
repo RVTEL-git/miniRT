@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 23:19:16 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/28 23:41:38 by barmarti         ###   ########.fr       */
+/*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
+/*   Updated: 2025/10/29 16:28:43 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minirt.h"
 
+/**
+ * @brief Print the error message if the id line containg wrong data
+ * 
+ * @param id the buffer containing the id of misconfigurated line
+ */
 void	error_by_id(char *id)
 {
 	ft_putendl_fd(2, "Error");
@@ -28,4 +33,24 @@ void	error_by_id(char *id)
 	else if (!ft_strncmp(id, "cy", 2))
 		ft_putstr_fd(2, "Cylender ");
 	ft_putendl_fd(2, "line is misconfigurated");
+}
+
+void	manage_exctract_error(t_scene *scene)
+{
+	
+}
+
+/**
+ * @brief If an error occure during the parsing/excrating file while
+ * using get_next_line, try to close the fd and free the buffer
+ * 
+ * @param fd the supposed rt_file file
+ * @param line the gnl line
+ */
+void	manage_gnl_error(int fd, char *line)
+{
+	if (fd)
+		close(fd);
+	if (line)
+		free(line);
 }
