@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 17:03:50 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:30:20 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct s_coor
 
 typedef struct s_rgb
 {
-	int	red;
-	int	green;
-	int	blue;
+	float	red;
+	float	green;
+	float	blue;
 }t_rgb;
 
 /*GLOBAL*/
@@ -70,6 +70,7 @@ typedef struct t_obj
 	t_coor			vec3;
 	t_rgb			color;
 	float			diameter;
+	float			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
 }t_obj;
@@ -80,7 +81,7 @@ typedef struct s_scene
 	t_light	light;
 	t_cam	camera;
 	t_obj	*object;
-	t_coor	temp;
+	t_coor	tmp;
 }t_scene;
 
 /*=== FUNCTIONS ===*/
@@ -89,10 +90,14 @@ typedef struct s_scene
 bool	init_struct(char *rt_file);
 bool	is_dir(char *rt_file);
 bool	check_file_format(char *rt_file);
+void	init_by_id(char *id, char *line, t_scene *scene);
 void	pass_float(char *line, int *index);
 void	convert_three_value(t_scene *scene, char *line, bool use_float);
-void	convert_three_int(t_coor temp, char *line);
-void	convert_three_float(t_coor temp, char *line);
+void	convert_three_int(t_coor *temp, char *line);
+void	convert_three_float(t_coor *temp, char *line);
+void	assign_three_value(float *fst, float *scn, float *thr, t_coor *tmp);
+void	pass_three_value(char *line, int *index, bool use_float);
+void	init_object(char *line, t_scene *scn, char *id);
 
 /*PARSING*/
 
@@ -109,10 +114,18 @@ bool	check_cylin_line(char *line);
 int		check_n_pass_float(char *line);
 int		three_follow_value(char *line, int charset, bool include_float);
 
+/*LIST*/
+
+t_obj	*ft_lstlast_obj(t_obj *lst);
+void	ft_lstadd_back_obj(t_obj **lst, t_obj *new);
+
 /*ERROR*/
 
 void	error_by_id(char *id);
 void	manage_gnl_error(int fd, char *line);
 void	manage_exctract_error(t_scene *scene);
+
+/*DEBUG*/
+void print_struct(t_scene *scn);
 
 #endif

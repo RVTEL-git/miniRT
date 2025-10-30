@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 17:09:35 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/30 17:15:49 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,22 @@
  * @return true if the extraction succsed
  * @return false if 
  */
-static bool	extract_data(char *valid_line, t_scene *scene, char *id)
+static bool	get_data(char *valid_line, t_scene *scene, char *id)
 {
 	int		index;
 
 	index = 0;
 	valid_line = ft_strnstr(id, valid_line, ft_strlen(valid_line));
+	index++;
 	while (valid_line[index] && ft_isspace(valid_line[index]))
 		index++;
-	init_by_id(id, valid_line, scene);
+	init_by_id(id, &valid_line[index], scene);
 	if (errno == EOVERFLOW || errno == ERANGE)
 	{
 		manage_exctract_error(scene);
 		return (false);
 	}
+	print_struct(scene);
 	return (true);
 }
 
@@ -60,7 +62,13 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 	buff_temp = get_next_line(fd_rt);
 	while (buff_temp)
 	{
-		if (!is_valid(buff_temp, id) || !extract_data(buff_temp, &scene, id))
+		if (buff_temp[0] == '\n')
+		{
+			free(buff_temp);
+			buff_temp = get_next_line(fd_rt);
+			continue ;
+		}
+		if (!is_valid(buff_temp, id) || !get_data(buff_temp, scene, id))
 		{
 			manage_gnl_error(fd_rt, buff_temp);
 			return (false);

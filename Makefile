@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/29 15:25:37 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/30 17:16:27 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,8 @@ MLX_LDFLAGS = -L$(MLX_DIR) -lXext -lX11 -lm -lz
 LIBFT_DIR = includes/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRCS = $(SRCS_DIR)/main.c
-
-ERR_DIR = error
-ERR = $(SRCS_DIR)/$(ERR_DIR)/manage_error.c
+SRCS = $(SRCS_DIR)/main.c \
+		$(SRCS_DIR)/DEBUG.c
 
 PARS_DIR = parsing
 PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c \
@@ -42,9 +40,17 @@ INIT_DIR = init
 INIT = $(SRCS_DIR)/$(INIT_DIR)/init.c \
 		$(SRCS_DIR)/$(INIT_DIR)/init_by_id.c \
 		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c 
+		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_utils.c \
+		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_utils_2.c \
+		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c \
 
-SRCS_FILES = $(SRCS) $(INIT) $(PARS) $(ERR)
+LST_DIR = list
+LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
+
+ERR_DIR = error
+ERR = $(SRCS_DIR)/$(ERR_DIR)/manage_error.c
+
+SRCS_FILES = $(SRCS) $(INIT) $(PARS) $(LST) $(ERR)
 
 OBJ_DIR = obj
 OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)

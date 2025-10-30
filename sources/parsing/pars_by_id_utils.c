@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_by_id_utils.c                                :+:      :+:    :+:   */
+/*   pars_by_id_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:14:04 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 11:39:25 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:41:44 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ static int	first_value(char *line, int charset, bool include_float)
 			return (is_float);
 		}
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	if (line[index] && !ft_isdigit(line[index]))
 		return (0);
 	while (line[index] && ft_isdigit(line[index]))
@@ -77,6 +79,8 @@ static int	second_value(char *line, int charset, bool include_float)
 			return (is_float);
 		}
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	if (line[index] && !ft_isdigit(line[index]))
 		return (0);
 	while (line[index] && ft_isdigit(line[index]))
@@ -104,6 +108,8 @@ static int	third_value(char *line, int charset, bool include_float)
 			return (is_float);
 		}
 	}
+	if (line[index] && line[index] == '-')
+		index++;
 	if (line[index] && !ft_isdigit(line[index]))
 		return (0);
 	while (line[index] && ft_isdigit(line[index]))
@@ -120,6 +126,9 @@ int	three_follow_value(char *line, int charset, bool include_float)
 	int	index;
 	int	index_to_comp;
 
+	index = 0;
+	while (line[index] && ft_isspace(line[index]))
+		index++;
 	index = first_value(line, charset, include_float);
 	if (index == 0)
 		return (0);
@@ -131,5 +140,7 @@ int	three_follow_value(char *line, int charset, bool include_float)
 	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;
+	while (line[index] && ft_isspace(line[index]))
+		index++;
 	return (index);
 }

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 16:28:43 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:40:19 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	error_by_id(char *id)
 
 void	manage_exctract_error(t_scene *scene)
 {
-	
+	(void)scene;
 }
 
 /**
