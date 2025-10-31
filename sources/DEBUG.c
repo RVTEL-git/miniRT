@@ -33,45 +33,48 @@ static void	print_light(t_light lgt)
 	printf("bright = %f\n", lgt.bright);
 }
 
-static void	print_it(t_obj *obj)
-{
-	printf("id = %s\n", obj->id);
-	printf("pos (x) = %f\n", obj->pos.x);
-	printf("pos (y) = %f\n", obj->pos.y);
-	printf("pos (z) = %f\n", obj->pos.z);
-	if (obj->vec3.x)
-	{
-		printf("vec3 (x) = %f\n", obj->vec3.x);
-		printf("vec3 (y) = %f\n", obj->vec3.y);
-		printf("vec3 (z) = %f\n", obj->vec3.z);
-	}
-	if (obj->diameter)
-		printf("diameter = %f\n", obj->diameter);
-	if (obj->height)
-		printf("height = %f\n", obj->height);
-	printf("red = %f\n", obj->color.red);
-	printf("green = %f\n", obj->color.green);
-	printf("blue = %f\n", obj->color.blue);
-}
+// static void	print_it(t_obj *obj)
+// {
+// 	printf("id = %s\n", obj->id);
+// 	printf("pos (x) = %f\n", obj->pos.x);
+// 	printf("pos (y) = %f\n", obj->pos.y);
+// 	printf("pos (z) = %f\n", obj->pos.z);
+// 	if (obj->vec3.x)
+// 	{
+// 		printf("vec3 (x) = %f\n", obj->vec3.x);
+// 		printf("vec3 (y) = %f\n", obj->vec3.y);
+// 		printf("vec3 (z) = %f\n", obj->vec3.z);
+// 	}
+// 	if (obj->diameter)
+// 		printf("diameter = %f\n", obj->diameter);
+// 	if (obj->height)
+// 		printf("height = %f\n", obj->height);
+// 	printf("red = %f\n", obj->color.red);
+// 	printf("green = %f\n", obj->color.green);
+// 	printf("blue = %f\n", obj->color.blue);
+// }
 
-static void	print_obj(t_obj *objects)
-{
-	int	i;
+// static void	print_obj(t_obj *objects)
+// {
+// 	int	i;
 
-	i = 1;
-	while (objects)
-	{
-		printf("====OBJECT %d====\n", i);
-		print_it(objects);
-		i++;
-		objects = objects->next;
-	}
-}
+// 	i = 1;
+// 	while (objects != NULL)
+// 	{
+// 		printf("====OBJECT %d====\n", i);
+// 		print_it(objects);
+// 		i++;
+// 		objects = objects->next;
+// 	}
+// }
 
 void	print_struct(t_scene *scn)
 {
-	print_amb(scn->a_light);
-	print_cam(scn->camera);
-	print_light(scn->light);
-	print_obj(scn->object);
+	if (scn->a_light.id == 'A')
+		print_amb(scn->a_light);
+	if (scn->camera.id == 'C')
+		print_cam(scn->camera);
+	if (scn->light.id == 'L')
+		print_light(scn->light);
+	// print_obj(scn->object);
 }

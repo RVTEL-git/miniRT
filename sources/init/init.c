@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/30 17:15:49 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:11:03 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 
 	index = 0;
 	valid_line = ft_strnstr(id, valid_line, ft_strlen(valid_line));
+	if (valid_line[index] && id[1])
+		index++;
 	index++;
 	while (valid_line[index] && ft_isspace(valid_line[index]))
 		index++;
 	init_by_id(id, &valid_line[index], scene);
-	if (errno == EOVERFLOW || errno == ERANGE)
+	if (errno == ECANCELED || errno == ERANGE)
 	{
 		manage_exctract_error(scene);
 		return (false);
 	}
-	print_struct(scene);
 	return (true);
 }
 
@@ -102,5 +103,6 @@ bool	init_struct(char *rt_file)
 	}
 	if (!extract_data(rt_file, &scene))
 		return (false);
+	print_struct(&scene);
 	return (true);
 }

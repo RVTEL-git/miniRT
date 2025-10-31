@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/30 17:16:27 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/31 13:39:58 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,27 +58,27 @@ OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(MLX_LIB)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_LIB) $(MLX_LDFLAGS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_LIB) $(MLX_LDFLAGS) -o $(NAME)
 	@echo "Compilation done"
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR)
 
 $(MLX_LIB):
-	$(MAKE) -C $(MLX_DIR)
+	@$(MAKE) -C $(MLX_DIR)
 
 $(OBJ_DIR)/%.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
-	-$(MAKE) -C $(LIBFT_DIR) clean
-	-$(MAKE) -C $(MLX_DIR) clean
+	@rm -rf $(OBJ_DIR)
+	@-$(MAKE) -C $(LIBFT_DIR) clean
+	@-$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
-	-$(MAKE) -C $(LIBFT_DIR) fclean
+	@rm -f $(NAME)
+	@-$(MAKE) -C $(LIBFT_DIR) fclean > /dev/null
 
 re: fclean all
 

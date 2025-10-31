@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/23 15:46:45 by cscache           #+#    #+#              #
-#    Updated: 2025/10/29 15:19:31 by barmarti         ###   ########.fr        #
+#    Updated: 2025/10/31 13:36:50 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,16 +52,16 @@ AR = ar rcs
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS) > /dev/null
 
 %.o: %.c $(INCLUDE)
-	@$(CC) $(CFLAGS) -I. -Ift_printf -Iget_next_line -c $< -o $@
+	@$(CC) $(CFLAGS) -I. -Ift_printf -Iget_next_line -c $< -o $@ > /dev/null
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) > /dev/null
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) > /dev/null
 
 re: fclean all
 	

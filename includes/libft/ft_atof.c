@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:50:28 by egiraud           #+#    #+#             */
-/*   Updated: 2025/10/29 16:10:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/10/31 16:38:17 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,5 @@ double	ft_atof(const char *nptr)
 		i++;
 	}
 	nb = transfo(nptr, i, nb);
-	if (nb * sign > FLT_MAX || nb * sign < FLT_MIN)
-		errno = EOVERFLOW;
 	return (nb * sign);
 }
