@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:13:27 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 14:16:59 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:21:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ bool	is_valid(char *gnl_line, char *id)
 		return (false);
 	}
 	if (!already_in_file(id, &a_id, &c_id, &l_id))
-		move_index(&gnl_line[index], &index, id);
+		move_index(gnl_line, &index, id);
 	else
 		return (false);
 	if (!check_by_id(id, &gnl_line[index]))

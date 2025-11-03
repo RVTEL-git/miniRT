@@ -6,11 +6,31 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 14:16:06 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:12:53 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minirt.h"
+
+bool	check_full(t_scene *scene)
+{
+	if (scene->camera.id == 0)
+	{
+		ft_putendl_fd(2, "Error\nMissing the camera element");
+		return (false);
+	}
+	if (scene->a_light.id == 0)
+	{
+		ft_putendl_fd(2, "Error\nMissing the ambiant light element");
+		return (false);
+	}
+	if (scene->light.id == 0)
+	{
+		ft_putendl_fd(2, "Error\nMissing the light element");
+		return (false);
+	}
+	return (true);
+}
 
 /**
  * @brief Function used to check is the file passed as

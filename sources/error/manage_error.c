@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/30 15:40:19 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:11:40 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,43 @@ void	error_by_id(char *id)
 	ft_putendl_fd(2, "line is misconfigurated");
 }
 
-void	manage_exctract_error(t_scene *scene)
+
+void	print_message(char *id)
 {
-	(void)scene;
+	if (errno == ENOMEM)
+	{
+		ft_putendl_fd(2, "Error\nMalloc failed for ");
+		ft_putstr_fd(2, id);
+		ft_putendl_fd(2, " line");
+	}
+	else if (errno == ERANGE)
+	{
+		ft_putendl_fd(2, "Error\nCheck range limits for ");
+		ft_putstr_fd(2, id);
+		ft_putendl_fd(2, " line");
+	}
+}
+
+void	manage_exctract_error(t_scene *scene, char *id, bool message)
+{
+	t_obj	*to_free;
+
+	if (message)
+		print_message(id);
+	if (scene->object)
+	{
+		while (scene->object != NULL)
+		{
+			to_free = scene->object->next;
+			if (scene->object)
+			{
+				if (scene->object->id)
+					free(scene->object->id);
+				free(scene->object);
+			}
+			scene->object = to_free;
+		}
+	}
 }
 
 /**
@@ -47,10 +81,11 @@ void	manage_exctract_error(t_scene *scene)
  * @param fd the supposed rt_file file
  * @param line the gnl line
  */
-void	manage_gnl_error(int fd, char *line)
+void	manage_gnl_error(int fd, char *line, t_scene *scene)
 {
 	if (fd)
 		close(fd);
 	if (line)
 		free(line);
+	manage_exctract_error(scene, 0, false);
 }

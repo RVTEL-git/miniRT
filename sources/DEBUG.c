@@ -5,9 +5,9 @@ static void	print_amb(t_amb amb)
 	printf("====AMB====\n");
 	printf("id = %c\n", amb.id);
 	printf("ratio = %f\n", amb.amb_ratio);
-	printf("red = %f\n", amb.color.red);
-	printf("green = %f\n", amb.color.green);
-	printf("blue = %f\n", amb.color.blue);
+	printf("r = %f\n", amb.rgb.r);
+	printf("g = %f\n", amb.rgb.g);
+	printf("b = %f\n", amb.rgb.b);
 }
 
 static void	print_cam(t_cam cam)
@@ -17,9 +17,9 @@ static void	print_cam(t_cam cam)
 	printf("view (x)= %f\n", cam.view.x);
 	printf("view (y) = %f\n", cam.view.y);
 	printf("view (z) = %f\n", cam.view.z);
-	printf("vec3 (x) = %f\n", cam.vec3.x);
-	printf("vec3 (y) = %f\n", cam.vec3.y);
-	printf("vec3 (z) = %f\n", cam.vec3.z);
+	printf("v (x) = %f\n", cam.v.x);
+	printf("v (y) = %f\n", cam.v.y);
+	printf("v (z) = %f\n", cam.v.z);
 	printf("FOV = %d\n", cam.fov);
 }
 
@@ -33,40 +33,40 @@ static void	print_light(t_light lgt)
 	printf("bright = %f\n", lgt.bright);
 }
 
-// static void	print_it(t_obj *obj)
-// {
-// 	printf("id = %s\n", obj->id);
-// 	printf("pos (x) = %f\n", obj->pos.x);
-// 	printf("pos (y) = %f\n", obj->pos.y);
-// 	printf("pos (z) = %f\n", obj->pos.z);
-// 	if (obj->vec3.x)
-// 	{
-// 		printf("vec3 (x) = %f\n", obj->vec3.x);
-// 		printf("vec3 (y) = %f\n", obj->vec3.y);
-// 		printf("vec3 (z) = %f\n", obj->vec3.z);
-// 	}
-// 	if (obj->diameter)
-// 		printf("diameter = %f\n", obj->diameter);
-// 	if (obj->height)
-// 		printf("height = %f\n", obj->height);
-// 	printf("red = %f\n", obj->color.red);
-// 	printf("green = %f\n", obj->color.green);
-// 	printf("blue = %f\n", obj->color.blue);
-// }
+static void	print_it(t_obj *obj)
+{
+	printf("id = %s\n", obj->id);
+	printf("pos (x) = %f\n", obj->pos.x);
+	printf("pos (y) = %f\n", obj->pos.y);
+	printf("pos (z) = %f\n", obj->pos.z);
+	if (obj->v.x)
+	{
+		printf("v (x) = %f\n", obj->v.x);
+		printf("v (y) = %f\n", obj->v.y);
+		printf("v (z) = %f\n", obj->v.z);
+	}
+	if (obj->diameter)
+		printf("diameter = %f\n", obj->diameter);
+	if (obj->height)
+		printf("height = %f\n", obj->height);
+	printf("r = %f\n", obj->rgb.r);
+	printf("g = %f\n", obj->rgb.g);
+	printf("b = %f\n", obj->rgb.b);
+}
 
-// static void	print_obj(t_obj *objects)
-// {
-// 	int	i;
+static void	print_obj(t_obj *objects)
+{
+	int	i;
 
-// 	i = 1;
-// 	while (objects != NULL)
-// 	{
-// 		printf("====OBJECT %d====\n", i);
-// 		print_it(objects);
-// 		i++;
-// 		objects = objects->next;
-// 	}
-// }
+	i = 1;
+	while (objects != NULL)
+	{
+		printf("====OBJECT %d====\n", i);
+		print_it(objects);
+		i++;
+		objects = objects->next;
+	}
+}
 
 void	print_struct(t_scene *scn)
 {
@@ -76,5 +76,5 @@ void	print_struct(t_scene *scn)
 		print_cam(scn->camera);
 	if (scn->light.id == 'L')
 		print_light(scn->light);
-	// print_obj(scn->object);
+	print_obj(scn->object);
 }

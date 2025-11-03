@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 18:11:03 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:13:19 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,26 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 	while (valid_line[index] && ft_isspace(valid_line[index]))
 		index++;
 	init_by_id(id, &valid_line[index], scene);
-	if (errno == ECANCELED || errno == ERANGE)
+	if (errno == ENOMEM || errno == ERANGE)
 	{
-		manage_exctract_error(scene);
+		manage_exctract_error(scene, id, true);
 		return (false);
 	}
 	return (true);
+}
+
+/**
+ * @brief check if the data exist
+ * 
+ * @param line 
+ * @param fd 
+ */
+void	free_n_close(char *line, int fd)
+{
+	if (line)
+		free(line);
+	if (fd)
+		close(fd);
 }
 
 /**
@@ -70,15 +84,11 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 			continue ;
 		}
 		if (!is_valid(buff_temp, id) || !get_data(buff_temp, scene, id))
-		{
-			manage_gnl_error(fd_rt, buff_temp);
-			return (false);
-		}
+			return (manage_gnl_error(fd_rt, buff_temp, scene), false);
 		free(buff_temp);
 		buff_temp = get_next_line(fd_rt);
 	}
-	free(buff_temp);
-	close(fd_rt);
+	free_n_close(buff_temp, fd_rt);
 	return (true);
 }
 
@@ -102,6 +112,8 @@ bool	init_struct(char *rt_file)
 		return (false);
 	}
 	if (!extract_data(rt_file, &scene))
+		return (false);
+	if (!check_full(&scene))
 		return (false);
 	print_struct(&scene);
 	return (true);

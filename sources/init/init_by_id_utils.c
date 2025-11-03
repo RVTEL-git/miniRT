@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:35:47 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/30 17:28:51 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:39:42 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	assign_three_value(float *fst, float *scn, float *thr, t_coor *tmp)
 	*fst = tmp->x;
 	*scn = tmp->y;
 	*thr = tmp->z;
+	ft_bzero(tmp, sizeof(t_coor));
 }
 
 void	convert_three_value(t_scene *scene, char *line, bool use_float)

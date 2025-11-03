@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 18:15:12 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:56:40 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static void	init_ambl_line(char *line, t_scene *scene)
 {
 	int		index;
-	t_rgb	*color;
+	t_rgb	*rgb;
 
 	index = 0;
-	color = &scene->a_light.color;
+	rgb = &scene->a_light.rgb;
 	scene->a_light.id = 'A';
 	scene->a_light.amb_ratio = ft_atof(line);
 	if (scene->a_light.amb_ratio > 1.0 || scene->a_light.amb_ratio < 0.0)
@@ -27,12 +27,12 @@ static void	init_ambl_line(char *line, t_scene *scene)
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);
-	assign_three_value(&color->red, &color->green, &color->blue, &scene->tmp);
-	if (color->red > 255 || color->red < 0)
+	assign_three_value(&rgb->r, &rgb->g, &rgb->b, &scene->tmp);
+	if (rgb->r > 255 || rgb->r < 0)
 		errno = ERANGE;
-	if (color->green > 255 || color->green < 0)
+	if (rgb->g > 255 || rgb->g < 0)
 		errno = ERANGE;
-	if (color->blue > 255 || color->blue < 0)
+	if (rgb->b > 255 || rgb->b < 0)
 		errno = ERANGE;
 }
 
@@ -40,23 +40,23 @@ static void	init_cam_line(char *line, t_scene *scene)
 {
 	int		index;
 	t_coor	*view;
-	t_coor	*vec3;
+	t_coor	*v;
 
 	index = 0;
 	view = &scene->camera.view;
-	vec3 = &scene->camera.vec3;
+	v = &scene->camera.v;
 	scene->camera.id = 'C';
 	convert_three_value(scene, line, true);
 	assign_three_value(&view->x, &view->y, &view->z, &scene->tmp);
 	pass_three_value(line, &index, true);
 	convert_three_value(scene, &line[index], true);
-	assign_three_value(&vec3->x, &vec3->y, &vec3->z, &scene->tmp);
+	assign_three_value(&v->x, &v->y, &v->z, &scene->tmp);
 	pass_three_value(line, &index, true);
-	if (vec3->x > 1 || vec3->x < -1)
+	if (v->x > 1 || v->x < -1)
 		errno = ERANGE;
-	if (vec3->y > 1 || vec3->y < -1)
+	if (v->y > 1 || v->y < -1)
 		errno = ERANGE;
-	if (vec3->z > 1 || vec3->z < -1)
+	if (v->z > 1 || v->z < -1)
 		errno = ERANGE;
 	scene->camera.fov = ft_atoi(&line[index]);
 	if (scene->camera.fov > 180 || scene->camera.fov < 0)
@@ -89,10 +89,4 @@ void	init_by_id(char *id, char *line, t_scene *scene)
 		init_light_line(line, scene);
 	else
 		init_object(line, scene, id);
-// 	else if (!ft_strncmp(id, "sp", 2))
-// 		init_spher_line(line, scene);
-// 	else if (!ft_strncmp(id, "pl", 2))
-// 		init_plane_line(line, scene);
-// 	else if (!ft_strncmp(id, "cy", 2))
-// 		init_cylin_line(line, scene);
 }

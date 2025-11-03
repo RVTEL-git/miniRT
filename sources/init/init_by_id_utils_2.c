@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:13:26 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 16:33:31 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:57:41 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	pass_float(char *line, int *index)
 		while (line[*index] && ft_isdigit(line[*index]))
 			*index += 1;
 	}
-
 }
 
 static void	pass_three_int(char *line, int *index)

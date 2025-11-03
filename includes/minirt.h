@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 16:39:59 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:04:39 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ typedef struct s_coor
 
 typedef struct s_rgb
 {
-	float	red;
-	float	green;
-	float	blue;
+	float	r;
+	float	g;
+	float	b;
 }t_rgb;
 
 /*GLOBAL*/
@@ -45,14 +45,14 @@ typedef struct s_amb
 {
 	char	id;
 	float	amb_ratio;
-	t_rgb	color;
+	t_rgb	rgb;
 }t_amb;
 
 typedef struct s_cam
 {
 	char	id;
 	t_coor	view;
-	t_coor	vec3;
+	t_coor	v;
 	int		fov;
 }t_cam;
 
@@ -67,8 +67,8 @@ typedef struct t_obj
 {
 	char			*id;
 	t_coor			pos;
-	t_coor			vec3;
-	t_rgb			color;
+	t_coor			v;
+	t_rgb			rgb;
 	float			diameter;
 	float			height;
 	struct t_obj	*next;
@@ -91,6 +91,7 @@ bool	init_struct(char *rt_file);
 bool	is_dir(char *rt_file);
 bool	check_file_format(char *rt_file);
 void	init_by_id(char *id, char *line, t_scene *scene);
+bool	check_full(t_scene *scene);
 void	pass_float(char *line, int *index);
 void	convert_three_value(t_scene *scene, char *line, bool use_float);
 void	convert_three_int(t_coor *temp, char *line);
@@ -122,8 +123,8 @@ void	ft_lstadd_back_obj(t_obj **lst, t_obj *new);
 /*ERROR*/
 
 void	error_by_id(char *id);
-void	manage_gnl_error(int fd, char *line);
-void	manage_exctract_error(t_scene *scene);
+void	manage_gnl_error(int fd, char *line, t_scene *scene);
+void	manage_exctract_error(t_scene *scene, char *id, bool message);
 
 /*DEBUG*/
 void print_struct(t_scene *scn);

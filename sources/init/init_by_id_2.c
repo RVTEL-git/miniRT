@@ -6,75 +6,70 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 18:44:08 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:37:09 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minirt.h"
 
+static void inline	ft_check_limits(float x, float y, float z, float lim[2])
+{
+	if (x > lim[0] || x < lim [1])
+		errno = ERANGE;
+	if (y > lim[0] || y < lim [1])
+		errno = ERANGE;
+	if (z > lim[0] || z < lim [1])
+		errno = ERANGE;
+}
+
+static void	init_cy_obj(t_obj *obj, char *line, int *index)
+{
+	obj->diameter = ft_atof(&line[*index]);
+	*index = *index + ft_isfloat(&line[*index], 0);
+	while (&line[*index] && ft_isspace(line[*index]))
+		*index += 1;
+	obj->height = ft_atof(&line[*index]);
+	*index = *index + ft_isfloat(&line[*index], 0);
+	while (&line[*index] && ft_isspace(line[*index]))
+		*index += 1;
+}
+
+static void	init_sp_obj(t_obj *obj, char *line, int *index)
+{
+	obj->diameter = ft_atof(&line[*index]);
+	*index = *index + ft_isfloat(&line[*index], 0);
+}
+
+static void	convert_n_pass(char *line, t_scene *scn, int *index)
+{
+	convert_three_value(scn, &line[*index], true);
+	pass_three_value(line, index, true);
+}
+
 void	init_object(char *line, t_scene *scn, char *id)
 {
 	int		index;
-	t_obj	*obj;
+	t_obj	*ob;
 
-	scn->object = ft_calloc(1, sizeof(t_obj));
-	if (!scn->object)
-	{
-		errno = ECANCELED;
+	ob = ft_calloc(1, sizeof(t_obj));
+	if (!ob)
 		return ;
-	}
 	index = 0;
-	obj = scn->object;
-	obj->id = ft_strndup(id, 3);
-	convert_three_value(scn, line, true);
-	assign_three_value(&obj->pos.x, &obj->pos.y, &obj->pos.z, &scn->tmp);
-	pass_three_value(line, &index, true);
+	ob->id = ft_strndup(id, ft_strlen(id));
+	convert_n_pass(line, scn, &index);
+	assign_three_value(&ob->pos.x, &ob->pos.y, &ob->pos.z, &scn->tmp);
 	if (!ft_strncmp(id, "sp", 2))
-	{
-		obj->diameter = ft_atof(&line[index]);
-		index = index + ft_isfloat(&line[index], 0);
-	}
+		init_sp_obj(ob, line, &index);
 	else
 	{
-		convert_three_value(scn, &line[index], true);
-		assign_three_value(&obj->vec3.x, &obj->vec3.y, &obj->vec3.z, &scn->tmp);
-		if (obj->vec3.x > 1.0 || obj->vec3.x < -1.0)
-			errno = ERANGE;
-		if (obj->vec3.y > 1.0 || obj->vec3.y < -1.0)
-			errno = ERANGE;
-		if (obj->vec3.z > 1.0 || obj->vec3.z < -1.0)
-			errno = ERANGE;
-		pass_three_value(&line[index], &index, true);
+		convert_n_pass(line, scn, &index);
+		assign_three_value(&ob->v.x, &ob->v.y, &ob->v.z, &scn->tmp);
+		ft_check_limits(ob->v.x, ob->v.y, ob->v.z, (float [2]){1.0, -1.0});
 	}
 	if (!ft_strncmp(id, "cy", 2))
-	{
-		obj->diameter = ft_atof(&line[index]);
-		index = index + ft_isfloat(&line[index], 0);
-		obj->height = ft_atof(&line[index]);
-		index = index + ft_isfloat(&line[index], 0);
-	}
+		init_cy_obj(ob, line, &index);
 	convert_three_value(scn, &line[index], true);
-	assign_three_value(&obj->color.red, &obj->color.green, &obj->color.blue, &scn->tmp);
-	if (obj->color.red > 255 || obj->color.red < 0)
-		errno = ERANGE;
-	if (obj->color.green > 255 || obj->color.green < 0)
-		errno = ERANGE;
-	if (obj->color.blue > 255 || obj->color.blue < 0)
-		errno = ERANGE;
-	ft_lstadd_back_obj(&scn->object, obj);
+	assign_three_value(&ob->rgb.r, &ob->rgb.g, &ob->rgb.b, &scn->tmp);
+	ft_check_limits(ob->rgb.r, ob->rgb.g, ob->rgb.b, (float [2]){255, 0});
+	ft_lstadd_back_obj(&scn->object, ob);
 }
-
-// void	init_spher_line(char *line, t_scene *scene)
-// {
-	
-// }
-
-// void	init_plane_line(char *line, t_scene *scene)
-// {
-	
-// }
-
-// void	init_cylin_line(char *line, t_scene *scene)
-// {
-	
-// }
