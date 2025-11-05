@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:13:27 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 13:21:26 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:10:57 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 /**
 * @brief Check the len of the line id and then move the index
@@ -57,9 +57,7 @@ bool	already_in_file(char *id, int *a_id, int *c_id, int *l_id)
 		return (false);
 	else
 	{
-		ft_putendl_fd(2, "Error");
-		ft_putchar_fd(2, id[0]);
-		ft_putendl_fd(2, " Present multiple times");
+		ft_dprintf(2, "Error\n%s Present multiple times\n", id);
 		return (true);
 	}
 	return (false);
@@ -127,7 +125,7 @@ bool	is_valid(char *gnl_line, char *id)
 		index++;
 	if (!is_valid_identifier(&gnl_line[index], id))
 	{
-		ft_putendl_fd(2, "Error\nBad identifier in scene file");
+		ft_dprintf(2, "Error\nBad identifier in scene file\n");
 		return (false);
 	}
 	if (!already_in_file(id, &a_id, &c_id, &l_id))

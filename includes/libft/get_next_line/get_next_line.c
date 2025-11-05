@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 19:07:53 by barmarti          #+#    #+#             */
-/*   Updated: 2025/07/08 16:03:45 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:26:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*make_new_line(t_gnl_list *lst, int len)
 	return (new_line);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, bool wipe)
 {
 	static t_gnl_list	*lsts[MAX_FD];
 	char				*line;
@@ -124,8 +124,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	index_nl = gnl_get_len(lsts[fd]);
 	line = make_new_line(lsts[fd], index_nl);
-	if (!line)
+	if (!line || wipe)
 	{
+		if (line)
+			free(line);
 		free_lst(&lsts[fd], NULL, NULL);
 		return (NULL);
 	}

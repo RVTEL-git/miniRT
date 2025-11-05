@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 17:11:40 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:10:43 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,43 @@
  */
 void	error_by_id(char *id)
 {
-	ft_putendl_fd(2, "Error");
-	if (id[0] == 'A')
-		ft_putstr_fd(2, "Ambient lighting ");
-	else if (id[0] == 'C')
-		ft_putstr_fd(2, "Camera ");
-	else if (id[0] == 'L')
-		ft_putstr_fd(2, "Light ");
-	else if (!ft_strncmp(id, "sp", 2))
-		ft_putstr_fd(2, "Sphere ");
-	else if (!ft_strncmp(id, "pl", 2))
-		ft_putstr_fd(2, "Planbe ");
-	else if (!ft_strncmp(id, "cy", 2))
-		ft_putstr_fd(2, "Cylender ");
-	ft_putendl_fd(2, "line is misconfigurated");
-}
+	char	*elem;
 
+	if (id[0] == 'A')
+		elem = "Ambient lighting";
+	else if (id[0] == 'C')
+		elem = "Camera";
+	else if (id[0] == 'L')
+		elem = "Light";
+	else if (id[0] == 's')
+		elem = "Sphere";
+	else if (id[0] == 'p')
+		elem = "Plane";
+	else
+		elem = "Cylinder";
+	ft_dprintf(2, "Error\n%s line is misconfigurated\n", elem);
+}
 
 void	print_message(char *id)
 {
+	char	*elem;
+
+	if (id[0] == 'A')
+		elem = "Ambient lighting";
+	else if (id[0] == 'C')
+		elem = "Camera";
+	else if (id[0] == 'L')
+		elem = "Light";
+	else if (id[0] == 's')
+		elem = "Sphere";
+	else if (id[0] == 'p')
+		elem = "Plane";
+	else
+		elem = "Cylinder";
 	if (errno == ENOMEM)
-	{
-		ft_putendl_fd(2, "Error\nMalloc failed for ");
-		ft_putstr_fd(2, id);
-		ft_putendl_fd(2, " line");
-	}
+		ft_dprintf(2, "Error\nMalloc failed for %s line\n", elem);
 	else if (errno == ERANGE)
-	{
-		ft_putendl_fd(2, "Error\nCheck range limits for ");
-		ft_putstr_fd(2, id);
-		ft_putendl_fd(2, " line");
-	}
+		ft_dprintf(2, "Error\nCheck range limits for %s element\n", elem);
 }
 
 void	manage_exctract_error(t_scene *scene, char *id, bool message)
@@ -87,5 +93,7 @@ void	manage_gnl_error(int fd, char *line, t_scene *scene)
 		close(fd);
 	if (line)
 		free(line);
+	line = get_next_line(fd, true);
+	free(line);
 	manage_exctract_error(scene, 0, false);
 }

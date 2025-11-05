@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 11:08:16 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 15:40:02 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:14:43 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
-int	print_str(char *format, va_list args)
+static int	print_str_fd(int fd, char *format, va_list args)
 {
 	int	count;
 	int	i;
@@ -28,7 +28,7 @@ int	print_str(char *format, va_list args)
 		}
 		else
 		{
-			ft_putchar_fd(1, format[i]);
+			ft_putchar_fd(fd, format[i]);
 			i++;
 			count++;
 		}
@@ -36,7 +36,7 @@ int	print_str(char *format, va_list args)
 	return (count);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_dprintf(int fd, const char *format, ...)
 {
 	int		count;
 	va_list	args;
@@ -44,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	va_start(args, format);
-	count = print_str((char *)format, args);
+	count = print_str_fd(fd, (char *)format, args);
 	va_end(args);
 	return (count);
 }

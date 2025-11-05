@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/10/31 13:39:58 by barmarti         ###   ########.fr        #
+#    Updated: 2025/11/05 16:05:20 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = miniRT
 SRCS_DIR = sources
 HEADER = includes/minirt.h
 
-INCLUDES = -Iincludes -Iincludes/libft -Iincludes/libft/ft_printf -Iincludes/libft/ft_printf/src -Iincludes/libft/ft_printf/conversions -Iincludes/minilibx-linux
+INCLUDES = -Iincludes -Iincludes/libft -Iincludes/libft/ft_printf -Iincludes/libft/ft_printf/src -Iincludes/libft/ft_printf/conversions -Iincludes/libft/ft_dprintf -Iincludes/libft/ft_dprintf/src -Iincludes/libft/ft_dprintf/conversions -Iincludes/minilibx-linux
 
 MLX_DIR = includes/minilibx-linux
 MLX_LIB = $(MLX_DIR)/libmlx_Linux.a

@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/23 15:46:45 by cscache           #+#    #+#              #
-#    Updated: 2025/10/31 13:36:50 by barmarti         ###   ########.fr        #
+#    Updated: 2025/11/05 16:13:58 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 
 INCLUDE = libft.h \
 ft_printf/ft_printf.h \
+ft_dprintf/ft_dprintf.h \
 get_next_line/get_next_line.h
 
 SRCS = ft_memcmp.c\
@@ -26,6 +27,16 @@ ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_atof.c \
 ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_isfloat.c\
 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c\
 ft_lstiter.c ft_abs.c ft_isspace.c ft_strndup.c \
+
+SRC_DPRINTF = ft_dprintf/src
+CONV_DIR_DPRINTF = ft_dprintf/conversions
+
+SRCS_DPRINTF = \
+ $(SRC_DPRINTF)/ft_dprintf.c \
+ $(SRC_DPRINTF)/fd_dispatcher.c \
+ $(CONV_DIR_DPRINTF)/fd_print_alpha.c \
+ $(CONV_DIR_DPRINTF)/fd_print_numerals.c \
+ $(CONV_DIR_DPRINTF)/d_utils.c
 
 SRC_PRINTF = ft_printf/src
 CONV_DIR_PRINTF = ft_printf/conversions
@@ -43,7 +54,7 @@ SRCS_PRINTF = \
   $(SRC_GNL)/get_next_line.c \
   $(SRC_GNL)/get_next_line_utils.c
 
-OBJS = $(SRCS:.c=.o) $(SRCS_PRINTF:.c=.o) $(SRCS_GNL:.c=.o)
+OBJS = $(SRCS:.c=.o) $(SRCS_PRINTF:.c=.o) $(SRCS_DPRINTF:.c=.o) $(SRCS_GNL:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g -I.
@@ -52,16 +63,16 @@ AR = ar rcs
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS) > /dev/null
+	@$(AR) $(NAME) $(OBJS)
 
 %.o: %.c $(INCLUDE)
-	@$(CC) $(CFLAGS) -I. -Ift_printf -Iget_next_line -c $< -o $@ > /dev/null
+	@$(CC) $(CFLAGS) -I. -Ift_printf -Ift_dprintf -Iget_next_line -c $< -o $@
 
 clean:
-	rm -f $(OBJS) > /dev/null
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME) > /dev/null
+	rm -f $(NAME)
 
 re: fclean all
 	

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:04:52 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 16:10:00 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:06:23 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf/ft_printf.h"
+# include "ft_dprintf/ft_dprintf.h"
 # include "get_next_line/get_next_line.h"
 
 typedef struct s_list

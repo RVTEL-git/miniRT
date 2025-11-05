@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 17:13:19 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:11:39 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 }
 
 /**
- * @brief check if the data exist
+ * @brief check if the data exist if it does delete it
  * 
- * @param line 
- * @param fd 
+ * @param line the line to free
+ * @param fd the fd to close
  */
 void	free_n_close(char *line, int fd)
 {
@@ -53,6 +53,8 @@ void	free_n_close(char *line, int fd)
 		free(line);
 	if (fd)
 		close(fd);
+	line = get_next_line(fd, true);
+	free(line);
 }
 
 /**
@@ -73,20 +75,20 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 	ft_bzero(id, 3);
 	fd_rt = open(rt_file, O_RDONLY);
 	if (fd_rt < 0)
-		ft_putendl_fd(2, "Error\nOpen failure");
-	buff_temp = get_next_line(fd_rt);
+		return (ft_dprintf(2, "Error\nOpen failure\n"), false);
+	buff_temp = get_next_line(fd_rt, false);
 	while (buff_temp)
 	{
 		if (buff_temp[0] == '\n')
 		{
 			free(buff_temp);
-			buff_temp = get_next_line(fd_rt);
+			buff_temp = get_next_line(fd_rt, false);
 			continue ;
 		}
 		if (!is_valid(buff_temp, id) || !get_data(buff_temp, scene, id))
 			return (manage_gnl_error(fd_rt, buff_temp, scene), false);
 		free(buff_temp);
-		buff_temp = get_next_line(fd_rt);
+		buff_temp = get_next_line(fd_rt, false);
 	}
 	free_n_close(buff_temp, fd_rt);
 	return (true);
@@ -108,7 +110,7 @@ bool	init_struct(char *rt_file)
 	ft_bzero(&scene, sizeof(t_scene));
 	if (!check_file_format(rt_file))
 	{
-		ft_putendl_fd(2, "Error\nWrong file format");
+		ft_dprintf(2, "Error\nWrong file format\n");
 		return (false);
 	}
 	if (!extract_data(rt_file, &scene))

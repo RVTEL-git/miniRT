@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fd_print_numerals.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 10:57:32 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 18:11:25 by barmarti         ###   ########.fr       */
+/*   Created: 2025/05/22 12:05:43 by barmarti          #+#    #+#             */
+/*   Updated: 2025/11/05 16:15:40 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "ft_dprintf.h"
 
-int	main(int ac, char **av)
+int	print_num_fd(int fd, int i)
 {
-	if (ac == 2)
-	{
-		if (!init_struct(av[1]))
-			return (EXIT_FAILURE);
-		return (EXIT_SUCCESS);
-	}
-	ft_dprintf(2, "Error\nWrong number of arguments\n");
-	return (EXIT_FAILURE);
+	int	size;
+
+	size = d_get_size(i, 10);
+	ft_putnbr_fd(fd, i);
+	return (size);
+}
+
+int	print_unit_fd(int fd, unsigned int uni)
+{
+	int	size;
+
+	size = d_get_size(uni, 10);
+	print_unsigned_fd(fd, uni);
+	return (size);
+}
+
+int	print_x_fd(int fd, int x, char specifier)
+{
+	int	size;
+
+	size = print_hex_fd(fd, x, specifier);
+	return (size);
 }

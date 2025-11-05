@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 16:37:09 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:20:54 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 static void inline	ft_check_limits(float x, float y, float z, float lim[2])
 {
-	if (x > lim[0] || x < lim [1])
+	if (x > lim[0] || x < lim[1])
 		errno = ERANGE;
-	if (y > lim[0] || y < lim [1])
+	if (y > lim[0] || y < lim[1])
 		errno = ERANGE;
-	if (z > lim[0] || z < lim [1])
+	if (z > lim[0] || z < lim[1])
 		errno = ERANGE;
 }
 
@@ -36,8 +36,12 @@ static void	init_cy_obj(t_obj *obj, char *line, int *index)
 
 static void	init_sp_obj(t_obj *obj, char *line, int *index)
 {
+	while (&line[*index] && ft_isspace(line[*index]))
+		*index += 1;
 	obj->diameter = ft_atof(&line[*index]);
 	*index = *index + ft_isfloat(&line[*index], 0);
+	while (&line[*index] && ft_isspace(line[*index]))
+		*index += 1;
 }
 
 static void	convert_n_pass(char *line, t_scene *scn, int *index)

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 17:12:53 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:59:01 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ bool	check_file_format(char *rt_file)
 		return (false);
 	if (ft_strncmp(&rt_file[len - 3], ".rt", 3) != 0)
 		return (false);
-	if (is_dir(rt_file) == true)
-		return (false);
+	// if (is_dir(rt_file) == true)
+	// 	return (false);
 	return (true);
 }
 

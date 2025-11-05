@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 17:04:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:46:57 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 
 # include <math.h>
 # include <errno.h>
+# include <sys/stat.h>
+# include <stdlib.h>
 # include "minilibx-linux/mlx.h"
 # include "minilibx-linux/mlx_int.h"
 # include "libft/libft.h"
-
-/*=== CODE ERREUR ===*/
-# define EXIT_FAILURE	1
-# define EXIT_SUCCESS	0
-/**/
 
 /*=== STRUCTURES ===*/
 /*DATA*/

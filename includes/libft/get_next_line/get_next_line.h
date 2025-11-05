@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:41:46 by barmarti          #+#    #+#             */
-/*   Updated: 2025/07/08 12:33:12 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:23:57 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_gnl_list
 	struct s_gnl_list	*next;
 }	t_gnl_list;
 
-char			*get_next_line(int fd);
+char			*get_next_line(int fd, bool wipe);
 char			*make_new_line(t_gnl_list *lst, int i);
 char			*dup_line(char *src);
 
