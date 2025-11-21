@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 17:46:57 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/21 11:50:28 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,15 @@
 # include "minilibx-linux/mlx_int.h"
 # include "libft/libft.h"
 
+/*=== COLORS ===*/
+
+# define COLOR_WHITE 0xffffff
+# define COLOR_BLACK 0x000000
+# define COLOR_BLUE 0x0000ff
+
 /*=== STRUCTURES ===*/
 /*DATA*/
+
 typedef struct s_coor
 {
 	float	x;
@@ -37,7 +44,8 @@ typedef struct s_rgb
 	float	b;
 }t_rgb;
 
-/*GLOBAL*/
+/*GEOMETRY*/
+
 typedef struct s_amb
 {
 	char	id;
@@ -81,22 +89,27 @@ typedef struct s_scene
 	t_coor	tmp;
 }t_scene;
 
+/*MLX*/
+
+typedef struct s_mlx_img
+{
+	void	*img_ptr;
+	char	*img_pixel_ptr;
+	int		bits_per_pixel;
+	int		endian;
+	int		line_len;
+}t_mlx_img;
+
+typedef struct s_mlx_data
+{
+	void		*mlx_ptr;
+	void		*win_ptr;
+	int			height;
+	int			width;
+	t_mlx_img	*img_ptr;
+}t_mlx_data;
+
 /*=== FUNCTIONS ===*/
-/*INIT*/
-
-bool	init_struct(char *rt_file);
-bool	is_dir(char *rt_file);
-bool	check_file_format(char *rt_file);
-void	init_by_id(char *id, char *line, t_scene *scene);
-bool	check_full(t_scene *scene);
-void	pass_float(char *line, int *index);
-void	convert_three_value(t_scene *scene, char *line, bool use_float);
-void	convert_three_int(t_coor *temp, char *line);
-void	convert_three_float(t_coor *temp, char *line);
-void	assign_three_value(float *fst, float *scn, float *thr, t_coor *tmp);
-void	pass_three_value(char *line, int *index, bool use_float);
-void	init_object(char *line, t_scene *scn, char *id);
-
 /*PARSING*/
 
 bool	is_valid(char *gnl_line, char *id);
@@ -111,6 +124,26 @@ bool	check_plane_line(char *line);
 bool	check_cylin_line(char *line);
 int		check_n_pass_float(char *line);
 int		three_follow_value(char *line, int charset, bool include_float);
+
+/*INIT*/
+
+bool	init_mlx_struct(t_mlx_data *data);
+bool	init_struct(char *rt_file);
+bool	is_dir(char *rt_file);
+bool	check_file_format(char *rt_file);
+void	init_by_id(char *id, char *line, t_scene *scene);
+bool	check_full(t_scene *scene);
+void	pass_float(char *line, int *index);
+void	convert_three_value(t_scene *scene, char *line, bool use_float);
+void	convert_three_int(t_coor *temp, char *line);
+void	convert_three_float(t_coor *temp, char *line);
+void	assign_three_value(float *fst, float *scn, float *thr, t_coor *tmp);
+void	pass_three_value(char *line, int *index, bool use_float);
+void	init_object(char *line, t_scene *scn, char *id);
+
+/*RENDER*/
+
+void	draw_rectangle(t_mlx_data *data);
 
 /*LIST*/
 

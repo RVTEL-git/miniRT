@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 17:20:44 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/08 09:59:19 by barmarti         ###   ########.fr       */
+/*   Created: 2025/08/09 17:14:39 by barmarti          #+#    #+#             */
+/*   Updated: 2025/08/09 18:03:47 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * @brief 
- * 
- * @param content 
- * @return t_dble_list* 
- */
-t_dble_list	*ft_lstnew(int content)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_dble_list	*new;
+	int	i;
 
-	new = malloc(sizeof(t_dble_list));
-	if (!new)
-		return (NULL);
-	new->data = content;
-	new->next = NULL;
-	return (new);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

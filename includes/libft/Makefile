@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/23 15:46:45 by cscache           #+#    #+#              #
-#    Updated: 2025/11/05 16:13:58 by barmarti         ###   ########.fr        #
+#    Updated: 2025/11/21 09:58:20 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c\
 ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c\
 ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c\
 ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_atof.c \
-ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_isfloat.c\
+ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_isfloat.c ft_strcmp.c \
 ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c\
 ft_lstiter.c ft_abs.c ft_isspace.c ft_strndup.c \
 

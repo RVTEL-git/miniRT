@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:04:52 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 16:06:23 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/21 09:57:45 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int			ft_isdigit(int c);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_tolower(int c);
+int			ft_strcmp(char *s1, char *s2);
 int			ft_toupper(int c);
 int			ft_lstsize(t_dble_list *lst);
 bool		ft_isspace(int c);

@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/11/05 16:05:20 by barmarti         ###   ########.fr        #
+#    Updated: 2025/11/21 11:52:49 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,18 @@ PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c \
 		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id_utils.c
 		
 INIT_DIR = init
-INIT = $(SRCS_DIR)/$(INIT_DIR)/init.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_by_id.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_utils.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_by_id_utils_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/init_utils.c \
+GEO_DIR = geometry
+WIN_DIR = window
+INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_2.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils_2.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_utils.c \
+		$(SRCS_DIR)/$(INIT_DIR)/$(WIN_DIR)/init_mlx.c 
+
+REN_DIR = render
+REN = $(SRCS_DIR)/$(REN_DIR)/draw.c
 
 LST_DIR = list
 LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
@@ -50,7 +56,7 @@ LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
 ERR_DIR = error
 ERR = $(SRCS_DIR)/$(ERR_DIR)/manage_error.c
 
-SRCS_FILES = $(SRCS) $(INIT) $(PARS) $(LST) $(ERR)
+SRCS_FILES = $(SRCS) $(PARS) $(INIT) $(REN) $(LST) $(ERR)
 
 OBJ_DIR = obj
 OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)

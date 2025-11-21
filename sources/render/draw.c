@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                  :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 17:20:44 by barmarti          #+#    #+#             */
-/*   Updated: 2025/05/08 09:59:19 by barmarti         ###   ########.fr       */
+/*   Created: 2025/11/21 11:18:12 by barmarti          #+#    #+#             */
+/*   Updated: 2025/11/21 11:47:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minirt.h"
 
-/**
- * @brief 
- * 
- * @param content 
- * @return t_dble_list* 
- */
-t_dble_list	*ft_lstnew(int content)
+void	draw_rectangle(t_mlx_data *data)
 {
-	t_dble_list	*new;
+	int	x;
+	int	y;
 
-	new = malloc(sizeof(t_dble_list));
-	if (!new)
-		return (NULL);
-	new->data = content;
-	new->next = NULL;
-	return (new);
+	x = 200;
+	while (x < 400)
+	{
+		y = 200;
+		while (y < 400)
+		{
+			mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, COLOR_WHITE);
+			y++;
+		}
+		x++;
+	}
 }
