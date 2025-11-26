@@ -48,7 +48,13 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c \
 		$(SRCS_DIR)/$(INIT_DIR)/$(WIN_DIR)/init_mlx.c 
 
 REN_DIR = render
-REN = $(SRCS_DIR)/$(REN_DIR)/draw.c
+REN = $(SRCS_DIR)/$(REN_DIR)/draw.c \
+	  $(SRCS_DIR)/$(REN_DIR)/camera.c \
+	  $(SRCS_DIR)/$(REN_DIR)/render.c
+
+MATH_DIR = maths
+MATH = $(SRCS_DIR)/$(MATH_DIR)/vec3_operations.c \
+	   $(SRCS_DIR)/$(MATH_DIR)/vec3_operations2.c
 
 LST_DIR = list
 LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
@@ -56,7 +62,7 @@ LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
 ERR_DIR = error
 ERR = $(SRCS_DIR)/$(ERR_DIR)/manage_error.c
 
-SRCS_FILES = $(SRCS) $(PARS) $(INIT) $(REN) $(LST) $(ERR)
+SRCS_FILES = $(SRCS) $(PARS) $(INIT) $(REN) $(LST) $(ERR) $(MATH)
 
 OBJ_DIR = obj
 OBJS = $(SRCS_FILES:%.c=$(OBJ_DIR)/%.o)
