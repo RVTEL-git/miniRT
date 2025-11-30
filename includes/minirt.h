@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/26 01:42:09 by egiraud          ###   ########.fr       */
+/*   Updated: 2025/11/30 11:44:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,26 @@
 # include <stdlib.h>
 # include <sys/stat.h>
 
+/*=== PI ===*/
+# define M_PI		3.14159265358979323846
+
 /*=== COLORS ===*/
 
-# define COLOR_WHITE 0xffffff
-# define COLOR_BLACK 0x000000
-# define COLOR_BLUE 0x0000ff
+# define WHITE_COLOR 0xffffff
+# define BLACK_COLOR 0x000000
+# define BLUE_COLOR 0x0000ff
+# define YELLOW_COLOR 0xffff00
+# define GRAY_COLOR 0x969696
 
 /*=== STRUCTURES ===*/
 /*DATA*/
 
-typedef struct ray
+typedef struct s_ray
 {
 	t_vec3			dir;
+	double			angle;
 	t_point			orig;
-}					ray;
+}					t_ray;
 
 typedef struct s_coor
 {
@@ -136,7 +142,7 @@ int					three_follow_value(char *line, int charset,
 /*INIT*/
 
 bool				init_mlx_struct(t_mlx_data *data);
-void	create_mlx_image(t_mlx_data *mlx);
+void				create_mlx_image(t_mlx_data *mlx);
 bool				init_struct(char *rt_file);
 bool				is_dir(char *rt_file);
 bool				check_file_format(char *rt_file);
@@ -151,11 +157,14 @@ void				assign_three_value(float *fst, float *scn, float *thr,
 						t_coor *tmp);
 void				pass_three_value(char *line, int *index, bool use_float);
 void				init_object(char *line, t_scene *scn, char *id);
+void				init_handler(t_mlx_data *data);
 
 /*RENDER*/
 
-void	render(t_scene *scene, t_mlx_data *mlx);
+void				render(t_scene *scene, t_mlx_data *mlx);
 void				draw_rectangle(t_mlx_data *data);
+void				draw_circle(t_mlx_data *data, int pos_x, int pos_y);
+void				draw_rays(t_mlx_data *dta, int pos_x, int pos_y, int color);
 
 /*LIST*/
 

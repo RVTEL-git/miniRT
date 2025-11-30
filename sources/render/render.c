@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/26 01:50:06 by egiraud          ###   ########.fr       */
+/*   Updated: 2025/11/30 11:58:46 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
 
 void	create_mlx_image(t_mlx_data *mlx)
 {
-	t_mlx_img new;
+	t_mlx_img	new;
 
 	new.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->width, mlx->height);
 	if (!new.img_ptr)
 		printf("image creation failed\n");//exit
-	new.img_pixel_ptr = mlx_get_data_addr(new.img_ptr, &new.bits_per_pixel, &new.line_len, &new.endian);
+	new.img_pixel_ptr = mlx_get_data_addr(new.img_ptr, &new.bits_per_pixel, \
+		&new.line_len, &new.endian);
 	if (!new.img_pixel_ptr)
 		printf("image creation failed\n");//exit
 	mlx->img = new;
@@ -35,8 +36,8 @@ void	create_mlx_image(t_mlx_data *mlx)
 
 void	render(t_scene *scene, t_mlx_data *mlx)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	(void)scene;
 
@@ -54,8 +55,7 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	{
 		x = -1;
 		while (++x < mlx->width)
-			my_mlx_pixel_put(&mlx->img, x, y, COLOR_BLUE);
+			my_mlx_pixel_put(&mlx->img, x, y, BLUE_COLOR);
 	}
-	
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
 }

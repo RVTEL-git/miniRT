@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:04:52 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/21 09:57:45 by barmarti         ###   ########.fr       */
+/*   Updated: 2025/11/30 11:22:04 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 # include <stdbool.h>
 # include <errno.h>
 # include <float.h>
+# include <sys/time.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf/ft_printf.h"
 # include "ft_dprintf/ft_dprintf.h"
 # include "get_next_line/get_next_line.h"
+
+# define MSG "segmentation fault  (core dumped)"
 
 typedef struct s_list
 {
