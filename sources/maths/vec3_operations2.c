@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_operations2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:39:01 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/25 00:24:55 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/02/07 17:13:04 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 //calcule la magnitude du vecteur (sa taille)
 double vec3_magnitude(t_vec3 vec3)

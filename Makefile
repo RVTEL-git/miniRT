@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2025/11/30 11:32:50 by barmarti         ###   ########.fr        #
+#    Updated: 2026/02/18 10:55:22 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,27 +31,26 @@ SRCS = $(SRCS_DIR)/main.c \
 		$(SRCS_DIR)/DEBUG.c
 
 PARS_DIR = parsing
-PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c \
-		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id.c \
-		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id_2.c \
+PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c			\
+		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id.c		\
+		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id_2.c		\
 		$(SRCS_DIR)/$(PARS_DIR)/pars_by_id_utils.c
 		
 INIT_DIR = init
 GEO_DIR = geometry
 MLX_INIT_DIR = mlx
-INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils_2.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_utils.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/init_window.c \
-		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/init_handler.c
+INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id.c			\
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_2.c		\
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils.c	\
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils_2.c	\
+		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_utils.c			\
+		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_init.c		\
+		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_handler.c
 
 REN_DIR = render
-REN = $(SRCS_DIR)/$(REN_DIR)/draw_geo.c\
-	  $(SRCS_DIR)/$(REN_DIR)/draw_rays.c\
-	  $(SRCS_DIR)/$(REN_DIR)/camera.c \
+REN = $(SRCS_DIR)/$(REN_DIR)/camera.c				\
+	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c	\
 	  $(SRCS_DIR)/$(REN_DIR)/render.c
 
 MATH_DIR = maths

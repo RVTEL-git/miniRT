@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 18:11:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/07 17:34:43 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,20 +103,17 @@ static bool	extract_data(char *rt_file, t_scene *scene)
  * @return false if one of the step fails (wrong ext name, 
  * the file is a directory, wrong data)
  */
-bool	init_struct(char *rt_file)
+bool	init_struct(char *rt_file, t_scene *scene)
 {
-	t_scene	scene;
-
-	ft_bzero(&scene, sizeof(t_scene));
 	if (!check_file_format(rt_file))
 	{
 		ft_dprintf(2, "Error\nWrong file format\n");
 		return (false);
 	}
-	if (!extract_data(rt_file, &scene))
+	if (!extract_data(rt_file, scene))
 		return (false);
-	if (!check_full(&scene))
+	if (!check_full(scene))
 		return (false);
-	print_struct(&scene);
+	print_struct(scene);
 	return (true);
 }

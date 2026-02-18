@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:41:48 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 11:14:55 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/08 15:55:11 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,19 @@ t_gnl_list	*make_list(t_gnl_list **lst, char *buff)
 {
 	t_gnl_list	*curr;
 	t_gnl_list	*new;
+	char		*dup;
 
 	if (!lst || !buff)
 		return (NULL);
-	new = new_node(dup_line(buff));
-	if (!new)
+	dup = dup_line(buff);
+	if (!dup)
 	{
 		free(buff);
 		return (NULL);
 	}
+	new = new_node(dup);
+	if (!new)
+		return (free(dup), NULL);
 	if (!*lst)
 	{
 		*lst = new;
@@ -48,6 +52,7 @@ t_gnl_list	*make_list(t_gnl_list **lst, char *buff)
 	curr->next = new;
 	return (*lst);
 }
+
 
 int	gnl_get_len(t_gnl_list *lst)
 {
@@ -84,6 +89,8 @@ int	is_nl(t_gnl_list *lst)
 	curr = lst;
 	while (curr)
 	{
+		if (!curr->content)
+			return (0);
 		j = 0;
 		while (curr->content[j])
 		{

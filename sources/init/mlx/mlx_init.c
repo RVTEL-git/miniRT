@@ -1,54 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_window.c                                      :+:      :+:    :+:   */
+/*   mlx_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:36:55 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/30 12:05:47 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/08 15:46:58 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-static bool	init_window(t_mlx_data *d)
+static bool	init_window(t_global *minirt)
 {
+	t_mlx_data	*d;
+
+	d = minirt->mlx;
 	d->mlx_ptr = mlx_init();
 	if (!d->mlx_ptr)
+	{
+		ft_dprintf(2, "Error\nmlx init failed\n");
 		return (False);
+	}
 	if (mlx_get_screen_size(d->mlx_ptr, &d->width, &d->height) != 0)
-		ft_dprintf(1, "Warning\nInexpected mlx render(mlx_get_screen)");
-	d->win_ptr = mlx_new_window(d->mlx_ptr, d->width, d->height, "miniRT");
+		ft_dprintf(1, "Warning\nInexpected mlx render(mlx_get_screen)\n");
+	d->height -= 69;
+	d->win_ptr = mlx_new_window(d->mlx_ptr, d->width, d->height, "RT_test");
 	if (!d->win_ptr)
 	{
 		mlx_destroy_display(d->mlx_ptr);
+		free(d->mlx_ptr);
+		d->mlx_ptr = NULL;
+		ft_dprintf(2, "Error\nmlx new window failed\n");
 		return (False);
 	}
-	draw_rectangle(d);
-	init_handler(d);
-	//render(NULL, d);
+	d->img.img_ptr = NULL;
+	init_handler(minirt);
 	return (True);
 }
 
-bool	init_mlx_struct(t_mlx_data *data)
+bool	init_mlx_struct(t_global *minirt)
 {
-	data = malloc(sizeof (t_mlx_data) * 1);
-	if (!data)
+	minirt->mlx = malloc(sizeof (t_mlx_data) * 1);
+	if (!minirt->mlx)
 		return (false);
-	/*data->img = malloc(sizeof (t_mlx_img) * 1);
-	if (!data->img)
+	if (!init_window(minirt))
 	{
-		free(data);
-		return (false);
-	}*/
-	data->img.img_ptr = NULL;
-	if (!init_window(data))
-	{
-	//	free(data->img);
-		free(data);
+		free(minirt->mlx);
 		return (false);
 	}
-	mlx_loop(data->mlx_ptr);
 	return (true);
 }

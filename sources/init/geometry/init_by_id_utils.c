@@ -6,13 +6,13 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:35:47 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 15:39:42 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:48:59 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
-void	assign_three_value(float *fst, float *scn, float *thr, t_coor *tmp)
+void	assign_three_value(double *fst, double *scn, double *thr, t_coor *tmp)
 {
 	*fst = tmp->x;
 	*scn = tmp->y;

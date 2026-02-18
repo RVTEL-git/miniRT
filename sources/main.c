@@ -6,33 +6,28 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:57:32 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/30 11:44:50 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:50:47 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
+#include "minirt.h"
 
 int	main(int ac, char **av)
 {
-	t_mlx_data	data;
+	t_global	minirt;
 
 	if (ac == 2)
 	{
-		if (!ft_strcmp(av[1], "test"))
+		ft_bzero(&minirt.scene, sizeof(t_scene));
+		if (!init_struct(av[1], &minirt.scene))
+			return (EXIT_FAILURE);
+		if (!init_mlx_struct(&minirt))
 		{
-			if (!init_mlx_struct(&data))
-			{
-				ft_dprintf(2, "Error\nInit MLX failed\n");
-				return (EXIT_FAILURE);
-			}
-			init_mlx_struct(&data);
-		}
-		else if (!init_struct(av[1]))
-		{
-			ft_dprintf(2, "Error\narg\n");
+			ft_lstclear_obj(minirt.scene.object);
 			return (EXIT_FAILURE);
 		}
-		return (EXIT_SUCCESS);
+		start_render(&minirt);
+		close_mlx(&minirt, EXIT_SUCCESS);
 	}
 	ft_dprintf(2, "Error\nWrong number of arguments\n");
 	return (EXIT_FAILURE);

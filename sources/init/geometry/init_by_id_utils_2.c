@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:13:26 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 14:57:41 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/07 17:12:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 void	pass_float(char *line, int *index)
 {

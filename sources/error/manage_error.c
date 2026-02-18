@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 18:10:43 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/07 17:11:40 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 /**
  * @brief Print the error message if the id line containg wrong data

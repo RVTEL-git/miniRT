@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_by_id_2.c                                    :+:      :+:    :+:   */
+/*   pars_by_id_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:00:42 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/29 11:48:40 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/07 17:13:09 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 /**
  * @brief parse the sphere line data by data to check if

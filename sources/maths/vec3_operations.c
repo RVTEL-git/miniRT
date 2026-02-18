@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:14:48 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/25 00:51:44 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/02/07 17:12:58 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 t_vec3	vec3_set(double x, double y, double z)
 {

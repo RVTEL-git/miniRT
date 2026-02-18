@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/06 02:00:47 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/02/18 10:56:20 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,11 @@ typedef struct s_ray
 	t_point			orig;
 }					t_ray;
 
-typedef struct s_coor
-{
-	float			x;
-	float			y;
-	float			z;
-}					t_coor;
-
 typedef struct s_rgb
 {
-	float			r;
-	float			g;
-	float			b;
+	double			r;
+	double			g;
+	double			b;
 }					t_rgb;
 
 /*GEOMETRY*/
@@ -89,6 +82,7 @@ typedef struct t_obj
 	t_coor			v;
 	t_rgb			rgb;
 	float			diameter;
+	double			radius;
 	float			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
@@ -123,6 +117,14 @@ typedef struct s_mlx_data
 	t_mlx_img		img;
 }					t_mlx_data;
 
+/*GLOBAAAAAL*/
+
+typedef struct s_global
+{
+	t_mlx_data	*mlx;
+	t_scene		scene;
+}				t_global;
+
 /*=== FUNCTIONS ===*/
 /*PARSING*/
 
@@ -142,9 +144,7 @@ int					three_follow_value(char *line, int charset,
 
 /*INIT*/
 
-bool				init_mlx_struct(t_mlx_data *data);
-void				create_mlx_image(t_mlx_data *mlx);
-bool				init_struct(char *rt_file);
+bool				init_struct(char *rt_file, t_scene *scene);
 bool				is_dir(char *rt_file);
 bool				check_file_format(char *rt_file);
 void				init_by_id(char *id, char *line, t_scene *scene);
@@ -154,23 +154,28 @@ void				convert_three_value(t_scene *scene, char *line,
 						bool use_float);
 void				convert_three_int(t_coor *temp, char *line);
 void				convert_three_float(t_coor *temp, char *line);
-void				assign_three_value(float *fst, float *scn, float *thr,
+void				assign_three_value(double *fst, double *scn, double *thr,
 						t_coor *tmp);
 void				pass_three_value(char *line, int *index, bool use_float);
 void				init_object(char *line, t_scene *scn, char *id);
-void				init_handler(t_mlx_data *data);
 
 /*RENDER*/
 
-void				render(t_scene *scene, t_mlx_data *mlx);
-void				draw_rectangle(t_mlx_data *data);
-void				draw_circle(t_mlx_data *data, int pos_x, int pos_y);
-void				draw_rays(t_mlx_data *dta, int pos_x, int pos_y, int color);
+void				start_render(t_global *minirt);
+
+/*MLX*/
+
+bool				init_mlx_struct(t_global *minirt);
+void				init_handler(t_global *minirt);
+int					close_mlx(t_global *data, int code);
+bool				create_mlx_image(t_mlx_data *mlx);
+void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
 /*LIST*/
 
 t_obj				*ft_lstlast_obj(t_obj *lst);
 void				ft_lstadd_back_obj(t_obj **lst, t_obj *new);
+void				ft_lstclear_obj(t_obj *lst);
 
 /*ERROR*/
 
@@ -183,3 +188,4 @@ void				manage_exctract_error(t_scene *scene, char *id,
 void				print_struct(t_scene *scn);
 
 #endif
+

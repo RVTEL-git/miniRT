@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:56:53 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/30 11:17:35 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:47:11 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_vector3
 	double	x;
 	double	y;
 	double	z;
-}t_vec3,	t_point;
+}t_vec3,	t_point, t_coor;
 
 /* METHODES */
 
