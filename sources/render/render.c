@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/08 15:57:16 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:31:32 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	start_render(t_global *minirt)
 	t_mlx_data	*mlx;
 
 	scn = minirt->scene;
+	(void)scn;
 	mlx = minirt->mlx;
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);

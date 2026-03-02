@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_by_id_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:14:04 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:13:16 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:14:02 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,36 +34,7 @@ int	check_n_pass_float(char *line)
 	return (0);
 }
 
-static int	first_value(char *line, int charset, bool include_float)
-{
-	int	is_float;
-	int	index;
-
-	index = 0;
-	if (include_float == true)
-	{
-		is_float = ft_isfloat(line, charset);
-		if (is_float)
-		{
-			if (line[is_float] && line[is_float] == ',')
-				is_float++;
-			return (is_float);
-		}
-	}
-	if (line[index] && line[index] == '-')
-		index++;
-	if (line[index] && !ft_isdigit(line[index]))
-		return (0);
-	while (line[index] && ft_isdigit(line[index]))
-		index++;
-	if (line[index] && line[index] == ',')
-		index++;
-	else
-		return (0);
-	return (index);
-}
-
-static int	second_value(char *line, int charset, bool include_float)
+static int	non_last_value(char *line, int charset, bool include_float)
 {
 	int	is_float;
 	int	index;
@@ -106,8 +77,8 @@ static int	third_value(char *line, int charset, bool include_float)
 		{
 			if (line[is_float] && line[is_float] == ',')
 				is_float++;
+			return (is_float);
 		}
-		return (is_float);
 	}
 	if (line[index] && line[index] == '-')
 		index++;
@@ -128,10 +99,10 @@ int	three_follow_value(char *line, int charset, bool include_float)
 	index = 0;
 	while (line[index] && ft_isspace(line[index]))
 		index++;
-	index = first_value(&line[index], charset, include_float);
+	index = non_last_value(&line[index], charset, include_float);
 	if (index == 0)
 		return (0);
-	index_to_comp = second_value(&line[index], charset, include_float);
+	index_to_comp = non_last_value(&line[index], charset, include_float);
 	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;

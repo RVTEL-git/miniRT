@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init_by_id_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:12:21 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:30:59 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-static void inline	ft_check_limits(float x, float y, float z, float lim[2])
+inline static void	ft_check_limits(float x, float y, float z, float lim[2])
 {
 	if (x > lim[0] || x < lim[1])
 		errno = ERANGE;
@@ -26,21 +26,21 @@ static void	init_cy_obj(t_obj *obj, char *line, int *index)
 {
 	obj->diameter = ft_atof(&line[*index]);
 	*index = *index + ft_isfloat(&line[*index], 0);
-	while (&line[*index] && ft_isspace(line[*index]))
+	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
 	obj->height = ft_atof(&line[*index]);
 	*index = *index + ft_isfloat(&line[*index], 0);
-	while (&line[*index] && ft_isspace(line[*index]))
+	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
 }
 
 static void	init_sp_obj(t_obj *obj, char *line, int *index)
 {
-	while (&line[*index] && ft_isspace(line[*index]))
+	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
 	obj->diameter = ft_atof(&line[*index]);
 	*index = *index + ft_isfloat(&line[*index], 0);
-	while (&line[*index] && ft_isspace(line[*index]))
+	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_by_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:12:38 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:22:28 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	init_cam_line(char *line, t_scene *scene)
 	if (v->z > 1 || v->z < -1)
 		errno = ERANGE;
 	scene->camera.fov = ft_atoi(&line[index]);
-	if (scene->camera.fov > 180 || scene->camera.fov < 0)
+	if (scene->camera.fov > 180 || scene->camera.fov <= 0)
 		errno = ERANGE;
 }
 

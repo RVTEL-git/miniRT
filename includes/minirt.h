@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/18 10:56:20 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 16:03:21 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_rgb
 typedef struct s_amb
 {
 	char			id;
-	float			amb_ratio;
+	double			amb_ratio;
 	t_rgb			rgb;
 }					t_amb;
 
@@ -72,7 +72,7 @@ typedef struct s_light
 {
 	char			id;
 	t_coor			point;
-	float			bright;
+	double			bright;
 }					t_light;
 
 typedef struct t_obj
@@ -81,9 +81,8 @@ typedef struct t_obj
 	t_coor			pos;
 	t_coor			v;
 	t_rgb			rgb;
-	float			diameter;
-	double			radius;
-	float			height;
+	double			diameter;
+	double			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
 }					t_obj;
@@ -131,7 +130,7 @@ typedef struct s_global
 bool				is_valid(char *gnl_line, char *id);
 void				move_index(char *line, int *index, char *id);
 bool				already_in_file(char *id, int *a_id, int *c_id, int *l_id);
-bool				check_by_id(char *line, char id[3]);
+bool				check_by_id(char id[3], char *line);
 bool				check_amb_line(char *line);
 bool				check_cam_line(char *line);
 bool				check_light_line(char *line);
@@ -153,11 +152,12 @@ void				pass_float(char *line, int *index);
 void				convert_three_value(t_scene *scene, char *line,
 						bool use_float);
 void				convert_three_int(t_coor *temp, char *line);
-void				convert_three_float(t_coor *temp, char *line);
+void				convert_three_double(t_coor *temp, char *line);
 void				assign_three_value(double *fst, double *scn, double *thr,
 						t_coor *tmp);
 void				pass_three_value(char *line, int *index, bool use_float);
 void				init_object(char *line, t_scene *scn, char *id);
+bool				check_line(char *line);
 
 /*RENDER*/
 
@@ -181,7 +181,7 @@ void				ft_lstclear_obj(t_obj *lst);
 
 void				error_by_id(char *id);
 void				manage_gnl_error(int fd, char *line, t_scene *scene);
-void				manage_exctract_error(t_scene *scene, char *id,
+void				manage_extract_error(t_scene *scene, char *id,
 						bool message);
 
 /*DEBUG*/

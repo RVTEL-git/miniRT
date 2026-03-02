@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   obj_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:29:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:56:33 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:32:53 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_obj	*ft_lstlast_obj(t_obj *lst)
 	return (curr);
 }
 
-void	ft_lstdelone_obj(t_obj *lst)
+static void	ft_lstdelone_obj(t_obj *lst)
 {
 	if (!lst)
 		return ;
@@ -61,5 +61,4 @@ void	ft_lstclear_obj(t_obj *lst)
 		ft_lstdelone_obj(lst);
 		lst = curr;
 	}
-	lst = NULL;
 }

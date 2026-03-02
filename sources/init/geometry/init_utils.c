@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:12:43 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:49:13 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,21 @@ bool	is_dir(char *rt_file)
 		return (false);
 	close(fd_rt);
 	return (true);
+}
+
+bool	check_line(char *line)
+{
+	size_t	index;
+
+	index = 0;
+	while (line[index])
+	{
+		if (line[index] == 32)
+			index++;
+		else if (line[index] == '\n')
+			return (true);
+		else
+			return (false);
+	}
+	return (false);
 }

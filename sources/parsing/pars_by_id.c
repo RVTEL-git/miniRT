@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_by_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:51:04 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:13:23 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:06:40 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * 
  * @param id the buffer
  * @param line the line containig all the data (the id have been passed)
- * @return true if the id is existing and the line misconfigurated
+ * @return true if the id is existing and the line well configurated
  * @return false if the buffer contain corrupted data (normaly not possible)
  * or if the line is misconfigurated
  */

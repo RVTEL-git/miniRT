@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   vector.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:56:53 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/10 11:47:11 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 13:18:26 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
-
-# include "minirt.h"
 
 typedef struct s_vector3
 {

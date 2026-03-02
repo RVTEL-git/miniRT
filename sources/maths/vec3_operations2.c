@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_operations2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:39:01 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/07 17:13:04 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 15:35:17 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_vec3	vec3_normalize(t_vec3 vec3)
 	if (mag == 0)
 		ft_printf("flag normalising null vector");
 	new = vec3_set(vec3.x / mag, vec3.y / mag, vec3.z / mag);
-	return (vec3);
+	return (new);
 }
 
 double	vec3_distance(t_vec3 a, t_vec3 b)

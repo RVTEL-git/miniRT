@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:34:43 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/28 16:01:08 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 	int		index;
 
 	index = 0;
-	valid_line = ft_strnstr(id, valid_line, ft_strlen(valid_line));
+	valid_line = ft_strnstr(id ,valid_line, ft_strlen(valid_line));
+	printf("valid line = %s", valid_line);
 	if (valid_line[index] && id[1])
 		index++;
 	index++;
@@ -35,7 +36,7 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 	init_by_id(id, &valid_line[index], scene);
 	if (errno == ENOMEM || errno == ERANGE)
 	{
-		manage_exctract_error(scene, id, true);
+		manage_extract_error(scene, id, true);
 		return (false);
 	}
 	return (true);
@@ -51,10 +52,10 @@ void	free_n_close(char *line, int fd)
 {
 	if (line)
 		free(line);
-	if (fd)
-		close(fd);
 	line = get_next_line(fd, true);
 	free(line);
+	if (fd >= 0)
+		close(fd);
 }
 
 /**
@@ -79,7 +80,7 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 	buff_temp = get_next_line(fd_rt, false);
 	while (buff_temp)
 	{
-		if (buff_temp[0] == '\n')
+		if (check_line(buff_temp))
 		{
 			free(buff_temp);
 			buff_temp = get_next_line(fd_rt, false);
