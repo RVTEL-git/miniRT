@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:18:38 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:18:55 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/02/26 15:36:35 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ bool	create_mlx_image(t_mlx_data *mlx)
 	return (true);
 }
 
+/*Ne serais-ce pas une bonne idee de mettre un protectio ici aussi type:
+
+if (x < 0 || y < 0 || x >= mlx->width || y >= mlx->height)
+	return;
+*/
 void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
 {
 	int	offset;
@@ -40,4 +45,3 @@ void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
 	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
 	*(unsigned int *)(img->img_pixel_ptr + offset) = color;
 }
-
