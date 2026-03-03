@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2026/02/18 10:55:22 by barmarti         ###   ########.fr        #
+#    Updated: 2026/03/03 10:31:04 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,12 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_handler.c
 
 REN_DIR = render
+HIT_DIR = hitable
 REN = $(SRCS_DIR)/$(REN_DIR)/camera.c				\
 	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/render.c
+	  $(SRCS_DIR)/$(REN_DIR)/render.c				\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c
 
 MATH_DIR = maths
 MATH = $(SRCS_DIR)/$(MATH_DIR)/vec3_operations.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 15:49:13 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 09:32:18 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,11 @@ bool	check_file_format(char *rt_file)
  */
 bool	is_dir(char *rt_file)
 {
-	int	fd_rt;
+	struct stat	st;
 
-	fd_rt = open(rt_file, __O_DIRECTORY);
-	if (errno == ENOTDIR)
-		return (false);
-	close(fd_rt);
-	return (true);
+	if (stat(rt_file, &st) == 0 && S_ISDIR(st.st_mode))
+		return (true);
+	return (false);
 }
 
 bool	check_line(char *line)

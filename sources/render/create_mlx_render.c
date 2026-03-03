@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/07 17:18:38 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/07 17:18:55 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 09:40:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
 {
 	int	offset;
 
+	if (x < 0 || y < 0)
+		return ;
 	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
 	*(unsigned int *)(img->img_pixel_ptr + offset) = color;
 }

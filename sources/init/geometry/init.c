@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 16:01:08 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 10:48:12 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 
 	index = 0;
 	valid_line = ft_strnstr(id ,valid_line, ft_strlen(valid_line));
-	printf("valid line = %s", valid_line);
 	if (valid_line[index] && id[1])
 		index++;
 	index++;
@@ -69,9 +68,10 @@ void	free_n_close(char *line, int fd)
  */
 static bool	extract_data(char *rt_file, t_scene *scene)
 {
-	int		fd_rt;
-	char	id[3];
-	char	*buff_temp;
+	int			fd_rt;
+	char		id[3];
+	char		*buff_temp;
+	static t_id	ids;
 
 	ft_bzero(id, 3);
 	fd_rt = open(rt_file, O_RDONLY);
@@ -86,13 +86,13 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 			buff_temp = get_next_line(fd_rt, false);
 			continue ;
 		}
-		if (!is_valid(buff_temp, id) || !get_data(buff_temp, scene, id))
+		if (!is_valid(buff_temp, id, &ids) || !get_data(buff_temp, scene, id))
 			return (manage_gnl_error(fd_rt, buff_temp, scene), false);
 		free(buff_temp);
 		buff_temp = get_next_line(fd_rt, false);
 	}
-	free_n_close(buff_temp, fd_rt);
-	return (true);
+	ft_bzero(&ids, sizeof(t_id));
+	return (free_n_close(buff_temp, fd_rt), true);
 }
 
 /**

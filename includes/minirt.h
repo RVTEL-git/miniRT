@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 16:03:21 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 10:46:35 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@
 
 /*=== STRUCTURES ===*/
 /*DATA*/
+
+typedef struct s_id
+{
+	bool	a;
+	bool	l;
+	bool	c;
+}t_id;
 
 typedef struct s_ray
 {
@@ -82,6 +89,7 @@ typedef struct t_obj
 	t_coor			v;
 	t_rgb			rgb;
 	double			diameter;
+	double			radius;
 	double			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
@@ -127,9 +135,10 @@ typedef struct s_global
 /*=== FUNCTIONS ===*/
 /*PARSING*/
 
-bool				is_valid(char *gnl_line, char *id);
+bool				is_valid(char *gnl_line, char *id, t_id *ids);
 void				move_index(char *line, int *index, char *id);
-bool				already_in_file(char *id, int *a_id, int *c_id, int *l_id);
+bool				already_in_file(char *id, \
+									bool *a_id, bool *c_id, bool *l_id);
 bool				check_by_id(char id[3], char *line);
 bool				check_amb_line(char *line);
 bool				check_cam_line(char *line);
@@ -162,6 +171,7 @@ bool				check_line(char *line);
 /*RENDER*/
 
 void				start_render(t_global *minirt);
+double				hit_sphere(t_ray ray, t_obj sph);
 
 /*MLX*/
 

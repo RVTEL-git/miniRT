@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/28 15:31:32 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 09:42:00 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	render(t_mlx_data	*mlx)
 	int			x;
 	int			y;
 
-		y = -1;
+	y = -1;
 	while (++y < mlx->height)
 	{
 		x = -1;
@@ -37,7 +37,8 @@ void	start_render(t_global *minirt)
 	mlx = minirt->mlx;
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
-	create_mlx_image(mlx);
+	if (!create_mlx_image(mlx))
+		return ;
 	render(mlx);
 	mlx_loop(mlx->mlx_ptr);
 }

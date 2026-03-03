@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars_by_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:51:04 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 15:06:40 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 10:54:39 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,11 @@ bool	check_cam_line(char *line)
 	if (index_to_comp == 0)
 		return (false);
 	index = index + index_to_comp;
+	index_to_comp = index;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
+	if (index == index_to_comp)
+		return (false);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (line[index] != '\0')
@@ -117,6 +120,12 @@ bool	check_light_line(char *line)
 	if (index_to_comp == 0)
 		return (false);
 	index = index + index_to_comp;
+	while (line[index] && ft_isspace(line[index]))
+		index++;
+	index_to_comp = three_follow_value(&line[index], ',', false);
+	if (index_to_comp == 0)
+		return (false);
+	index = index_to_comp;
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (line[index] != '\0')

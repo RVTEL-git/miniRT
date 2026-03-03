@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:13:27 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 15:05:05 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 10:49:22 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void	move_index(char *line, int *index, char *id)
  * @return true if there's already one of the element in the current file
  * @return false if there's not
  */
-bool	already_in_file(char *id, int *a_id, int *c_id, int *l_id)
+bool	already_in_file(char *id, bool *a_id, bool *c_id, bool *l_id)
 {
-	if (id[0] == 'A' && *a_id == 0)
-		*a_id = 1;
-	else if (id[0] == 'C' && *c_id == 0)
-		*c_id = 1;
-	else if (id[0] == 'L' && *l_id == 0)
-		*l_id = 1;
+	if (id[0] == 'A' && *a_id == false)
+		*a_id = true;
+	else if (id[0] == 'C' && *c_id == false)
+		*c_id = true;
+	else if (id[0] == 'L' && *l_id == false)
+		*l_id = true;
 	else if (!ft_strncmp(id, "sp", 2))
 		return (false);
 	else if (!ft_strncmp(id, "pl", 2))
@@ -57,7 +57,7 @@ bool	already_in_file(char *id, int *a_id, int *c_id, int *l_id)
 		return (false);
 	else
 	{
-		ft_dprintf(2, "Error\n%s Present multiple times\n", id);
+		ft_dprintf(2, "Error\n%s Presents multiple times\n", id);
 		return (true);
 	}
 	return (false);
@@ -113,12 +113,9 @@ static bool	is_valid_identifier(char *str, char id[3])
  * @return true if the line have a good format
  * @return false if some misconfigurated information
  */
-bool	is_valid(char *gnl_line, char *id)
+bool	is_valid(char *gnl_line, char *id, t_id *ids)
 {
 	int			index;
-	static int	a_id;
-	static int	c_id;
-	static int	l_id;
 
 	index = 0;
 	while (ft_isspace(gnl_line[index]))
@@ -128,7 +125,7 @@ bool	is_valid(char *gnl_line, char *id)
 		ft_dprintf(2, "Error\nBad identifier in scene file\n");
 		return (false);
 	}
-	if (!already_in_file(id, &a_id, &c_id, &l_id))
+	if (!already_in_file(id, &ids->a, &ids->c, &ids->l))
 		move_index(gnl_line, &index, id);
 	else
 		return (false);
