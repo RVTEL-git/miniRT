@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:51:04 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 10:54:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ bool	check_amb_line(char *line)
 	int	index;
 	int	index_to_comp;
 
-	index_to_comp = ft_isfloat(line, 0);
+	index_to_comp = ft_isdouble(line, 0);
 	if (index_to_comp == 0)
 		return (false);
 	index = index_to_comp;
@@ -116,7 +116,7 @@ bool	check_light_line(char *line)
 	if (index_to_comp == 0)
 		return (false);
 	index = index_to_comp;
-	index_to_comp = ft_isfloat(&line[index], 0);
+	index_to_comp = ft_isdouble(&line[index], 0);
 	if (index_to_comp == 0)
 		return (false);
 	index = index + index_to_comp;

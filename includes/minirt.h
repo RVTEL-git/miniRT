@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 10:46:35 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/04 16:55:32 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 # include <stdlib.h>
 # include <sys/stat.h>
 
-/*=== PI ===*/
+/*=== MATHS ===*/
 # define M_PI		3.14159265358979323846
+# define EPS		1e-6
 
 /*=== COLORS ===*/
 
@@ -43,6 +44,13 @@ typedef struct s_id
 	bool	l;
 	bool	c;
 }t_id;
+
+typedef struct s_equ
+{
+	double	a;
+	double	b;
+	double	c;
+}t_equ;
 
 typedef struct s_ray
 {
@@ -89,7 +97,7 @@ typedef struct t_obj
 	t_coor			v;
 	t_rgb			rgb;
 	double			diameter;
-	double			radius;
+	double			rad;
 	double			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
@@ -146,9 +154,9 @@ bool				check_light_line(char *line);
 bool				check_spher_line(char *line);
 bool				check_plane_line(char *line);
 bool				check_cylin_line(char *line);
-int					check_n_pass_float(char *line);
+int					check_n_pass_double(char *line);
 int					three_follow_value(char *line, int charset,
-						bool include_float);
+						bool include_double);
 
 /*INIT*/
 
@@ -157,21 +165,22 @@ bool				is_dir(char *rt_file);
 bool				check_file_format(char *rt_file);
 void				init_by_id(char *id, char *line, t_scene *scene);
 bool				check_full(t_scene *scene);
-void				pass_float(char *line, int *index);
+void				pass_double(char *line, int *index);
 void				convert_three_value(t_scene *scene, char *line,
-						bool use_float);
+						bool use_double);
 void				convert_three_int(t_coor *temp, char *line);
 void				convert_three_double(t_coor *temp, char *line);
 void				assign_three_value(double *fst, double *scn, double *thr,
 						t_coor *tmp);
-void				pass_three_value(char *line, int *index, bool use_float);
+void				pass_three_value(char *line, int *index, bool use_double);
 void				init_object(char *line, t_scene *scn, char *id);
-bool				check_line(char *line);
+bool				check_empty_line(char *line);
 
 /*RENDER*/
 
 void				start_render(t_global *minirt);
-double				hit_sphere(t_ray ray, t_obj sph);
+double				hit_sphere(t_obj sph, t_ray ray);
+double				hit_cylinder(t_obj cy, t_ray ray);
 
 /*MLX*/
 

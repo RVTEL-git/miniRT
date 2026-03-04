@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 09:32:18 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:17:49 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ bool	is_dir(char *rt_file)
 	return (false);
 }
 
-bool	check_line(char *line)
+bool	check_empty_line(char *line)
 {
 	size_t	index;
 

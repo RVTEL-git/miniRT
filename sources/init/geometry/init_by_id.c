@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_by_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 15:22:28 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	init_ambl_line(char *line, t_scene *scene)
 	scene->a_light.amb_ratio = ft_atof(line);
 	if (scene->a_light.amb_ratio > 1.0 || scene->a_light.amb_ratio < 0.0)
 		errno = ERANGE;
-	index = ft_isfloat(line, 0);
+	index = ft_isdouble(line, 0);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);

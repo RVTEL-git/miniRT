@@ -6,7 +6,7 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2026/03/03 10:31:04 by barmarti         ###   ########.fr        #
+#    Updated: 2026/03/04 16:53:19 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,12 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 
 REN_DIR = render
 HIT_DIR = hitable
-REN = $(SRCS_DIR)/$(REN_DIR)/camera.c				\
-	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/render.c				\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c			\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c
+REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
+	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c		\
+	  $(SRCS_DIR)/$(REN_DIR)/render.c					\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c	\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c	\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c
 
 MATH_DIR = maths
 MATH = $(SRCS_DIR)/$(MATH_DIR)/vec3_operations.c \

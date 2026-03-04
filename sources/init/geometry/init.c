@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 10:48:12 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:19:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
  * @param valid_line the element struct that need to be used
  * @param scene the global struc where to store all the elements
  * @return true if the extraction succsed
- * @return false if 
+ * @return false if a rang is not respected
  */
 static bool	get_data(char *valid_line, t_scene *scene, char *id)
 {
 	int		index;
 
 	index = 0;
-	valid_line = ft_strnstr(id ,valid_line, ft_strlen(valid_line));
+	valid_line = ft_strnstr(id, valid_line, ft_strlen(valid_line));
 	if (valid_line[index] && id[1])
 		index++;
 	index++;
@@ -80,7 +80,7 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 	buff_temp = get_next_line(fd_rt, false);
 	while (buff_temp)
 	{
-		if (check_line(buff_temp))
+		if (check_empty_line(buff_temp))
 		{
 			free(buff_temp);
 			buff_temp = get_next_line(fd_rt, false);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:57:32 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 14:47:40 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/03 11:20:29 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		return (EXIT_FAILURE);
 		ft_dprintf(2, "Error\nWrong number of arguments\n");
+		return (EXIT_FAILURE);
 	}
 }
 
