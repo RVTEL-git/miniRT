@@ -12,6 +12,13 @@
 
 #include "minirt.h"
 
+typedef struct s_equ
+{
+	double	a;
+	double	b;
+	double	c;
+}t_equ;
+
 //      Sphère (centre = sph.pos, rayon = 2)
 //         ___
 //       /     \
