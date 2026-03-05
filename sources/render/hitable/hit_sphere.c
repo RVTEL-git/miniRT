@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:43:30 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 16:07:01 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/04 18:03:18 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@
 //
 // og = vecteur du centre de la sphère vers l'origine du rayon
 // ◄───
-double	hit_sphere(t_obj sph, t_ray ray)
+double	hit_sphere(t_obj *sph, t_ray ray)
 {
 	t_vec3	og;
 	t_equ	e;
 	double	t[2];
 	double	delt;
 
-	sph.rad = sph.diameter / 2;
-	og = vec3_sub(ray.orig, sph.pos);
+	sph->rad = sph->diameter / 2;
+	og = vec3_sub(ray.orig, sph->pos);
 	e.a = vec3_dot(ray.dir, ray.dir);
 	e.b = 2.0 * vec3_dot(og, ray.dir);
-	e.c = vec3_dot(og, og) - sph.rad * sph.rad;
+	e.c = vec3_dot(og, og) - sph->rad * sph->rad;
 	delt = e.b * e.b - 4 * e.a * e.c;
 	if (delt <= 0.0)
 		return (-1);

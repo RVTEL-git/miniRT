@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/04 16:55:32 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:52:06 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,8 +179,10 @@ bool				check_empty_line(char *line);
 /*RENDER*/
 
 void				start_render(t_global *minirt);
-double				hit_sphere(t_obj sph, t_ray ray);
-double				hit_cylinder(t_obj cy, t_ray ray);
+double				hit_sphere(t_obj *sph, t_ray ray);
+double				hit_cylinder(t_obj *cy, t_ray ray);
+double				hit_plane(t_obj *pl, t_ray ray);
+double				hit_obj(t_ray ray, t_scene *scn);
 
 /*MLX*/
 
