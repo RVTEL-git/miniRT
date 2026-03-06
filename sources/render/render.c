@@ -26,11 +26,11 @@ void	create_mlx_image(t_mlx_data *mlx)
 
 	new.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->width, mlx->height);
 	if (!new.img_ptr)
-		printf("image creation failed\n");//exit
+		ft_printf("image creation failed\n");//exit
 	new.img_pixel_ptr = mlx_get_data_addr(new.img_ptr, &new.bits_per_pixel, \
 		&new.line_len, &new.endian);
 	if (!new.img_pixel_ptr)
-		printf("image creation failed\n");//exit
+		ft_printf("image creation failed\n");//exit
 	mlx->img = new;
 }
 
@@ -55,6 +55,10 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	{
 		x = -1;
 		while (++x < mlx->width)
+			t_ray ray = generate_ray(scene, x, y,
+                                     mlx->width,
+                                     mlx->height);
+		//tests d'intersection et tout le bazar
 			my_mlx_pixel_put(&mlx->img, x, y, BLUE_COLOR);
 	}
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);

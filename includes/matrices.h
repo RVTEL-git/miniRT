@@ -28,7 +28,7 @@ typedef struct s_mat4
 	double m[4][4];	
 } t_mat4;
 
-t_mat4 mat4_base(void);
+t_mat4 mat4_identity(void);
 t_mat4 mat4_translate(double x, double y, double z);
 t_mat4 mat4_scale(double x, double y, double z);
 
