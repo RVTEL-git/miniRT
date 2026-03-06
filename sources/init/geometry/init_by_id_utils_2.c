@@ -6,13 +6,13 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 13:13:26 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 14:57:41 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
-void	pass_float(char *line, int *index)
+void	pass_double(char *line, int *index)
 {
 	if (line[*index] && line[*index] == '-')
 		*index += 1;
@@ -39,21 +39,21 @@ static void	pass_three_int(char *line, int *index)
 	*index += 1;
 }
 
-static void	pass_three_float(char *line, int *index)
+static void	pass_three_double(char *line, int *index)
 {
-	pass_float(line, index);
+	pass_double(line, index);
 	*index += 1;
-	pass_float(line, index);
+	pass_double(line, index);
 	*index += 1;
-	pass_float(line, index);
+	pass_double(line, index);
 }
 
-void	pass_three_value(char *line, int *index, bool use_float)
+void	pass_three_value(char *line, int *index, bool use_double)
 {
 	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
-	if (use_float)
-		pass_three_float(line, index);
+	if (use_double)
+		pass_three_double(line, index);
 	else
 		pass_three_int(line, index);
 	while (line[*index] && ft_isspace(line[*index]))

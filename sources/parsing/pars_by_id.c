@@ -6,18 +6,18 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:51:04 by barmarti          #+#    #+#             */
-/*   Updated: 2025/10/31 16:47:16 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 /**
  * @brief use the id's buffer to send the line in the dedicated function
  * 
  * @param id the buffer
  * @param line the line containig all the data (the id have been passed)
- * @return true if the id is existing and the line misconfigurated
+ * @return true if the id is existing and the line well configurated
  * @return false if the buffer contain corrupted data (normaly not possible)
  * or if the line is misconfigurated
  */
@@ -51,7 +51,7 @@ bool	check_amb_line(char *line)
 	int	index;
 	int	index_to_comp;
 
-	index_to_comp = ft_isfloat(line, 0);
+	index_to_comp = ft_isdouble(line, 0);
 	if (index_to_comp == 0)
 		return (false);
 	index = index_to_comp;
@@ -87,8 +87,11 @@ bool	check_cam_line(char *line)
 	if (index_to_comp == 0)
 		return (false);
 	index = index + index_to_comp;
+	index_to_comp = index;
 	while (line[index] && ft_isdigit(line[index]))
 		index++;
+	if (index == index_to_comp)
+		return (false);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (line[index] != '\0')
@@ -113,10 +116,16 @@ bool	check_light_line(char *line)
 	if (index_to_comp == 0)
 		return (false);
 	index = index_to_comp;
-	index_to_comp = ft_isfloat(&line[index], 0);
+	index_to_comp = ft_isdouble(&line[index], 0);
 	if (index_to_comp == 0)
 		return (false);
 	index = index + index_to_comp;
+	while (line[index] && ft_isspace(line[index]))
+		index++;
+	index_to_comp = three_follow_value(&line[index], ',', false);
+	if (index_to_comp == 0)
+		return (false);
+	index = index_to_comp;
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (line[index] != '\0')

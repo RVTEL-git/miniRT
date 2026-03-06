@@ -1,4 +1,4 @@
-#include "../includes/minirt.h"
+#include "minirt.h"
 
 static void	print_amb(t_amb amb)
 {

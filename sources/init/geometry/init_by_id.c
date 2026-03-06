@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 14:56:40 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 static void	init_ambl_line(char *line, t_scene *scene)
 {
@@ -23,7 +23,7 @@ static void	init_ambl_line(char *line, t_scene *scene)
 	scene->a_light.amb_ratio = ft_atof(line);
 	if (scene->a_light.amb_ratio > 1.0 || scene->a_light.amb_ratio < 0.0)
 		errno = ERANGE;
-	index = ft_isfloat(line, 0);
+	index = ft_isdouble(line, 0);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);
@@ -59,7 +59,7 @@ static void	init_cam_line(char *line, t_scene *scene)
 	if (v->z > 1 || v->z < -1)
 		errno = ERANGE;
 	scene->camera.fov = ft_atoi(&line[index]);
-	if (scene->camera.fov > 180 || scene->camera.fov < 0)
+	if (scene->camera.fov > 180 || scene->camera.fov <= 0)
 		errno = ERANGE;
 }
 

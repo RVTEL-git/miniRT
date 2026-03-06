@@ -6,23 +6,23 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:14:04 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 14:57:59 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
-int	check_n_pass_float(char *line)
+int	check_n_pass_double(char *line)
 {
 	int	index;
 	int	index_to_comp;
 
-	index = ft_isfloat(line, 0);
+	index = ft_isdouble(line, 0);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (index)
 	{
-		index_to_comp = ft_isfloat(&line[index], 0);
+		index_to_comp = ft_isdouble(&line[index], 0);
 		if (index_to_comp)
 		{
 			index = index + index_to_comp;
@@ -34,20 +34,20 @@ int	check_n_pass_float(char *line)
 	return (0);
 }
 
-static int	first_value(char *line, int charset, bool include_float)
+static int	non_last_value(char *line, int charset, bool include_double)
 {
-	int	is_float;
+	int	is_double;
 	int	index;
 
 	index = 0;
-	if (include_float == true)
+	if (include_double == true)
 	{
-		is_float = ft_isfloat(line, charset);
-		if (is_float)
+		is_double = ft_isdouble(line, charset);
+		if (is_double)
 		{
-			if (line[is_float] && line[is_float] == ',')
-				is_float++;
-			return (is_float);
+			if (line[is_double] && line[is_double] == ',')
+				is_double++;
+			return (is_double);
 		}
 	}
 	if (line[index] && line[index] == '-')
@@ -63,51 +63,22 @@ static int	first_value(char *line, int charset, bool include_float)
 	return (index);
 }
 
-static int	second_value(char *line, int charset, bool include_float)
+static int	third_value(char *line, int charset, bool include_double)
 {
-	int	is_float;
+	int	is_double;
 	int	index;
 
+	is_double = 0;
 	index = 0;
-	if (include_float == true)
+	if (include_double == true)
 	{
-		is_float = ft_isfloat(line, charset);
-		if (is_float)
+		is_double = ft_isdouble(line, charset);
+		if (is_double)
 		{
-			if (line[is_float] && line[is_float] == ',')
-				is_float++;
-			return (is_float);
+			if (line[is_double] && line[is_double] == ',')
+				is_double++;
+			return (is_double);
 		}
-	}
-	if (line[index] && line[index] == '-')
-		index++;
-	if (line[index] && !ft_isdigit(line[index]))
-		return (0);
-	while (line[index] && ft_isdigit(line[index]))
-		index++;
-	if (line[index] && line[index] == ',')
-		index++;
-	else
-		return (0);
-	return (index);
-}
-
-static int	third_value(char *line, int charset, bool include_float)
-{
-	int	is_float;
-	int	index;
-
-	is_float = 0;
-	index = 0;
-	if (include_float == true)
-	{
-		is_float = ft_isfloat(line, charset);
-		if (is_float)
-		{
-			if (line[is_float] && line[is_float] == ',')
-				is_float++;
-		}
-		return (is_float);
 	}
 	if (line[index] && line[index] == '-')
 		index++;
@@ -120,7 +91,7 @@ static int	third_value(char *line, int charset, bool include_float)
 	return (0);
 }
 
-int	three_follow_value(char *line, int charset, bool include_float)
+int	three_follow_value(char *line, int charset, bool include_double)
 {
 	int	index;
 	int	index_to_comp;
@@ -128,14 +99,14 @@ int	three_follow_value(char *line, int charset, bool include_float)
 	index = 0;
 	while (line[index] && ft_isspace(line[index]))
 		index++;
-	index = first_value(&line[index], charset, include_float);
+	index = non_last_value(&line[index], charset, include_double);
 	if (index == 0)
 		return (0);
-	index_to_comp = second_value(&line[index], charset, include_float);
+	index_to_comp = non_last_value(&line[index], charset, include_double);
 	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;
-	index_to_comp = third_value(&line[index], charset, include_float);
+	index_to_comp = third_value(&line[index], charset, include_double);
 	if (index_to_comp == 0)
 		return (0);
 	index = index + index_to_comp;

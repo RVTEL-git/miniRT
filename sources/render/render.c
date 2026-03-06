@@ -6,15 +6,16 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/30 11:58:46 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:05:54 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
-void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
+void	render(t_mlx_data	*mlx)
 {
-	int	offset;
+	int			x;
+	int			y;
 
 	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
 	*(unsigned int *)(img->img_pixel_ptr + offset) = color;
@@ -62,4 +63,20 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 			my_mlx_pixel_put(&mlx->img, x, y, BLUE_COLOR);
 	}
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
+}
+
+void	start_render(t_global *minirt)
+{
+	t_scene		scn;
+	t_mlx_data	*mlx;
+
+	scn = minirt->scene;
+	(void)scn;
+	mlx = minirt->mlx;
+	if (mlx->img.img_ptr)
+		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
+	if (!create_mlx_image(mlx))
+		return ;
+	render(mlx);
+	mlx_loop(mlx->mlx_ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/05 18:11:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:19:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param valid_line the element struct that need to be used
  * @param scene the global struc where to store all the elements
  * @return true if the extraction succsed
- * @return false if 
+ * @return false if a rang is not respected
  */
 static bool	get_data(char *valid_line, t_scene *scene, char *id)
 {
@@ -35,7 +35,7 @@ static bool	get_data(char *valid_line, t_scene *scene, char *id)
 	init_by_id(id, &valid_line[index], scene);
 	if (errno == ENOMEM || errno == ERANGE)
 	{
-		manage_exctract_error(scene, id, true);
+		manage_extract_error(scene, id, true);
 		return (false);
 	}
 	return (true);
@@ -51,10 +51,10 @@ void	free_n_close(char *line, int fd)
 {
 	if (line)
 		free(line);
-	if (fd)
-		close(fd);
 	line = get_next_line(fd, true);
 	free(line);
+	if (fd >= 0)
+		close(fd);
 }
 
 /**
@@ -68,9 +68,10 @@ void	free_n_close(char *line, int fd)
  */
 static bool	extract_data(char *rt_file, t_scene *scene)
 {
-	int		fd_rt;
-	char	id[3];
-	char	*buff_temp;
+	int			fd_rt;
+	char		id[3];
+	char		*buff_temp;
+	static t_id	ids;
 
 	ft_bzero(id, 3);
 	fd_rt = open(rt_file, O_RDONLY);
@@ -79,19 +80,19 @@ static bool	extract_data(char *rt_file, t_scene *scene)
 	buff_temp = get_next_line(fd_rt, false);
 	while (buff_temp)
 	{
-		if (buff_temp[0] == '\n')
+		if (check_empty_line(buff_temp))
 		{
 			free(buff_temp);
 			buff_temp = get_next_line(fd_rt, false);
 			continue ;
 		}
-		if (!is_valid(buff_temp, id) || !get_data(buff_temp, scene, id))
+		if (!is_valid(buff_temp, id, &ids) || !get_data(buff_temp, scene, id))
 			return (manage_gnl_error(fd_rt, buff_temp, scene), false);
 		free(buff_temp);
 		buff_temp = get_next_line(fd_rt, false);
 	}
-	free_n_close(buff_temp, fd_rt);
-	return (true);
+	ft_bzero(&ids, sizeof(t_id));
+	return (free_n_close(buff_temp, fd_rt), true);
 }
 
 /**
@@ -103,20 +104,17 @@ static bool	extract_data(char *rt_file, t_scene *scene)
  * @return false if one of the step fails (wrong ext name, 
  * the file is a directory, wrong data)
  */
-bool	init_struct(char *rt_file)
+bool	init_struct(char *rt_file, t_scene *scene)
 {
-	t_scene	scene;
-
-	ft_bzero(&scene, sizeof(t_scene));
 	if (!check_file_format(rt_file))
 	{
 		ft_dprintf(2, "Error\nWrong file format\n");
 		return (false);
 	}
-	if (!extract_data(rt_file, &scene))
+	if (!extract_data(rt_file, scene))
 		return (false);
-	if (!check_full(&scene))
+	if (!check_full(scene))
 		return (false);
-	print_struct(&scene);
+	print_struct(scene);
 	return (true);
 }

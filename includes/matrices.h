@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   matrices.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 01:29:58 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/06 02:01:10 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/02/28 13:18:31 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATRICES_H
 # define MATRICES_H
-
-# include "minirt.h"
 
 //ptet a bouger a voir
 typedef enum e_axis

@@ -6,11 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:59:31 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/10 15:43:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 11:17:49 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 bool	check_full(t_scene *scene)
 {
@@ -72,11 +72,26 @@ bool	check_file_format(char *rt_file)
  */
 bool	is_dir(char *rt_file)
 {
-	int	fd_rt;
+	struct stat	st;
 
-	fd_rt = open(rt_file, __O_DIRECTORY);
-	if (errno == ENOTDIR)
-		return (false);
-	close(fd_rt);
-	return (true);
+	if (stat(rt_file, &st) == 0 && S_ISDIR(st.st_mode))
+		return (true);
+	return (false);
+}
+
+bool	check_empty_line(char *line)
+{
+	size_t	index;
+
+	index = 0;
+	while (line[index])
+	{
+		if (line[index] == 32)
+			index++;
+		else if (line[index] == '\n')
+			return (true);
+		else
+			return (false);
+	}
+	return (false);
 }

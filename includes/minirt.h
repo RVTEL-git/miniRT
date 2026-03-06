@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/06 02:00:47 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/06 16:23:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 # include <stdlib.h>
 # include <sys/stat.h>
 
-/*=== PI ===*/
+/*=== MATHS ===*/
 # define M_PI		3.14159265358979323846
+# define EPS		1e-6
 
 /*=== COLORS ===*/
 
@@ -37,6 +38,20 @@
 /*=== STRUCTURES ===*/
 /*DATA*/
 
+typedef struct s_id
+{
+	bool	a;
+	bool	l;
+	bool	c;
+}t_id;
+
+typedef struct s_equ
+{
+	double	a;
+	double	b;
+	double	c;
+}t_equ;
+
 typedef struct s_ray
 {
 	t_vec3			dir;
@@ -44,18 +59,11 @@ typedef struct s_ray
 	t_point			orig;
 }					t_ray;
 
-typedef struct s_coor
-{
-	float			x;
-	float			y;
-	float			z;
-}					t_coor;
-
 typedef struct s_rgb
 {
-	float			r;
-	float			g;
-	float			b;
+	double			r;
+	double			g;
+	double			b;
 }					t_rgb;
 
 /*GEOMETRY*/
@@ -63,7 +71,7 @@ typedef struct s_rgb
 typedef struct s_amb
 {
 	char			id;
-	float			amb_ratio;
+	double			amb_ratio;
 	t_rgb			rgb;
 }					t_amb;
 
@@ -79,7 +87,7 @@ typedef struct s_light
 {
 	char			id;
 	t_coor			point;
-	float			bright;
+	double			bright;
 }					t_light;
 
 typedef struct t_obj
@@ -88,8 +96,9 @@ typedef struct t_obj
 	t_coor			pos;
 	t_coor			v;
 	t_rgb			rgb;
-	float			diameter;
-	float			height;
+	double			diameter;
+	double			rad;
+	double			height;
 	struct t_obj	*next;
 	struct t_obj	*prev;
 }					t_obj;
@@ -123,63 +132,81 @@ typedef struct s_mlx_data
 	t_mlx_img		img;
 }					t_mlx_data;
 
+/*GLOBAAAAAL*/
+
+typedef struct s_global
+{
+	t_mlx_data	*mlx;
+	t_scene		scene;
+}				t_global;
+
 /*=== FUNCTIONS ===*/
 /*PARSING*/
 
-bool				is_valid(char *gnl_line, char *id);
+bool				is_valid(char *gnl_line, char *id, t_id *ids);
 void				move_index(char *line, int *index, char *id);
-bool				already_in_file(char *id, int *a_id, int *c_id, int *l_id);
-bool				check_by_id(char *line, char id[3]);
+bool				already_in_file(char *id, \
+									bool *a_id, bool *c_id, bool *l_id);
+bool				check_by_id(char id[3], char *line);
 bool				check_amb_line(char *line);
 bool				check_cam_line(char *line);
 bool				check_light_line(char *line);
 bool				check_spher_line(char *line);
 bool				check_plane_line(char *line);
 bool				check_cylin_line(char *line);
-int					check_n_pass_float(char *line);
+int					check_n_pass_double(char *line);
 int					three_follow_value(char *line, int charset,
-						bool include_float);
+						bool include_double);
 
 /*INIT*/
 
-bool				init_mlx_struct(t_mlx_data *data);
-void				create_mlx_image(t_mlx_data *mlx);
-bool				init_struct(char *rt_file);
+bool				init_struct(char *rt_file, t_scene *scene);
 bool				is_dir(char *rt_file);
 bool				check_file_format(char *rt_file);
 void				init_by_id(char *id, char *line, t_scene *scene);
 bool				check_full(t_scene *scene);
-void				pass_float(char *line, int *index);
+void				pass_double(char *line, int *index);
 void				convert_three_value(t_scene *scene, char *line,
-						bool use_float);
+						bool use_double);
 void				convert_three_int(t_coor *temp, char *line);
-void				convert_three_float(t_coor *temp, char *line);
-void				assign_three_value(float *fst, float *scn, float *thr,
+void				convert_three_double(t_coor *temp, char *line);
+void				assign_three_value(double *fst, double *scn, double *thr,
 						t_coor *tmp);
-void				pass_three_value(char *line, int *index, bool use_float);
+void				pass_three_value(char *line, int *index, bool use_double);
 void				init_object(char *line, t_scene *scn, char *id);
-void				init_handler(t_mlx_data *data);
+bool				check_empty_line(char *line);
 
 /*RENDER*/
 
-void				render(t_scene *scene, t_mlx_data *mlx);
-void				draw_rectangle(t_mlx_data *data);
-void				draw_circle(t_mlx_data *data, int pos_x, int pos_y);
-void				draw_rays(t_mlx_data *dta, int pos_x, int pos_y, int color);
+void				start_render(t_global *minirt);
+double				hit_sphere(t_obj *sph, t_ray ray);
+double				hit_cylinder(t_obj *cy, t_ray ray);
+double				hit_plane(t_obj *pl, t_ray ray);
+double				hit_obj(t_ray ray, t_scene *scn);
+
+/*MLX*/
+
+bool				init_mlx_struct(t_global *minirt);
+void				init_handler(t_global *minirt);
+int					close_mlx(t_global *data, int code);
+bool				create_mlx_image(t_mlx_data *mlx);
+void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
 /*LIST*/
 
 t_obj				*ft_lstlast_obj(t_obj *lst);
 void				ft_lstadd_back_obj(t_obj **lst, t_obj *new);
+void				ft_lstclear_obj(t_obj *lst);
 
 /*ERROR*/
 
 void				error_by_id(char *id);
 void				manage_gnl_error(int fd, char *line, t_scene *scene);
-void				manage_exctract_error(t_scene *scene, char *id,
+void				manage_extract_error(t_scene *scene, char *id,
 						bool message);
 
 /*DEBUG*/
 void				print_struct(t_scene *scn);
 
 #endif
+

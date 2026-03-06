@@ -51,32 +51,30 @@ t_mat4	mat4_scale(double x, double y, double z)
 t_mat4	mat4_rotate(double n, t_axis axis)
 {
 	t_mat4	m;
+	double c;
+	double s;
 
 	ft_memset(&m, 0, sizeof(t_mat4));
+	c = cos(n);
+
+	s = sin(n);
 	if (axis == X)
 	{
-		m.m[0][0] = 1.;
-		m.m[3][3] = 1.;
-		m.m[1][1] = cos(n);
-		m.m[1][2] = -sin(n);
-		m.m[2][1] = sin(n);
-		m.m[2][2] = cos(n);
+		return ((t_mat4){{{1.0, 0.0, 0.0, 0.0}, {0.0, c, -s, 0.0},
+			{0.0, s, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
+
 	}
 	else if (axis == Y)
 	{
-		m.m[1][1] = 1.;
-		m.m[3][3] = 1.;
-		m.m[0][0] = cos(n);
-		m.m[0][2] = sin(n);
-		m.m[2][0] = -sin(n);
-		m.m[2][2] = cos(n);
+		return ((t_mat4){{{c, 0.0, s, 0.0}, {0.0, 1.0, 0.0, 0.0},
+			{-s, 0.0, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
 	}
 	else if (axis == Z)
 	{
-		return ((t_mat4){{{cos(n), -sin(n), 0.0, 0.0}, {sin(n), cos(n), 0.0,
-			0.0}, {0.0, 0.0, 0.0, 0.0}, {0.0, 0.0, 0.0, 0.0}}});
+		return ((t_mat4){{{c, -s, 0.0, 0.0}, {s, c, 0.0,
+			0.0}, {0.0, 0.0, 1.0, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
 	}
-	return (m);
+	return (mat4_identity());
 }
 
 t_mat4	mat4_mult(t_mat4 a, t_mat4 b)
@@ -166,4 +164,6 @@ t_mat4	mat4_inverse(t_mat4 m)
 	inv.m[2][3] = -(inv.m[2][0] * m.m[0][3] + inv.m[2][1] * m.m[1][3]
 			+ inv.m[2][2] * m.m[2][3]);
 	return (inv);
+
+
 }

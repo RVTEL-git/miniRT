@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:34:02 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/26 01:42:58 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/02/07 17:13:29 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 t_mat4 mat4_look_at(t_vec3 eye, t_vec3 dir)
 {

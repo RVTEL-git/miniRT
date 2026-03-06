@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vec3_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:14:48 by egiraud           #+#    #+#             */
-/*   Updated: 2025/11/25 00:51:44 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 t_vec3	vec3_set(double x, double y, double z)
 {
@@ -53,7 +53,7 @@ t_vec3	vec3_cross(t_vec3 a, t_vec3 b)
 }
 
 // pas encore sur de l'utilisation
-// d'ailleurs transfo les floats en double ?
+// d'ailleurs transfo les doubles en double ?
 double	vec3_dot(t_vec3 a, t_vec3 b)
 {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);

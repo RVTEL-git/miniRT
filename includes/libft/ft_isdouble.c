@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isfloat.c                                       :+:      :+:    :+:   */
+/*   ft_isdouble.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 23:16:44 by barmarti          #+#    #+#             */
-/*   Updated: 2025/11/03 13:55:25 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/03 10:34:10 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isfloat(char *line, int charset)
+int	ft_isdouble(char *line, int charset)
 {
 	int	index;
 
 	index = 0;
+	if (line[index] && line[index] == '-')
+		index++;
 	if (line[index] && !ft_isdigit(line[index]))
 		return (0);
 	while (line[index] && ft_isdigit(line[index]))
