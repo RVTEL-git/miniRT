@@ -78,8 +78,8 @@ typedef struct s_amb
 typedef struct s_cam
 {
 	char			id;
-	t_coor			view;
-	t_coor			v;
+	t_coor			pos;
+	t_coor			look;
 	int				fov;
 }					t_cam;
 
