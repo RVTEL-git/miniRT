@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 12:17:38 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/04 19:49:51 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/05 10:27:21 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static bool	check_height(t_ray ray, t_obj *cy, double ret)
 
 	t_hit = ret;
 	hit_point = vec3_add(ray.orig, vec3_scale(ray.dir, t_hit));
-	hit_to_center = vec3_sub(hit_point, cy.pos);
-	proj = vec3_dot(hit_to_center, cy.v);
-	if (proj < 0 || proj > cy.height)
+	hit_to_center = vec3_sub(hit_point, cy->pos);
+	proj = vec3_dot(hit_to_center, cy->v);
+	if (proj < 0 || proj > cy->height)
 		return (false);
 	return (true);
 }
