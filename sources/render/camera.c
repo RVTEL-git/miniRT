@@ -87,8 +87,7 @@ t_vec3 mat4_apply_vec(t_mat4 m, t_vec3 v)
     return r;
 }
 
-t_ray generate_ray(t_scene *scene, t_mat4 cam_matrix,
-                   int x, int y, int width, int height)
+t_ray generate_ray(t_scene *scene, t_mat4 cam_matrix, int x, int y, int width, int height)
 {
     t_ray ray;
     double px;
