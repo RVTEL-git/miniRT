@@ -43,8 +43,8 @@ static void	init_cam_line(char *line, t_scene *scene)
 	t_coor	*v;
 
 	index = 0;
-	view = &scene->camera.view;
-	v = &scene->camera.v;
+	view = &scene->camera.pos;
+	v = &scene->camera.look;
 	scene->camera.id = 'C';
 	convert_three_value(scene, line, true);
 	assign_three_value(&view->x, &view->y, &view->z, &scene->tmp);

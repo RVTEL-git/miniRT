@@ -178,6 +178,9 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
+
+t_ray generate_ray(t_scene *scene, t_mat4 cam_matrix, int x, int y, int width, int height);
+
 void				start_render(t_global *minirt);
 double				hit_sphere(t_obj *sph, t_ray ray);
 double				hit_cylinder(t_obj *cy, t_ray ray);
@@ -189,7 +192,7 @@ double				hit_obj(t_ray ray, t_scene *scn);
 bool				init_mlx_struct(t_global *minirt);
 void				init_handler(t_global *minirt);
 int					close_mlx(t_global *data, int code);
-bool				create_mlx_image(t_mlx_data *mlx);
+bool				create_mlx_image(t_mlx_data *mlx); //pk bool la
 void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
 /*LIST*/

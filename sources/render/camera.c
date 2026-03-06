@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "../../includes/minirt.h"
 
 t_mat4 mat4_look_at(t_vec3 eye, t_vec3 dir)
 {

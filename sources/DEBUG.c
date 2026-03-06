@@ -14,12 +14,12 @@ static void	print_cam(t_cam cam)
 {
 	printf("====CAM====\n");
 	printf("id = %c\n", cam.id);
-	printf("view (x)= %f\n", cam.view.x);
-	printf("view (y) = %f\n", cam.view.y);
-	printf("view (z) = %f\n", cam.view.z);
-	printf("v (x) = %f\n", cam.v.x);
-	printf("v (y) = %f\n", cam.v.y);
-	printf("v (z) = %f\n", cam.v.z);
+	printf("pos (x)= %f\n", cam.pos.x);
+	printf("pos (y) = %f\n", cam.pos.y);
+	printf("pos (z) = %f\n", cam.pos.z);
+	printf("v (x) = %f\n", cam.look.x);
+	printf("v (y) = %f\n", cam.look.y);
+	printf("v (z) = %f\n", cam.look.z);
 	printf("FOV = %d\n", cam.fov);
 }
 

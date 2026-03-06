@@ -59,7 +59,9 @@ REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
 
 MATH_DIR = maths
 MATH = $(SRCS_DIR)/$(MATH_DIR)/vec3_operations.c \
-	   $(SRCS_DIR)/$(MATH_DIR)/vec3_operations2.c
+	   $(SRCS_DIR)/$(MATH_DIR)/vec3_operations2.c \
+	   $(SRCS_DIR)/$(MATH_DIR)/mat4_operations.c \
+	   $(SRCS_DIR)/$(MATH_DIR)/get_normal.c
 
 LST_DIR = list
 LST = $(SRCS_DIR)/$(LST_DIR)/obj_list.c
