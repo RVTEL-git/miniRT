@@ -1,0 +1,49 @@
+# Build thingies
+build/
+bin/
+out/
+
+# Compilation shit
+*.o
+*.obj
+*.lo
+*.slo
+
+# Bullshit libraries
+*.a
+*.la
+
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Executables of hell
+*.exe
+*.out
+*.app
+
+# Fucking dependencies
+*.d
+*.dep
+
+# Clangd allucinations
+.cache/
+.clangd/
+clangd/
+
+# (Neo)Vim 
+*.swp
+*.swo
+Session.vim
+.netrwhist
+.nvim/
+
+# vscode childish manners
+.vscode/
+
+# Bloody OS ramblings
+.DS_Store
+
+# Misc
+compile_commands.json
