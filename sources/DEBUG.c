@@ -10,7 +10,7 @@ static void	print_amb(t_amb amb)
 	printf("b = %f\n", amb.rgb.b);
 }
 
-static void	print_cam(t_cam cam)
+void	print_cam(t_cam cam)
 {
 	printf("====CAM====\n");
 	printf("id = %c\n", cam.id);
@@ -54,7 +54,7 @@ static void	print_it(t_obj *obj)
 	printf("b = %f\n", obj->rgb.b);
 }
 
-static void	print_obj(t_obj *objects)
+void	print_obj(t_obj *objects)
 {
 	int	i;
 

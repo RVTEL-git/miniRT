@@ -17,7 +17,7 @@ int	print_num(int i)
 	int	size;
 
 	size = get_size(i, 10);
-	ft_putnbr_fd(i, 1);
+	ft_putnbr_fd(1, i);
 	return (size);
 }
 

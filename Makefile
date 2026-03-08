@@ -53,9 +53,12 @@ HIT_DIR = hitable
 REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
 	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c		\
 	  $(SRCS_DIR)/$(REN_DIR)/render.c					\
+	  $(SRCS_DIR)/$(REN_DIR)/color_ray.c				\
 	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c	\
 	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c		\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_obj.c
+
 
 MATH_DIR = maths
 MATH = $(SRCS_DIR)/$(MATH_DIR)/vec3_operations.c \

@@ -12,16 +12,7 @@
 
 #include "minirt.h"
 
-typedef struct s_did_hit
-{
-	bool	did_hit;
-	double	t;
-	t_obj	*obj;
-	t_vec3	p;
-	t_vec3	normal;
-}t_did_hit;
-
-double	hit_obj(t_ray ray, t_scene *scn, t_did_hit *hit)
+t_hit_data	*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 {
 	t_obj	*tmp;
 	double	t;
@@ -39,12 +30,17 @@ double	hit_obj(t_ray ray, t_scene *scn, t_did_hit *hit)
 		if (t > 0.0 && (hit->t < 0.0 || t < hit->t))
 		{
 			hit->obj = tmp;
-			hit->t = t;
 			hit->did_hit = true;
+			hit->t = t;
+			ft_printf("hit");
 		}
+		hit->t = t;
 		tmp = tmp->next;
 	}
-	hit->p = vec3_add(ray.orig, vec3_scale(ray.dir, t));
-	hit->normal = get_normal(hit->p, hit->obj);
-	return (hit->t);
+	if (hit->obj)
+	{
+		hit->p = vec3_add(ray.orig, vec3_scale(ray.dir, t));
+	}
+	//hit->normal = get_normal(hit->p, hit->obj); a ajouter plus tard
+	return (hit);
 }

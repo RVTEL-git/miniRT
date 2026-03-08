@@ -115,6 +115,6 @@ bool	init_struct(char *rt_file, t_scene *scene)
 		return (false);
 	if (!check_full(scene))
 		return (false);
-	print_struct(scene);
+	//print_struct(scene);
 	return (true);
 }

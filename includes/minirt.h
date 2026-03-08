@@ -14,18 +14,18 @@
 # define MINIRT_H
 
 # include "libft/libft.h"
+# include "matrices.h"
 # include "minilibx-linux/mlx.h"
 # include "minilibx-linux/mlx_int.h"
 # include "vector.h"
-# include "matrices.h"
 # include <errno.h>
 # include <math.h>
 # include <stdlib.h>
 # include <sys/stat.h>
 
 /*=== MATHS ===*/
-# define M_PI		3.14159265358979323846
-# define EPS		1e-6
+# define M_PI 3.14159265358979323846
+# define EPS 1e-6
 
 /*=== COLORS ===*/
 
@@ -40,17 +40,17 @@
 
 typedef struct s_id
 {
-	bool	a;
-	bool	l;
-	bool	c;
-}t_id;
+	bool			a;
+	bool			l;
+	bool			c;
+}					t_id;
 
 typedef struct s_equ
 {
-	double	a;
-	double	b;
-	double	c;
-}t_equ;
+	double			a;
+	double			b;
+	double			c;
+}					t_equ;
 
 typedef struct s_ray
 {
@@ -65,6 +65,15 @@ typedef struct s_rgb
 	double			g;
 	double			b;
 }					t_rgb;
+
+typedef struct s_hit_data
+{
+	bool			did_hit;
+	double			t;
+	struct t_obj	*obj;
+	t_vec3			p;
+	t_vec3			normal;
+}					t_hit_data;
 
 /*GEOMETRY*/
 
@@ -136,17 +145,17 @@ typedef struct s_mlx_data
 
 typedef struct s_global
 {
-	t_mlx_data	*mlx;
-	t_scene		scene;
-}				t_global;
+	t_mlx_data		*mlx;
+	t_scene			scene;
+}					t_global;
 
 /*=== FUNCTIONS ===*/
 /*PARSING*/
 
 bool				is_valid(char *gnl_line, char *id, t_id *ids);
 void				move_index(char *line, int *index, char *id);
-bool				already_in_file(char *id, \
-									bool *a_id, bool *c_id, bool *l_id);
+bool				already_in_file(char *id, bool *a_id, bool *c_id,
+						bool *l_id);
 bool				check_by_id(char id[3], char *line);
 bool				check_amb_line(char *line);
 bool				check_cam_line(char *line);
@@ -178,21 +187,22 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
-
-t_ray generate_ray(t_scene *scene, t_mat4 cam_matrix, int x, int y, int width, int height);
+t_ray				generate_ray(t_scene *scene, t_mat4 cam_matrix, int x,
+						int y, int width, int height);
 
 void				start_render(t_global *minirt);
 double				hit_sphere(t_obj *sph, t_ray ray);
 double				hit_cylinder(t_obj *cy, t_ray ray);
 double				hit_plane(t_obj *pl, t_ray ray);
-double				hit_obj(t_ray ray, t_scene *scn);
+t_hit_data			*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
+int					s_rgb_to_int(int r, int g, int b);
 
 /*MLX*/
 
 bool				init_mlx_struct(t_global *minirt);
 void				init_handler(t_global *minirt);
 int					close_mlx(t_global *data, int code);
-bool				create_mlx_image(t_mlx_data *mlx); //pk bool la
+bool	create_mlx_image(t_mlx_data *mlx); // pk bool la
 void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
 /*LIST*/
@@ -210,6 +220,7 @@ void				manage_extract_error(t_scene *scene, char *id,
 
 /*DEBUG*/
 void				print_struct(t_scene *scn);
+void	print_obj(t_obj *objects);
+void	print_cam(t_cam cam);
 
 #endif
-

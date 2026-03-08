@@ -12,16 +12,16 @@
 
 #include "minirt.h"
 
-static int	rgb(int r, int g, int b)
+int	s_rgb_to_int(int r, int g, int b)
 {
 	return (r << 16 | g << 8 | b);
 }
 
-t_rgb	ray_color(t_ray ray)
-{
-	t_did_hit	hit;
-
-	ft_bzero(&hit, sizeof(t_did_hit));
-	hit.t = -1;
-	hit = 
-}
+//t_rgb	ray_color(t_ray ray)
+//{
+//	t_did_hit	hit;
+//
+//	ft_bzero(&hit, sizeof(t_did_hit));
+//	hit.t = -1;
+//	hit = 
+//}
