@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "s_amb", "structs__amb.html", "structs__amb" ],
+    [ "s_cam", "structs__cam.html", "structs__cam" ],
+    [ "s_col_name", "structs__col__name.html", "structs__col__name" ],
+    [ "s_did_hit", "structs__did__hit.html", "structs__did__hit" ],
+    [ "s_equ", "structs__equ.html", "structs__equ" ],
+    [ "s_event_list", "structs__event__list.html", "structs__event__list" ],
+    [ "s_global", "structs__global.html", "structs__global" ],
+    [ "s_gnl_list", "structs__gnl__list.html", "structs__gnl__list" ],
+    [ "s_id", "structs__id.html", "structs__id" ],
+    [ "s_img", "structs__img.html", "structs__img" ],
+    [ "s_light", "structs__light.html", "structs__light" ],
+    [ "s_list", "structs__list.html", "structs__list" ],
+    [ "s_mat4", "structs__mat4.html", "structs__mat4" ],
+    [ "s_mlx_data", "structs__mlx__data.html", "structs__mlx__data" ],
+    [ "s_mlx_img", "structs__mlx__img.html", "structs__mlx__img" ],
+    [ "s_proj", "structs__proj.html", "structs__proj" ],
+    [ "s_ray", "structs__ray.html", "structs__ray" ],
+    [ "s_rgb", "structs__rgb.html", "structs__rgb" ],
+    [ "s_scene", "structs__scene.html", "structs__scene" ],
+    [ "s_vector3", "structs__vector3.html", "structs__vector3" ],
+    [ "s_win_list", "structs__win__list.html", "structs__win__list" ],
+    [ "s_xpm_col", "structs__xpm__col.html", "structs__xpm__col" ],
+    [ "s_xvar", "structs__xvar.html", "structs__xvar" ],
+    [ "t_obj", "structt__obj.html", "structt__obj" ]
+];

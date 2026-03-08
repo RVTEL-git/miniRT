@@ -1,0 +1,12 @@
+<map id="mat4_identity" name="mat4_identity">
+<area shape="rect" id="node1" title=" " alt="" coords="507,132,620,159"/>
+<area shape="rect" id="node2" href="$mat4__operations_8c.html#a89e6078c4d319ae014d3d2a654dc2c3a" title=" " alt="" coords="316,5,459,32"/>
+<area shape="rect" id="node3" href="$mat4__operations_8c.html#ab74fd1179a9937f22bba65f525e1430d" title="Build the inverse matrix with the affine transformation method (the fastest from my researchs)...." alt="" coords="133,31,243,57"/>
+<area shape="rect" id="node4" href="$camera_8c.html#a493fb71bff75313ce9f49e2fc3b09c41" title=" " alt="" coords="332,107,443,133"/>
+<area shape="rect" id="node6" href="$mat4__operations_8c.html#a39a7c1c0dd4a5e0c2bf19a5ca1da037e" title=" " alt="" coords="336,157,439,184"/>
+<area shape="rect" id="node7" href="$mat4__operations_8c.html#ac19c33d574e43d66c73a97bb50e67cc6" title=" " alt="" coords="339,208,436,235"/>
+<area shape="rect" id="node8" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="355,259,419,285"/>
+<area shape="rect" id="node5" href="$camera_8c.html#af49668765ab4c7e3c87e8fbe0ae50aef" title=" " alt="" coords="108,107,268,133"/>
+<area shape="rect" id="node9" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="137,259,239,285"/>
+<area shape="rect" id="node10" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,259,60,285"/>
+</map>

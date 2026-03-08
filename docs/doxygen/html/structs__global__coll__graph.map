@@ -1,0 +1,12 @@
+<map id="s_global" name="s_global">
+<area shape="rect" id="node1" title=" " alt="" coords="305,291,381,317"/>
+<area shape="rect" id="node2" href="$structs__scene.html" title=" " alt="" coords="251,201,326,228"/>
+<area shape="rect" id="node3" href="$structt__obj.html" title=" " alt="" coords="175,111,229,137"/>
+<area shape="rect" id="node4" href="$structs__rgb.html" title=" " alt="" coords="361,5,419,32"/>
+<area shape="rect" id="node6" href="$structs__amb.html" title=" " alt="" coords="400,111,465,137"/>
+<area shape="rect" id="node5" href="$structs__vector3.html" title=" " alt="" coords="118,5,203,32"/>
+<area shape="rect" id="node7" href="$structs__cam.html" title=" " alt="" coords="311,111,375,137"/>
+<area shape="rect" id="node8" href="$structs__light.html" title=" " alt="" coords="5,111,71,137"/>
+<area shape="rect" id="node9" href="$structs__mlx__data.html" title=" " alt="" coords="427,201,524,228"/>
+<area shape="rect" id="node10" href="$structs__mlx__img.html" title=" " alt="" coords="490,111,583,137"/>
+</map>

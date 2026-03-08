@@ -1,0 +1,9 @@
+<map id="check_cam_line" name="check_cam_line">
+<area shape="rect" id="node1" title="parse the camera line data by data to check if everything seems to be in the right format" alt="" coords="5,91,132,118"/>
+<area shape="rect" id="node2" href="$ft__isdigit_8c.html#a2cf15b8a1a277d1e2ce3654101a2003d" title=" " alt="" coords="688,15,767,42"/>
+<area shape="rect" id="node3" href="$ft__isspace_8c.html#a9829ac0b446ed5e51064e342a973c6cd" title=" " alt="" coords="684,167,771,194"/>
+<area shape="rect" id="node4" href="$pars__by__id__utils_8c.html#adb6f8132fd53f6936a75a9f6bd486a6b" title=" " alt="" coords="180,91,327,118"/>
+<area shape="rect" id="node5" href="$pars__by__id__utils_8c.html#abea1fb599a76ff548d9490880767d112" title=" " alt="" coords="375,40,495,67"/>
+<area shape="rect" id="node7" href="$pars__by__id__utils_8c.html#a15f7d82d0fd11191ef82dd2cf3867781" title=" " alt="" coords="387,91,482,118"/>
+<area shape="rect" id="node6" href="$ft__isdouble_8c.html#a81ec5127ff70b1b5c18d3d04cab4e73b" title=" " alt="" coords="543,40,636,67"/>
+</map>

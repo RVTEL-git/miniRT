@@ -1,0 +1,9 @@
+<map id="check_amb_line" name="check_amb_line">
+<area shape="rect" id="node1" title="parse the ambiant light line data by data to check if everything seems to be in the right format" alt="" coords="5,107,132,133"/>
+<area shape="rect" id="node2" href="$ft__isdouble_8c.html#a81ec5127ff70b1b5c18d3d04cab4e73b" title=" " alt="" coords="543,31,636,57"/>
+<area shape="rect" id="node4" href="$ft__isspace_8c.html#a9829ac0b446ed5e51064e342a973c6cd" title=" " alt="" coords="684,157,771,184"/>
+<area shape="rect" id="node5" href="$pars__by__id__utils_8c.html#adb6f8132fd53f6936a75a9f6bd486a6b" title=" " alt="" coords="180,107,327,133"/>
+<area shape="rect" id="node3" href="$ft__isdigit_8c.html#a2cf15b8a1a277d1e2ce3654101a2003d" title=" " alt="" coords="688,31,767,57"/>
+<area shape="rect" id="node6" href="$pars__by__id__utils_8c.html#abea1fb599a76ff548d9490880767d112" title=" " alt="" coords="375,5,495,32"/>
+<area shape="rect" id="node7" href="$pars__by__id__utils_8c.html#a15f7d82d0fd11191ef82dd2cf3867781" title=" " alt="" coords="387,107,482,133"/>
+</map>

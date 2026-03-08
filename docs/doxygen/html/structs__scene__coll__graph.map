@@ -1,0 +1,9 @@
+<map id="s_scene" name="s_scene">
+<area shape="rect" id="node1" title=" " alt="" coords="226,201,301,228"/>
+<area shape="rect" id="node2" href="$structt__obj.html" title=" " alt="" coords="95,111,149,137"/>
+<area shape="rect" id="node3" href="$structs__rgb.html" title=" " alt="" coords="49,5,107,32"/>
+<area shape="rect" id="node5" href="$structs__amb.html" title=" " alt="" coords="5,111,71,137"/>
+<area shape="rect" id="node4" href="$structs__vector3.html" title=" " alt="" coords="266,5,351,32"/>
+<area shape="rect" id="node6" href="$structs__cam.html" title=" " alt="" coords="231,111,295,137"/>
+<area shape="rect" id="node7" href="$structs__light.html" title=" " alt="" coords="320,111,385,137"/>
+</map>

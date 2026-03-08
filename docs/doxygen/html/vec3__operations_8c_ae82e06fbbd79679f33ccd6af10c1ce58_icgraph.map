@@ -1,0 +1,16 @@
+<map id="vec3_dot" name="vec3_dot">
+<area shape="rect" id="node1" title=" " alt="" coords="976,132,1057,159"/>
+<area shape="rect" id="node2" href="$hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d" title=" " alt="" coords="809,5,917,32"/>
+<area shape="rect" id="node3" href="$hit__cylinder_8c.html#a92832e32f760612be362db5d2d527915" title=" " alt="" coords="637,56,736,83"/>
+<area shape="rect" id="node5" href="$hit__plane_8c.html#a03ce24ffe7cf30032e0f85732087a755" title=" " alt="" coords="645,107,728,133"/>
+<area shape="rect" id="node6" href="$hit__sphere_8c.html#a3180dd967225a245908d1afbbad59b49" title=" " alt="" coords="817,157,908,184"/>
+<area shape="rect" id="node7" href="$camera_8c.html#a493fb71bff75313ce9f49e2fc3b09c41" title=" " alt="" coords="465,208,576,235"/>
+<area shape="rect" id="node9" href="$vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" title=" " alt="" coords="797,259,928,285"/>
+<area shape="rect" id="node4" href="$hit__obj_8c.html#a23f4a33b0c2d47ec5ecf0346fc6f18b7" title=" " alt="" coords="487,107,554,133"/>
+<area shape="rect" id="node8" href="$camera_8c.html#af49668765ab4c7e3c87e8fbe0ae50aef" title=" " alt="" coords="257,208,417,235"/>
+<area shape="rect" id="node10" href="$vec3__operations2_8c.html#aece2686d74f4d89a97c3925fc5d69b94" title=" " alt="" coords="624,259,749,285"/>
+<area shape="rect" id="node11" href="$camera_8c.html#a9f4f6a3e1bf24e3b830f116e88d8cffa" title=" " alt="" coords="467,259,575,285"/>
+<area shape="rect" id="node12" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="305,259,369,285"/>
+<area shape="rect" id="node13" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="108,259,209,285"/>
+<area shape="rect" id="node14" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,259,60,285"/>
+</map>

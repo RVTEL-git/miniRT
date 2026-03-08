@@ -1,0 +1,8 @@
+<map id="print_ptr" name="print_ptr">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,83,83"/>
+<area shape="rect" id="node2" href="$ft__putstr__fd_8c.html#a2c0d915a8579fdf1d3a383a358b23357" title=" " alt="" coords="134,5,230,32"/>
+<area shape="rect" id="node4" href="$utils_8c.html#a34f85bf1b5e1d7fefd8ca540d87b8fe3" title=" " alt="" coords="131,56,233,83"/>
+<area shape="rect" id="node6" href="$utils_8c.html#a360d0d61647491d7b257e97bec3cacb8" title=" " alt="" coords="145,107,219,133"/>
+<area shape="rect" id="node3" href="$ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="297,5,372,32"/>
+<area shape="rect" id="node5" href="$ft__putchar__fd_8c.html#ae54b488501b5183426fccd79db9f9f7f" title=" " alt="" coords="281,56,388,83"/>
+</map>

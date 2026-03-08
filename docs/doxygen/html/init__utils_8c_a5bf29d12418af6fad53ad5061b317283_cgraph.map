@@ -1,0 +1,5 @@
+<map id="check_file_format" name="check_file_format">
+<area shape="rect" id="node1" title="Function used to check is the file passed as argument is a .rt file. We use the lenght of the string ..." alt="" coords="5,31,144,57"/>
+<area shape="rect" id="node2" href="$ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="200,5,275,32"/>
+<area shape="rect" id="node3" href="$ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="192,56,283,83"/>
+</map>

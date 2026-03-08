@@ -1,0 +1,7 @@
+<map id="mat4_inverse" name="mat4_inverse">
+<area shape="rect" id="node1" title="Build the inverse matrix with the affine transformation method (the fastest from my researchs)...." alt="" coords="5,56,116,83"/>
+<area shape="rect" id="node2" href="$mat4__operations_8c.html#a76ebf4a748e4893b270d8a9fc1c24647" title=" " alt="" coords="164,5,331,32"/>
+<area shape="rect" id="node3" href="$mat4__operations_8c.html#a89e6078c4d319ae014d3d2a654dc2c3a" title=" " alt="" coords="176,56,319,83"/>
+<area shape="rect" id="node4" href="$mat4__operations_8c.html#a3650bd5dd15e55eb9ad166850197c45d" title=" " alt="" coords="379,81,492,108"/>
+<area shape="rect" id="node5" href="$ft__memset_8c.html#ab1acba53b63f6d0eb6e6cf84cf8b6149" title=" " alt="" coords="540,81,632,108"/>
+</map>
