@@ -50,7 +50,7 @@ int temp_color(t_hit_data *hit)
 		return (s_rgb_to_int(r, g, b));
 	}
 	else 
-		return (0 << 16 | 0 << 8 | 0);
+		return (BLUE_COLOR);
 }
 
 void	render(t_scene *scene, t_mlx_data *mlx)
@@ -58,13 +58,12 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	int	x;
 	int	y;
 	t_ray ray;
-	t_mat4 cam_matrix;
 	t_hit_data hit;
 
 	memset(&hit, 0, sizeof(t_hit_data));
 	memset(&ray, 0, sizeof(ray));
-	print_cam(scene->camera);
-	cam_matrix = mat4_identity();
+	//print_cam(scene->camera);
+	init_camera(&scene->camera, mlx->width, mlx->height);	
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
 	create_mlx_image(mlx);
@@ -74,10 +73,10 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 		x = -1;
 		while (++x < mlx->width)
 		{
-			ray = generate_ray(scene, cam_matrix, x, y, mlx->width, mlx->height);
+			ray = generate_ray(&scene->camera, x, y);
 			hit = *hit_obj(ray, scene, &hit);
 			//if (x == 0 && y == 0)
-			//printf("ray dir:%d,%d,%d traced\n ", (int)ray.dir.x, (int)ray.dir.y, (int)ray.dir.z);
+			printf("ray dir:%f.2,%f.2,%f.2 traced\n ", ray.dir.x, ray.dir.y, ray.dir.z);
 			//tests d'intersection et tout le bazar
 			my_mlx_pixel_put(&mlx->img, x, y, temp_color(&hit));
 			//my_mlx_pixel_put(&mlx->img, x, y, BLUE_COLOR);
@@ -87,7 +86,7 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
 }
 
-
+/*
 static void	render_debug(t_scene *scene, t_mlx_data *mlx)
 {
 	t_ray ray;
@@ -105,30 +104,35 @@ static void	render_debug(t_scene *scene, t_mlx_data *mlx)
 	ray.dir = (t_vec3){1, 0, 0};
 	hit = *hit_obj(ray, scene, &hit);
 	printf("x+ %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 100, 100, temp_color(&hit));
 	
 	ray.dir = (t_vec3){-1, 0, 0};
 	hit = *hit_obj(ray, scene, &hit);
 	printf("x- %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 200, 200, temp_color(&hit));
 
 	ray.dir = (t_vec3){0, 1, 0};
 	hit = *hit_obj(ray, scene, &hit);
 	printf("y+ %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 300, 300, temp_color(&hit));
 	
 	ray.dir = (t_vec3){0, -1, 0};
 	hit = *hit_obj(ray, scene, &hit);
 	printf("y- %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 400, 400, temp_color(&hit));
 
 	ray.dir = (t_vec3){0, 0, 1}; 
 	hit = *hit_obj(ray, scene, &hit);
 	printf("z+ %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 500, 500, temp_color(&hit));
 	
 	ray.dir = (t_vec3){0, 0, -1};
 	hit = *hit_obj(ray, scene, &hit);
 	printf("z- %f\n", hit.t);
+	my_mlx_pixel_put(&mlx->img, 600, 600, temp_color(&hit));
 	
-	my_mlx_pixel_put(&mlx->img, 400, 400, temp_color(&hit));
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
-}
+}*/
 
 void	start_render(t_global *minirt)
 {

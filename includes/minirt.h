@@ -86,10 +86,15 @@ typedef struct s_amb
 
 typedef struct s_cam
 {
-	char			id;
+	t_mat4			transform;
 	t_coor			pos;
 	t_coor			look;
+	double			aspect_ratio;
+	double			fov_scaled;
+	double			scrn_height;
+	double			scrn_width;
 	int				fov;
+	char			id;
 }					t_cam;
 
 typedef struct s_light
@@ -187,8 +192,8 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
-t_ray				generate_ray(t_scene *scene, t_mat4 cam_matrix, int x,
-						int y, int width, int height);
+t_ray				generate_ray(t_cam *cam, int x,
+						int y);
 
 void				start_render(t_global *minirt);
 double				hit_sphere(t_obj *sph, t_ray ray);
@@ -196,6 +201,7 @@ double				hit_cylinder(t_obj *cy, t_ray ray);
 double				hit_plane(t_obj *pl, t_ray ray);
 t_hit_data			*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
 int					s_rgb_to_int(int r, int g, int b);
+t_cam	*init_camera(t_cam *cam, int width, int height);
 
 /*MLX*/
 

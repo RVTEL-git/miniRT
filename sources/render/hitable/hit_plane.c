@@ -19,7 +19,7 @@ double	hit_plane(t_obj *pl, t_ray ray)
 	double	t;
 
 	denom = vec3_dot(ray.dir, pl->v);
-	printf("denom[%d] = %f\n",time, denom);
+	//printf("denom[%d] = %f\n",time, denom);
 	time++;
 	if (fabs(denom) < EPS)
 		return (-1);

@@ -12,12 +12,16 @@
 
 #include "minirt.h"
 
+
+
 t_hit_data	*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 {
 	t_obj	*tmp;
 	double	t;
 
 	tmp = scn->object;
+	memset(hit, 0, sizeof(t_hit_data));
+	hit->t = -1;
 	while (tmp)
 	{
 		t = -1.0;

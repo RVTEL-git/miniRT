@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "../../includes/minirt.h"
+#include "matrices.h"
+#include "vector.h"
 
-t_mat4 mat4_look_at(t_vec3 eye, t_vec3 dir)
+t_mat4 mat4_look_at(t_vec3 orig, t_vec3 dir)
 {
     t_vec3 forward;
     t_vec3 right;
@@ -21,7 +23,6 @@ t_mat4 mat4_look_at(t_vec3 eye, t_vec3 dir)
     t_mat4 m;
 
     forward = vec3_normalize(dir);
-
     world_up = vec3_set(0, 1, 0);
 
     // attention a si la cam regarde pile en haut ou en bas ca peut casser donc cette solution ????
@@ -36,35 +37,37 @@ t_mat4 mat4_look_at(t_vec3 eye, t_vec3 dir)
     m.m[0][0] = right.x;
     m.m[0][1] = up.x;
     m.m[0][2] = forward.x;
-    m.m[0][3] = eye.x;
+    m.m[0][3] = orig.x;
 
     m.m[1][0] = right.y;
     m.m[1][1] = up.y;
     m.m[1][2] = forward.y;
-    m.m[1][3] = eye.y;
+    m.m[1][3] = orig.y;
 
     m.m[2][0] = right.z;
     m.m[2][1] = up.z;
     m.m[2][2] = forward.z;
-    m.m[2][3] = eye.z;
+    m.m[2][3] = orig.z;
 
     return m;
 }
 
 
-t_mat4 build_camera_matrix(t_cam cam)
+t_mat4 build_camera_matrix(t_cam *cam)
 {
-    t_vec3 eye;
+    t_vec3 orig;
     t_vec3 dir;
 
-    eye = vec3_set(cam.pos.x, cam.pos.y, cam.pos.z);
-    dir = vec3_set(cam.look.x, cam.look.y, cam.look.z);
+    orig = vec3_set(cam->pos.x, cam->pos.y, cam->pos.z);
+    dir = vec3_set(cam->look.x, cam->look.y, cam->look.z);
 
-    return mat4_look_at(eye, dir);
+    return mat4_look_at(orig, dir);
 }
 
-//apply sans la translation
-t_vec3 mat4_apply_point(t_mat4 m, t_vec3 p)
+/**
+ * @brief Apply (multiply) the vector in the matrix so that I get rid of translation
+ */
+t_vec3 mat4_apply(t_mat4 m, t_vec3 p)
 {
     t_vec3 r;
 
@@ -75,8 +78,10 @@ t_vec3 mat4_apply_point(t_mat4 m, t_vec3 p)
     return r;
 }
 
-// apply en incluant la translation
-t_vec3 mat4_apply_vec(t_mat4 m, t_vec3 v)
+/**
+ * @brief Apply (multiply) the vector in the matrix so that I keep translation
+ */
+t_vec3 mat4_apply_translation(t_mat4 m, t_vec3 v)
 {
     t_vec3 r;
 
@@ -87,25 +92,27 @@ t_vec3 mat4_apply_vec(t_mat4 m, t_vec3 v)
     return r;
 }
 
-t_ray generate_ray(t_scene *scene, t_mat4 cam_matrix, int x, int y, int width, int height)
+t_ray generate_ray(t_cam *cam, int x, int y)
 {
     t_ray ray;
     double px;
     double py;
-    double scale;
-    double aspect;
 
-    aspect = (double)width / height;
-    scale = tan(scene->camera.fov * 0.5 * M_PI / 180.0);
+    px = (2 * ((x + 0.5) / cam->scrn_width) - 1) * cam->aspect_ratio * cam->fov_scaled;
+    py = (1 - 2 * ((y + 0.5) / cam->scrn_height)) * cam->fov_scaled;
 
-    px = (2 * ((x + 0.5) / (double)width) - 1) * aspect * scale;
-    py = (1 - 2 * ((y + 0.5) / (double)height)) * scale;
-
-    t_vec3 cam_origin = vec3_set(0, 0, 0);
-    t_vec3 cam_dir = vec3_set(px, py, 1);
-
-    ray.orig = mat4_apply_point(cam_matrix, cam_origin);
-    ray.dir = vec3_normalize(mat4_apply_vec(cam_matrix, cam_dir));
+    ray.orig = mat4_apply(cam->transform, vec3_set(0, 0, 0));
+    ray.dir = vec3_normalize(mat4_apply_translation(cam->transform, vec3_set(px, py, 1)));
 
     return ray;
+}
+
+t_cam	*init_camera(t_cam *cam, int width, int height)
+{
+	cam->scrn_width = (double)width;
+	cam->scrn_height = (double)height;
+	cam->transform = build_camera_matrix(cam);
+	cam->aspect_ratio = cam->scrn_width / cam->scrn_height;
+	cam->fov_scaled = tan(cam->fov * 0.5 * M_PI / 180.0);
+	return (cam);	
 }
