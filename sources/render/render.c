@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/05 12:05:54 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/09 11:57:45 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,35 +95,36 @@ static void	render_debug(t_scene *scene, t_mlx_data *mlx)
 	t_hit_data hit;
 
 	memset(&hit, 0, sizeof(t_hit_data));
+	hit.t = -1;
 	memset(&ray, 0, sizeof(ray));
 	cam_matrix = mat4_identity();
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
 	create_mlx_image(mlx);
 
-	ray.dir.x = 1;
+	ray.dir = (t_vec3){1, 0, 0};
 	hit = *hit_obj(ray, scene, &hit);
-	printf("x1 %f\n", hit.t);
+	printf("x+ %f\n", hit.t);
+	
+	ray.dir = (t_vec3){-1, 0, 0};
+	hit = *hit_obj(ray, scene, &hit);
+	printf("x- %f\n", hit.t);
 
-	ray.dir.x = -1;
+	ray.dir = (t_vec3){0, 1, 0};
 	hit = *hit_obj(ray, scene, &hit);
-	printf("x-1 %f\n", hit.t);
+	printf("y+ %f\n", hit.t);
 	
-	ray.dir.y = 1;
+	ray.dir = (t_vec3){0, -1, 0};
 	hit = *hit_obj(ray, scene, &hit);
-	printf("y1 %f\n", hit.t);
+	printf("y- %f\n", hit.t);
+
+	ray.dir = (t_vec3){0, 0, 1}; 
+	hit = *hit_obj(ray, scene, &hit);
+	printf("z+ %f\n", hit.t);
 	
-	ray.dir.y = -1;
+	ray.dir = (t_vec3){0, 0, -1};
 	hit = *hit_obj(ray, scene, &hit);
-	printf("y-1 %f\n", hit.t);
-	
-	ray.dir.z = 1;
-	hit = *hit_obj(ray, scene, &hit);
-	printf("z1 %f\n", hit.t);
-	
-	ray.dir.z = -1;
-	hit = *hit_obj(ray, scene, &hit);
-	printf("z-1 %f\n", hit.t);
+	printf("z- %f\n", hit.t);
 	
 	my_mlx_pixel_put(&mlx->img, 400, 400, temp_color(&hit));
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
