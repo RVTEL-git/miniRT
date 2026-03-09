@@ -1,0 +1,5 @@
+<map id="mat4_apply_translation" name="mat4_apply_translation">
+<area shape="rect" id="node1" title="Apply (multiply) the vector in the matrix so that I keep translation." alt="" coords="273,5,449,32"/>
+<area shape="rect" id="node2" href="$camera_8c.html#a26c51ac054edcbf278016fa793c8711b" title=" " alt="" coords="117,5,225,32"/>
+<area shape="rect" id="node3" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="5,5,69,32"/>
+</map>

@@ -1,5 +1,7 @@
 <map id="vec3_cross" name="vec3_cross">
-<area shape="rect" id="node1" title=" " alt="" coords="372,5,467,32"/>
-<area shape="rect" id="node2" href="$camera_8c.html#a493fb71bff75313ce9f49e2fc3b09c41" title=" " alt="" coords="213,5,324,32"/>
-<area shape="rect" id="node3" href="$camera_8c.html#af49668765ab4c7e3c87e8fbe0ae50aef" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="631,5,725,32"/>
+<area shape="rect" id="node2" href="$camera_8c.html#a00aafb34db9d578766be0aea223135e7" title=" " alt="" coords="472,5,583,32"/>
+<area shape="rect" id="node3" href="$camera_8c.html#ad7a5c9d05d164fc0070bb26042bdb922" title=" " alt="" coords="264,5,424,32"/>
+<area shape="rect" id="node4" href="$camera_8c.html#ab7941b4db5f2301a9dfce62834c6b3ac" title=" " alt="" coords="117,5,216,32"/>
+<area shape="rect" id="node5" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="5,5,69,32"/>
 </map>

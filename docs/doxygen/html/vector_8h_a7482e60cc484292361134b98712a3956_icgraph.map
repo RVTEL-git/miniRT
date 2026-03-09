@@ -1,6 +1,7 @@
 <map id="vec3_scale" name="vec3_scale">
-<area shape="rect" id="node1" title=" " alt="" coords="423,31,517,57"/>
-<area shape="rect" id="node2" href="$hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d" title=" " alt="" coords="267,5,375,32"/>
-<area shape="rect" id="node4" href="$hit__obj_8c.html#a23f4a33b0c2d47ec5ecf0346fc6f18b7" title=" " alt="" coords="5,31,72,57"/>
-<area shape="rect" id="node3" href="$hit__cylinder_8c.html#a92832e32f760612be362db5d2d527915" title=" " alt="" coords="120,5,219,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="535,31,629,57"/>
+<area shape="rect" id="node2" href="$hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d" title=" " alt="" coords="379,5,487,32"/>
+<area shape="rect" id="node4" href="$hit__obj_8c.html#a1811e518dcf4cbbcae25bd9a369257a8" title=" " alt="" coords="117,31,184,57"/>
+<area shape="rect" id="node3" href="$hit__cylinder_8c.html#a92832e32f760612be362db5d2d527915" title=" " alt="" coords="232,5,331,32"/>
+<area shape="rect" id="node5" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="5,31,69,57"/>
 </map>

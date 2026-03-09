@@ -52,8 +52,8 @@ var NAVTREEINDEX =
 [
 "DEBUG_8c.html",
 "globals_func_k.html",
-"minirt_8h.html#aae9d8e45bb777526ea8b8b8763b56532",
-"structs__did__hit.html#a8fb160dda905c426bdee59090db12ee2"
+"minirt_8h.html#aa9fb5025efa91f457dfb1dd8c7f45a87",
+"structs__cam.html#a9ae04d3dee15abac35c72e5a78ae8ce1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

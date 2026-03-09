@@ -89,28 +89,35 @@ $(document).ready(function(){initNavTree('camera_8c.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="minirt_8h_source.html">../../includes/minirt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="matrices_8h_source.html">matrices.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for camera.c:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c__incl.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c__incl.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a493fb71bff75313ce9f49e2fc3b09c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a493fb71bff75313ce9f49e2fc3b09c41">mat4_look_at</a> (<a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> eye, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> dir)</td></tr>
-<tr class="separator:a493fb71bff75313ce9f49e2fc3b09c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49668765ab4c7e3c87e8fbe0ae50aef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#af49668765ab4c7e3c87e8fbe0ae50aef">build_camera_matrix</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> cam)</td></tr>
-<tr class="separator:af49668765ab4c7e3c87e8fbe0ae50aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accda3fa8c759347e77743aeb32b3920a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#accda3fa8c759347e77743aeb32b3920a">mat4_apply_point</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> p)</td></tr>
-<tr class="separator:accda3fa8c759347e77743aeb32b3920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2673051e66039eabc9c13e9503343e2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a2673051e66039eabc9c13e9503343e2c">mat4_apply_vec</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> v)</td></tr>
-<tr class="separator:a2673051e66039eabc9c13e9503343e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4f6a3e1bf24e3b830f116e88d8cffa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a9f4f6a3e1bf24e3b830f116e88d8cffa">generate_ray</a> (<a class="el" href="minirt_8h.html#a82a03b320e25492edcc920f31af81f83">t_scene</a> *scene, <a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> cam_matrix, int x, int y, int width, int height)</td></tr>
-<tr class="separator:a9f4f6a3e1bf24e3b830f116e88d8cffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aafb34db9d578766be0aea223135e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a00aafb34db9d578766be0aea223135e7">mat4_look_at</a> (<a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> orig, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> dir)</td></tr>
+<tr class="separator:a00aafb34db9d578766be0aea223135e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a5c9d05d164fc0070bb26042bdb922"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#ad7a5c9d05d164fc0070bb26042bdb922">build_camera_matrix</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam)</td></tr>
+<tr class="separator:ad7a5c9d05d164fc0070bb26042bdb922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27e39de17bd31c1d87a0dd0cc401c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#af27e39de17bd31c1d87a0dd0cc401c50">mat4_apply</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> p)</td></tr>
+<tr class="memdesc:af27e39de17bd31c1d87a0dd0cc401c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply (multiply) the vector in the matrix so that I get rid of translation.  <a href="camera_8c.html#af27e39de17bd31c1d87a0dd0cc401c50">More...</a><br /></td></tr>
+<tr class="separator:af27e39de17bd31c1d87a0dd0cc401c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a8589481fe36ab4bb6d05cd98f4368fe9">mat4_apply_translation</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> v)</td></tr>
+<tr class="memdesc:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply (multiply) the vector in the matrix so that I keep translation.  <a href="camera_8c.html#a8589481fe36ab4bb6d05cd98f4368fe9">More...</a><br /></td></tr>
+<tr class="separator:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c51ac054edcbf278016fa793c8711b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a26c51ac054edcbf278016fa793c8711b">generate_ray</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam, int x, int y)</td></tr>
+<tr class="separator:a26c51ac054edcbf278016fa793c8711b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7941b4db5f2301a9dfce62834c6b3ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#ab7941b4db5f2301a9dfce62834c6b3ac">init_camera</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam, int width, int height)</td></tr>
+<tr class="separator:ab7941b4db5f2301a9dfce62834c6b3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af49668765ab4c7e3c87e8fbe0ae50aef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af49668765ab4c7e3c87e8fbe0ae50aef">&#9670;&nbsp;</a></span>build_camera_matrix()</h2>
+<a id="ad7a5c9d05d164fc0070bb26042bdb922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a5c9d05d164fc0070bb26042bdb922">&#9670;&nbsp;</a></span>build_camera_matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +125,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> build_camera_matrix </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td>
           <td class="paramname"><em>cam</em></td><td>)</td>
           <td></td>
         </tr>
@@ -127,13 +134,20 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_af49668765ab4c7e3c87e8fbe0ae50aef_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_ad7a5c9d05d164fc0070bb26042bdb922_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_ad7a5c9d05d164fc0070bb26042bdb922_icgraph.svg" width="430" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a9f4f6a3e1bf24e3b830f116e88d8cffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f4f6a3e1bf24e3b830f116e88d8cffa">&#9670;&nbsp;</a></span>generate_ray()</h2>
+<a id="a26c51ac054edcbf278016fa793c8711b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c51ac054edcbf278016fa793c8711b">&#9670;&nbsp;</a></span>generate_ray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,14 +155,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> generate_ray </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="minirt_8h.html#a82a03b320e25492edcc920f31af81f83">t_scene</a> *&#160;</td>
-          <td class="paramname"><em>scene</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td>
-          <td class="paramname"><em>cam_matrix</em>, </td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td>
+          <td class="paramname"><em>cam</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,7 +168,41 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a26c51ac054edcbf278016fa793c8711b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a26c51ac054edcbf278016fa793c8711b_icgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab7941b4db5f2301a9dfce62834c6b3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7941b4db5f2301a9dfce62834c6b3ac">&#9670;&nbsp;</a></span>init_camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a>* init_camera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td>
+          <td class="paramname"><em>cam</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -184,24 +226,26 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a9f4f6a3e1bf24e3b830f116e88d8cffa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_ab7941b4db5f2301a9dfce62834c6b3ac_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a9f4f6a3e1bf24e3b830f116e88d8cffa_icgraph.svg" width="483" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_ab7941b4db5f2301a9dfce62834c6b3ac_icgraph.svg" width="222" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="accda3fa8c759347e77743aeb32b3920a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accda3fa8c759347e77743aeb32b3920a">&#9670;&nbsp;</a></span>mat4_apply_point()</h2>
+<a id="af27e39de17bd31c1d87a0dd0cc401c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27e39de17bd31c1d87a0dd0cc401c50">&#9670;&nbsp;</a></span>mat4_apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply_point </td>
+          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td>
           <td class="paramname"><em>m</em>, </td>
@@ -219,22 +263,25 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply (multiply) the vector in the matrix so that I get rid of translation. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_accda3fa8c759347e77743aeb32b3920a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_af27e39de17bd31c1d87a0dd0cc401c50_icgraph.svg" width="378" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a2673051e66039eabc9c13e9503343e2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2673051e66039eabc9c13e9503343e2c">&#9670;&nbsp;</a></span>mat4_apply_vec()</h2>
+<a id="a8589481fe36ab4bb6d05cd98f4368fe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8589481fe36ab4bb6d05cd98f4368fe9">&#9670;&nbsp;</a></span>mat4_apply_translation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply_vec </td>
+          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply_translation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td>
           <td class="paramname"><em>m</em>, </td>
@@ -252,16 +299,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply (multiply) the vector in the matrix so that I keep translation. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a2673051e66039eabc9c13e9503343e2c_icgraph.svg" width="660" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a8589481fe36ab4bb6d05cd98f4368fe9_icgraph.svg" width="455" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a493fb71bff75313ce9f49e2fc3b09c41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a493fb71bff75313ce9f49e2fc3b09c41">&#9670;&nbsp;</a></span>mat4_look_at()</h2>
+<a id="a00aafb34db9d578766be0aea223135e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00aafb34db9d578766be0aea223135e7">&#9670;&nbsp;</a></span>mat4_look_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +320,7 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> mat4_look_at </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td>
-          <td class="paramname"><em>eye</em>, </td>
+          <td class="paramname"><em>orig</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -288,12 +338,14 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a493fb71bff75313ce9f49e2fc3b09c41_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a00aafb34db9d578766be0aea223135e7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a493fb71bff75313ce9f49e2fc3b09c41_icgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a00aafb34db9d578766be0aea223135e7_icgraph.svg" width="588" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

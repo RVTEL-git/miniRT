@@ -1,9 +1,7 @@
 <map id="mlx_put_image_to_window" name="mlx_put_image_to_window">
-<area shape="rect" id="node1" title=" " alt="" coords="412,81,612,108"/>
-<area shape="rect" id="node2" href="$includes_2minilibx-linux_2test_2main_8c.html#af5e193fe4f3164132b47d9109e0f6f98" title=" " alt="" coords="257,5,364,32"/>
-<area shape="rect" id="node3" href="$includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="131,56,186,83"/>
-<area shape="rect" id="node4" href="$includes_2minilibx-linux_2test_2main_8c.html#a61da8dfb6378c7a5c3273e8b8cf6126c" title=" " alt="" coords="257,107,364,133"/>
-<area shape="rect" id="node5" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="279,157,343,184"/>
-<area shape="rect" id="node6" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="108,157,209,184"/>
-<area shape="rect" id="node7" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,157,60,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="263,81,463,108"/>
+<area shape="rect" id="node2" href="$includes_2minilibx-linux_2test_2main_8c.html#af5e193fe4f3164132b47d9109e0f6f98" title=" " alt="" coords="108,5,215,32"/>
+<area shape="rect" id="node3" href="$includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node4" href="$includes_2minilibx-linux_2test_2main_8c.html#a61da8dfb6378c7a5c3273e8b8cf6126c" title=" " alt="" coords="108,107,215,133"/>
+<area shape="rect" id="node5" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="129,157,193,184"/>
 </map>

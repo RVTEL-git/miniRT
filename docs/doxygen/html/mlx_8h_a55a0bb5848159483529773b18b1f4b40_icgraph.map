@@ -1,8 +1,8 @@
 <map id="mlx_destroy_image" name="mlx_destroy_image">
-<area shape="rect" id="node1" title=" " alt="" coords="860,132,1011,159"/>
-<area shape="rect" id="node2" href="$mlx__handler_8c.html#a89aaf8451f52c377da9668e037e4ca81" title=" " alt="" coords="724,56,812,83"/>
-<area shape="rect" id="node8" href="$includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="741,107,795,133"/>
-<area shape="rect" id="node9" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="736,157,800,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="860,81,1011,108"/>
+<area shape="rect" id="node2" href="$mlx__handler_8c.html#a89aaf8451f52c377da9668e037e4ca81" title=" " alt="" coords="724,5,812,32"/>
+<area shape="rect" id="node8" href="$includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="741,56,795,83"/>
+<area shape="rect" id="node9" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="736,107,800,133"/>
 <area shape="rect" id="node10" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="572,157,673,184"/>
 <area shape="rect" id="node3" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title=" " alt="" coords="569,5,676,32"/>
 <area shape="rect" id="node4" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title=" " alt="" coords="423,56,521,83"/>

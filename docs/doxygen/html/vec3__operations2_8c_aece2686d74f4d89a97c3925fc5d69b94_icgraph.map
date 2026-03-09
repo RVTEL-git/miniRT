@@ -1,9 +1,8 @@
 <map id="vec3_normalize" name="vec3_normalize">
-<area shape="rect" id="node1" title=" " alt="" coords="624,31,749,57"/>
-<area shape="rect" id="node2" href="$camera_8c.html#a9f4f6a3e1bf24e3b830f116e88d8cffa" title=" " alt="" coords="467,5,575,32"/>
-<area shape="rect" id="node6" href="$camera_8c.html#a493fb71bff75313ce9f49e2fc3b09c41" title=" " alt="" coords="465,56,576,83"/>
-<area shape="rect" id="node3" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="305,5,369,32"/>
-<area shape="rect" id="node4" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="108,5,209,32"/>
-<area shape="rect" id="node5" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,5,60,32"/>
-<area shape="rect" id="node7" href="$camera_8c.html#af49668765ab4c7e3c87e8fbe0ae50aef" title=" " alt="" coords="257,56,417,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="631,31,756,57"/>
+<area shape="rect" id="node2" href="$camera_8c.html#a26c51ac054edcbf278016fa793c8711b" title=" " alt="" coords="290,5,398,32"/>
+<area shape="rect" id="node4" href="$camera_8c.html#a00aafb34db9d578766be0aea223135e7" title=" " alt="" coords="472,56,583,83"/>
+<area shape="rect" id="node3" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="5,31,69,57"/>
+<area shape="rect" id="node5" href="$camera_8c.html#ad7a5c9d05d164fc0070bb26042bdb922" title=" " alt="" coords="264,56,424,83"/>
+<area shape="rect" id="node6" href="$camera_8c.html#ab7941b4db5f2301a9dfce62834c6b3ac" title=" " alt="" coords="117,56,216,83"/>
 </map>
