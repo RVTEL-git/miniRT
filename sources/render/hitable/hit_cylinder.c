@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 12:17:38 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/05 10:27:21 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:31:47 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ double	hit_cylinder(t_obj *cy, t_ray ray)
 	double	delt;
 	double	t[2];
 
-	cy->rad = (cy->diameter / 2);
 	oc = vec3_sub(ray.orig, cy->pos);
 	p.d_proj = vec3_dot(ray.dir, cy->v);
 	p.oc_proj = vec3_dot(oc, cy->v);

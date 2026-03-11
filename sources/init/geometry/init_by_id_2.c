@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:31:36 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ inline static void	ft_check_limits(double x, double y, double z, double lim[2])
 static void	init_cy_obj(t_obj *obj, char *line, int *index)
 {
 	obj->diameter = ft_atof(&line[*index]);
+	obj->rad = (obj->diameter / 2);
 	*index = *index + ft_isdouble(&line[*index], 0);
 	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
@@ -39,6 +40,7 @@ static void	init_sp_obj(t_obj *obj, char *line, int *index)
 	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
 	obj->diameter = ft_atof(&line[*index]);
+	obj->rad = (obj->diameter / 2);
 	*index = *index + ft_isdouble(&line[*index], 0);
 	while (line[*index] && ft_isspace(line[*index]))
 		*index += 1;
