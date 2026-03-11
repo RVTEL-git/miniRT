@@ -6,15 +6,13 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:22:49 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/09 19:42:33 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:07:45 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-
-
-t_hit_data	*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
+void	hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 {
 	t_obj	*tmp;
 	double	t;
@@ -36,14 +34,15 @@ t_hit_data	*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 			hit->obj = tmp;
 			hit->did_hit = true;
 			hit->t = t;
-			ft_printf("hit\n");
+			// ft_printf("hit\n");
 		}
 		tmp = tmp->next;
 	}
 	if (hit->obj)
 	{
-		hit->p = vec3_add(ray.orig, vec3_scale(ray.dir, t));
+		hit->p = vec3_add(ray.orig, vec3_scale(ray.dir, hit->t));
+		hit->normal = get_normal(hit, hit->obj);
+		if (vec3_dot(hit->normal.compute, ray.dir) > 0.0)
+			hit->normal.compute = vec3_scale(hit->normal.compute, -1.0);
 	}
-	//hit->normal = get_normal(hit->p, hit->obj); a ajouter plus tard
-	return (hit);
 }

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:51:04 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:08:44 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ bool	check_light_line(char *line)
 	index_to_comp = three_follow_value(&line[index], ',', false);
 	if (index_to_comp == 0)
 		return (false);
-	index = index_to_comp;
+	index = index + index_to_comp;
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	if (line[index] != '\0')

@@ -6,15 +6,18 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:22:06 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/06 17:35:53 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:29:33 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	s_rgb_to_int(int r, int g, int b)
+int	s_rgb_to_int(t_vec3 rgb)
 {
-	return (r << 16 | g << 8 | b);
+	rgb.x *= 255;
+	rgb.y *= 255;
+	rgb.z *= 255;
+	return ((int)rgb.x << 16 | (int)rgb.y << 8 | (int)rgb.z);
 }
 
 //t_rgb	ray_color(t_ray ray)

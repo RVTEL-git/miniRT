@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/09 18:30:07 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:29:50 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ typedef struct s_hit_data
 	bool			did_hit;
 	double			t;
 	struct t_obj	*obj;
+	t_ray			*ray;
 	t_vec3			p;
-	t_vec3			normal;
+	t_normal		normal;
 }					t_hit_data;
 
 /*GEOMETRY*/
@@ -195,14 +196,14 @@ bool				check_empty_line(char *line);
 
 t_ray				generate_ray(t_cam *cam, int x,
 						int y);
-
+t_normal			get_normal(t_hit_data *hit, t_obj *obj);
 void				start_render(t_global *minirt);
 double				hit_sphere(t_obj *sph, t_ray ray);
 double				hit_cylinder(t_obj *cy, t_ray ray);
 double				hit_plane(t_obj *pl, t_ray ray);
-t_hit_data			*hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
-int					s_rgb_to_int(int r, int g, int b);
-t_cam	*init_camera(t_cam *cam, int width, int height);
+void				hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
+int					s_rgb_to_int(t_vec3 rgb);
+t_cam				*init_camera(t_cam *cam, int width, int height);
 
 /*MLX*/
 
