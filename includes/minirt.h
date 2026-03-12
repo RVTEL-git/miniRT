@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/11 17:29:50 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/12 16:10:13 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,6 @@ typedef struct s_ray
 	t_point			orig;
 	t_vec3			compute;
 }t_ray,	t_normal;
-
-typedef struct s_rgb
-{
-	double			r;
-	double			g;
-	double			b;
-}					t_rgb;
 
 typedef struct s_hit_data
 {

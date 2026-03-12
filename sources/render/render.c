@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/11 17:57:59 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/12 16:20:28 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,22 @@ typedef struct s_render
 //	mlx->img = new;
 //	return (1);
 //}
-void	vec_clamp(t_vec3 *rgb)
-{
-	if (rgb->x > 255)
-		rgb->x = 255;
-	if (rgb->y > 255)
-		rgb->y = 255;
-	if (rgb->z > 255)
-		rgb->z = 255;
-	if (rgb->x < 0)
-		rgb->x = 0;
-	if (rgb->y < 0)
-		rgb->y = 0;
-	if (rgb->z < 0)
-		rgb->z = 0;
-}
+
+// static void	vec_clamp(t_vec3 *rgb)
+// {
+// 	if (rgb->x > 1)
+// 		rgb->x = 1;
+// 	if (rgb->y > 1)
+// 		rgb->y = 1;
+// 	if (rgb->z > 1)
+// 		rgb->z = 1;
+// 	if (rgb->x < 0)
+// 		rgb->x = 0;
+// 	if (rgb->y < 0)
+// 		rgb->y = 0;
+// 	if (rgb->z < 0)
+// 		rgb->z = 0;
+// }
 
 int temp_color(t_hit_data *hit, t_scene *scene)
 {
@@ -76,17 +77,17 @@ int temp_color(t_hit_data *hit, t_scene *scene)
 			rgb.y = (hit->obj->rgb.g / 255) * scene->light.bright * dot_p;
 			rgb.z = (hit->obj->rgb.b / 255) * scene->light.bright * dot_p;
 		}
-		a_l = vec3_set((hit->obj->rgb.r / 255) * scene->a_light.amb_ratio, ((hit->obj->rgb.g / 255) * scene->a_light.amb_ratio), ((hit->obj->rgb.b / 255) * scene->a_light.amb_ratio));
-		t_vec3 temp = vec3_add (rgb, a_l);
-		vec_clamp(&temp);
-		return (s_rgb_to_int(temp));
-
+		a_l.r = (rgb.r + scene->a_light.rgb.r / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
+		a_l.g = (rgb.g + scene->a_light.rgb.g / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
+		a_l.b = (rgb.b + scene->a_light.rgb.b / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
+		// a_l = vec3_set((hit->obj->rgb.r / 255) * scene->a_light.amb_ratio, ((hit->obj->rgb.g / 255) * scene->a_light.amb_ratio), ((hit->obj->rgb.b / 255) * scene->a_light.amb_ratio));
+		// t_vec3 temp = vec3_add (rgb, a_l);
+		// vec_clamp(&a_l);
+		return (s_rgb_to_int(a_l));
 	}
 	else 
 		return (BLACK_COLOR);
 }
-
-
 
 void	render(t_scene *scene, t_mlx_data *mlx)
 {
@@ -98,7 +99,7 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	memset(&hit, 0, sizeof(t_hit_data));
 	memset(&ray, 0, sizeof(ray));
 	//print_cam(scene->camera);
-	init_camera(&scene->camera, mlx->width, mlx->height);	
+	init_camera(&scene->camera, mlx->width, mlx->height);
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
 	create_mlx_image(mlx);

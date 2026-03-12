@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 16:33:08 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/09 13:17:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:47:35 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 double	hit_plane(t_obj *pl, t_ray ray)
 {
-	static int	time;
+	// static int	time;
 	double	denom;
 	double	t;
 
 	denom = vec3_dot(ray.dir, pl->v);
 	//printf("denom[%d] = %f\n",time, denom);
-	time++;
+	// time++;
 	if (fabs(denom) < EPS)
 		return (-1);
 	t = vec3_dot(vec3_sub(pl->pos, ray.orig), pl->v) / denom;

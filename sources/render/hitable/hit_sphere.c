@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:43:30 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/09 19:31:40 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:20:28 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ double	hit_sphere(t_obj *sph, t_ray ray)
 	e.b = 2.0 * vec3_dot(og, ray.dir);
 	e.c = vec3_dot(og, og) - sph->rad * sph->rad;
 	delt = e.b * e.b - 4 * e.a * e.c;
-	if (delt <= 0.0)
+	if (delt <= EPS)
 		return (-1);
 	t[0] = (-e.b - sqrt(delt)) / (2.0 * e.a);
 	t[1] = (-e.b + sqrt(delt)) / (2.0 * e.a);

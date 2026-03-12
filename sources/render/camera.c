@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:34:02 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/11 11:48:54 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:54:41 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_mat4 mat4_look_at(t_vec3 orig, t_vec3 dir)
     if (fabs(vec3_dot(forward, world_up)) > 0.999)
         world_up = vec3_set(0, 0, 1);
 
-    right = vec3_normalize(vec3_cross(world_up, forward)); // ✅ world_up X forward
+    right = vec3_normalize(vec3_cross(world_up, forward));
     up = vec3_cross(forward, right);
 
     m = mat4_identity();
