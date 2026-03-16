@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 17:40:19 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/11 15:38:01 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/16 14:20:24 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ t_vec3	compute_normal_sphere(t_hit_data *hit, t_obj *sphere)
 
 t_vec3	compute_normal_cylinder(t_hit_data *hit, t_obj *cylinder)
 {
-	t_vec3	og;
-	t_vec3	proj;
-	t_vec3	ret;
-	double	t;
+	t_vec3	op;
+	double	h;
+	double	half_h;
+	t_vec3	side;
 
-	og = vec3_sub(hit->p, cylinder->pos);
-	t = vec3_dot(og, cylinder->v);
-	proj = vec3_scale(cylinder->v, t);
-	ret = vec3_normalize(vec3_sub(og, proj));
-	return (ret);
+	op = vec3_sub(hit->p, cylinder->pos);
+	h = vec3_dot(op, cylinder->v);
+	half_h = cylinder->height * 0.5;
+	if (fabs(h - half_h) < EPS)
+		return (cylinder->v);
+	if (fabs(h + half_h) < EPS)
+		return (vec3_scale(cylinder->v, -1.0));
+	side = vec3_sub(op, vec3_scale(cylinder->v, h));
+	return (vec3_normalize(side));
 }
 
 t_normal	get_normal(t_hit_data *hit, t_obj *obj)

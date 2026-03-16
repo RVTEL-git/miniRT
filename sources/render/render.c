@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/12 16:20:28 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:18:30 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,41 @@ typedef struct s_render
 //	mlx->img = new;
 //	return (1);
 //}
+t_rgb	init_ambiant()
+{
+	
+}
 
-// static void	vec_clamp(t_vec3 *rgb)
-// {
-// 	if (rgb->x > 1)
-// 		rgb->x = 1;
-// 	if (rgb->y > 1)
-// 		rgb->y = 1;
-// 	if (rgb->z > 1)
-// 		rgb->z = 1;
-// 	if (rgb->x < 0)
-// 		rgb->x = 0;
-// 	if (rgb->y < 0)
-// 		rgb->y = 0;
-// 	if (rgb->z < 0)
-// 		rgb->z = 0;
-// }
+static bool	is_in_shadow(t_scene *scene, t_hit_data *hit)
+{
+	t_ray		shadow_ray;
+	t_hit_data	shadow_hit;
+	double		light_dist;
+	t_vec3		to_light;
+
+	memset(&shadow_hit, 0, sizeof(t_hit_data));
+	to_light = vec3_sub(scene->light.point, hit->p);
+	light_dist = vec3_distance(scene->light.point, hit->p);
+	shadow_ray.orig = vec3_add(hit->p, vec3_scale(hit->normal.compute, EPS * 10.0));
+	shadow_ray.dir = vec3_normalize(to_light);
+	hit_obj(shadow_ray, scene, &shadow_hit);
+	if (shadow_hit.did_hit && shadow_hit.t > EPS && shadow_hit.t < light_dist)
+		return (true);
+	return (false);
+}
+
+static int	apply_light(t_hit_data *hit, t_scene *scene)
+{
+	t_rgb	diffuse;
+	t_rgb	specular;
+	t_rgb	ambient;
+	bool	is_shadow;
+
+	ambient = vec3_set(0, 0, 0);
+	specular = vec3_set(0, 0, 0);
+	ambient = vec3_set(0, 0, 0);
+	ambiant = init_ambiant()
+}
 
 int temp_color(t_hit_data *hit, t_scene *scene)
 {
@@ -64,25 +83,21 @@ int temp_color(t_hit_data *hit, t_scene *scene)
 	double		dot_p;
 	t_vec3		rgb;
 
-	(void)hit;
 	if (hit->did_hit == true)
 	{
 		light.p_to_light = vec3_normalize(vec3_sub(scene->light.point, hit->p));
 		dot_p = vec3_dot(light.p_to_light, hit->normal.compute);
-		if (dot_p < 0)
-			rgb = vec3_set(0,0,0);
+		if (dot_p < 0 || is_in_shadow(scene, hit))
+			rgb = vec3_set(0, 0, 0);
 		else
 		{
-			rgb.x = (hit->obj->rgb.r / 255) * scene->light.bright * dot_p;
-			rgb.y = (hit->obj->rgb.g / 255) * scene->light.bright * dot_p;
-			rgb.z = (hit->obj->rgb.b / 255) * scene->light.bright * dot_p;
+			rgb.red = (hit->obj->rgb.red / 255) * scene->light.bright * dot_p;
+			rgb.green = (hit->obj->rgb.green / 255) * scene->light.bright * dot_p;
+			rgb.blue = (hit->obj->rgb.blue / 255) * scene->light.bright * dot_p;
 		}
-		a_l.r = (rgb.r + scene->a_light.rgb.r / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		a_l.g = (rgb.g + scene->a_light.rgb.g / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		a_l.b = (rgb.b + scene->a_light.rgb.b / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		// a_l = vec3_set((hit->obj->rgb.r / 255) * scene->a_light.amb_ratio, ((hit->obj->rgb.g / 255) * scene->a_light.amb_ratio), ((hit->obj->rgb.b / 255) * scene->a_light.amb_ratio));
-		// t_vec3 temp = vec3_add (rgb, a_l);
-		// vec_clamp(&a_l);
+		a_l.red = (rgb.red + scene->a_light.rgb.red / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
+		a_l.green = (rgb.green + scene->a_light.rgb.green / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
+		a_l.blue = (rgb.blue + scene->a_light.rgb.blue / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
 		return (s_rgb_to_int(a_l));
 	}
 	else 

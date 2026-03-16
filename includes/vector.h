@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:56:53 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/12 16:10:39 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:40:05 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@ typedef struct s_vector3
 {
 	union {
 		double x;
-		double r;
+		double red;
+		double a;
 	};
 	union {
 		double y;
-		double g;
+		double green;
+		double b;
 	};
 	union {
 		double z;
-		double b;
+		double blue;
+		double c;
 	};
 }
-t_rgb,	t_vec3,	t_point,	t_coor;
+t_equ,	t_rgb,	t_vec3,	t_point,	t_coor;
 
 /* METHODES */
 

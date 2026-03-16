@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/09 19:31:36 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/13 16:02:44 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void	init_object(char *line, t_scene *scn, char *id)
 	{
 		convert_n_pass(line, scn, &index);
 		assign_three_value(&ob->v.x, &ob->v.y, &ob->v.z, &scn->tmp);
+		ob->v = vec3_normalize(ob->v);
 		ft_check_limits(ob->v.x, ob->v.y, ob->v.z, (double [2]){1.0, -1.0});
 	}
 	if (!ft_strncmp(id, "cy", 2))
 		init_cy_obj(ob, line, &index);
 	convert_three_value(scn, &line[index], true);
-	assign_three_value(&ob->rgb.r, &ob->rgb.g, &ob->rgb.b, &scn->tmp);
-	ft_check_limits(ob->rgb.r, ob->rgb.g, ob->rgb.b, (double [2]){255, 0});
+	assign_three_value(&ob->rgb.red, &ob->rgb.green, &ob->rgb.blue, &scn->tmp);
+	ft_check_limits(ob->rgb.red, ob->rgb.green, ob->rgb.blue, (double [2]){255, 0});
 	ft_lstadd_back_obj(&scn->object, ob);
 }

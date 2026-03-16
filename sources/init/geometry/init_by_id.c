@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:42:57 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static void	init_ambl_line(char *line, t_scene *scene)
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);
-	assign_three_value(&rgb->r, &rgb->g, &rgb->b, &scene->tmp);
-	if (rgb->r > 255 || rgb->r < 0)
+	assign_three_value(&rgb->red, &rgb->green, &rgb->blue, &scene->tmp);
+	if (rgb->red > 255 || rgb->red < 0)
 		errno = ERANGE;
-	if (rgb->g > 255 || rgb->g < 0)
+	if (rgb->green > 255 || rgb->green < 0)
 		errno = ERANGE;
-	if (rgb->b > 255 || rgb->b < 0)
+	if (rgb->blue > 255 || rgb->blue < 0)
 		errno = ERANGE;
 }
 
