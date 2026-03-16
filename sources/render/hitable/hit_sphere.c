@@ -3,32 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   hit_sphere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 15:43:30 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/12 14:20:28 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/16 19:23:35 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+/*
+typedef struct s_equ
+{
+	double	a;
+	double	b;
+	double	c;
+}t_equ;
 
-//typedef struct s_equ
-//{
-//	double	a;
-//	double	b;
-//	double	c;
-//}t_equ;
+     Sphère (centre = sph.pos, rayon = 2)
+        ___
+      /     \
+     |   •   |  ← Centre
+      \ ___ /
 
-//      Sphère (centre = sph.pos, rayon = 2)
-//         ___
-//       /     \
-//      |   •   |  ← Centre
-//       \ ___ /
-//
-// •────────────────►  Rayon (origine = ray.orig, direction = ray.dir)
-//
-// og = vecteur du centre de la sphère vers l'origine du rayon
-// ◄───
+•────────────────►  Rayon (origine = ray.orig, direction = ray.dir)
+
+og = vecteur du centre de la sphère vers l'origine du rayon
+◄───
+*/
 double	hit_sphere(t_obj *sph, t_ray ray)
 {
 	t_vec3	og;

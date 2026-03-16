@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/13 13:17:03 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/16 22:09:42 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,23 +180,28 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
+void				start_render(t_global *minirt);
+t_cam				*init_camera(t_cam *cam, int width, int height);
 t_ray				generate_ray(t_cam *cam, int x,
 						int y);
-t_normal			get_normal(t_hit_data *hit, t_obj *obj);
-void				start_render(t_global *minirt);
+void				hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
 double				hit_sphere(t_obj *sph, t_ray ray);
 double				hit_cylinder(t_obj *cy, t_ray ray);
 double				hit_plane(t_obj *pl, t_ray ray);
-void				hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
+t_normal			get_normal(t_hit_data *hit, t_obj *obj);
+t_normal			get_normal(t_hit_data *hit, t_obj *obj);
+int					get_rgb(t_hit_data *hit, t_scene *scene);
 int					s_rgb_to_int(t_vec3 rgb);
-t_cam				*init_camera(t_cam *cam, int width, int height);
+t_rgb				init_ambient(t_hit_data *hit, t_scene *scene);
+t_rgb				init_diffuse(t_hit_data *hit, t_scene *scene);
+t_rgb				init_specular(t_hit_data *hit, t_scene *scene);
 
 /*MLX*/
 
 bool				init_mlx_struct(t_global *minirt);
 void				init_handler(t_global *minirt);
 int					close_mlx(t_global *data, int code);
-bool	create_mlx_image(t_mlx_data *mlx); // pk bool la
+bool				create_mlx_image(t_mlx_data *mlx); // pk bool la
 void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
 /*LIST*/

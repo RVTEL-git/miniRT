@@ -3,107 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/16 15:18:30 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/16 19:23:10 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
-typedef struct s_render
-{
-	t_vec3	p_to_light;
-	
-}	t_render;
+#include "minirt.h"
 
-//void	render(t_mlx_data	*mlx)
-//{
-//	int			x;
-//	int			y;
-//
-//	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
-//	*(unsigned int *)(img->img_pixel_ptr + offset) = color;
-//}
-
-//bool	create_mlx_image(t_mlx_data *mlx)
-//{
-//	t_mlx_img	new;
-//
-//	new.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->width, mlx->height);
-//	if (!new.img_ptr)
-//		return (ft_printf("image creation failed\n"), 0);//exit bool
-//	new.img_pixel_ptr = mlx_get_data_addr(new.img_ptr, &new.bits_per_pixel, \
-//		&new.line_len, &new.endian);
-//	if (!new.img_pixel_ptr)
-//		return (ft_printf("image creation failed\n"), 0);//exit
-//	mlx->img = new;
-//	return (1);
-//}
-t_rgb	init_ambiant()
+/*
+void	render(t_mlx_data	*mlx)
 {
-	
+	int			x;
+	int			y;
+
+	offset = (y * img->line_len) + (x * (img->bits_per_pixel / 8));
+	*(unsigned int *)(img->img_pixel_ptr + offset) = color;
 }
 
-static bool	is_in_shadow(t_scene *scene, t_hit_data *hit)
+bool	create_mlx_image(t_mlx_data *mlx)
 {
-	t_ray		shadow_ray;
-	t_hit_data	shadow_hit;
-	double		light_dist;
-	t_vec3		to_light;
+	t_mlx_img	new;
 
-	memset(&shadow_hit, 0, sizeof(t_hit_data));
-	to_light = vec3_sub(scene->light.point, hit->p);
-	light_dist = vec3_distance(scene->light.point, hit->p);
-	shadow_ray.orig = vec3_add(hit->p, vec3_scale(hit->normal.compute, EPS * 10.0));
-	shadow_ray.dir = vec3_normalize(to_light);
-	hit_obj(shadow_ray, scene, &shadow_hit);
-	if (shadow_hit.did_hit && shadow_hit.t > EPS && shadow_hit.t < light_dist)
-		return (true);
-	return (false);
+	new.img_ptr = mlx_new_image(mlx->mlx_ptr, mlx->width, mlx->height);
+	if (!new.img_ptr)
+		return (ft_printf("image creation failed\n"), 0);//exit bool
+	new.img_pixel_ptr = mlx_get_data_addr(new.img_ptr, &new.bits_per_pixel, \
+		&new.line_len, &new.endian);
+	if (!new.img_pixel_ptr)
+		return (ft_printf("image creation failed\n"), 0);//exit
+	mlx->img = new;
+	return (1);
 }
-
-static int	apply_light(t_hit_data *hit, t_scene *scene)
-{
-	t_rgb	diffuse;
-	t_rgb	specular;
-	t_rgb	ambient;
-	bool	is_shadow;
-
-	ambient = vec3_set(0, 0, 0);
-	specular = vec3_set(0, 0, 0);
-	ambient = vec3_set(0, 0, 0);
-	ambiant = init_ambiant()
-}
-
-int temp_color(t_hit_data *hit, t_scene *scene)
-{
-	t_render	light;
-	t_vec3		a_l;
-	double		dot_p;
-	t_vec3		rgb;
-
-	if (hit->did_hit == true)
-	{
-		light.p_to_light = vec3_normalize(vec3_sub(scene->light.point, hit->p));
-		dot_p = vec3_dot(light.p_to_light, hit->normal.compute);
-		if (dot_p < 0 || is_in_shadow(scene, hit))
-			rgb = vec3_set(0, 0, 0);
-		else
-		{
-			rgb.red = (hit->obj->rgb.red / 255) * scene->light.bright * dot_p;
-			rgb.green = (hit->obj->rgb.green / 255) * scene->light.bright * dot_p;
-			rgb.blue = (hit->obj->rgb.blue / 255) * scene->light.bright * dot_p;
-		}
-		a_l.red = (rgb.red + scene->a_light.rgb.red / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		a_l.green = (rgb.green + scene->a_light.rgb.green / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		a_l.blue = (rgb.blue + scene->a_light.rgb.blue / 255 * scene->a_light.amb_ratio) / (1.0 + scene->a_light.amb_ratio);
-		return (s_rgb_to_int(a_l));
-	}
-	else 
-		return (BLACK_COLOR);
-}
-
+*/
 void	render(t_scene *scene, t_mlx_data *mlx)
 {
 	int	x;
@@ -129,7 +62,7 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 			//if (x == 0 && y == 0)
 			// printf("ray dir:%f.2,%f.2,%f.2 traced\n ", ray.dir.x, ray.dir.y, ray.dir.z);
 			//tests d'intersection et tout le bazar
-			my_mlx_pixel_put(&mlx->img, x, y, temp_color(&hit, scene));
+			my_mlx_pixel_put(&mlx->img, x, y, get_rgb(&hit, scene));
 		}
 	}
 	// ft_putstr_fd(1, "image pasted");

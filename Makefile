@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
+#    By: ratel <ratel@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2026/03/04 16:53:19 by barmarti         ###   ########.fr        #
+#    Updated: 2026/03/16 19:17:17 by ratel            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ PARS = $(SRCS_DIR)/$(PARS_DIR)/parsing.c			\
 INIT_DIR = init
 GEO_DIR = geometry
 MLX_INIT_DIR = mlx
+LGH_DIR = light
 INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id.c			\
 		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_2.c		\
@@ -46,10 +47,12 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_by_id_utils_2.c	\
 		$(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init_utils.c			\
 		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_init.c		\
-		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_handler.c
+		$(SRCS_DIR)/$(INIT_DIR)/$(MLX_INIT_DIR)/mlx_handler.c	\
+		$(SRCS_DIR)/$(INIT_DIR)/$(LGH_DIR)/init_light.c
 
 REN_DIR = render
 HIT_DIR = hitable
+RGB_DIR = rgb
 REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
 	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c		\
 	  $(SRCS_DIR)/$(REN_DIR)/render.c					\
@@ -57,7 +60,8 @@ REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
 	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c	\
 	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c	\
 	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c		\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_obj.c
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_obj.c		\
+	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color.c
 
 
 MATH_DIR = maths

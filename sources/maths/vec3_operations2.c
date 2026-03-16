@@ -6,7 +6,7 @@
 /*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:39:01 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/28 15:35:17 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/16 19:35:18 by ratel            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,9 @@ t_vec3	vec3_scale(t_vec3 vec3, double n)
 	return (new = vec3_set(vec3.x * n, vec3.y * n, vec3.z * n));
 }
 
+void	print_vec3(t_vec3 print)
+{
+	printf("to print.1 = %.1f\n", print.a);
+	printf("to print.2 = %.1f\n", print.b);
+	printf("to print.3 = %.1f\n", print.c);
+}
