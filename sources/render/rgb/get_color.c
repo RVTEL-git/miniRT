@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_color.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:44:13 by ratel             #+#    #+#             */
-/*   Updated: 2026/03/16 22:13:22 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/18 15:34:17 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ t_rgb	get_final(t_rgb	diffuse, t_rgb specular, t_rgb ambient)
 	t_rgb ret;
 
 	ret = vec3_set(0, 0, 0);
-	ret = vec3_add(ambient, diffuse);
-	ret = vec3_add(ret, specular);
+	ret = vec3_add(diffuse, specular);
+	ret = vec3_add(ret, ambient);
 	return (ret);
 }
 
@@ -63,10 +63,30 @@ t_rgb	apply_light(t_hit_data *hit, t_scene *scene)
 	return (ret);
 }
 
-int	get_rgb(t_hit_data *hit, t_scene *scene)
+int	sum_rgb(t_rgb *colors, size_t len)
+{
+	t_rgb	sum;
+	size_t	time;
+
+	time = 0;
+	sum = vec3_set(0,0,0);
+	while (time < len)
+	{
+		sum.red += colors[time].red;
+		sum.green += colors[time].green;
+		sum.blue += colors[time].blue;
+		time++;
+	}
+	sum.red /= len;
+	sum.green /= len;
+	sum.blue /= len;
+	return (s_rgb_to_int(sum));
+}
+
+t_rgb	get_rgb(t_hit_data *hit, t_scene *scene)
 {
 	if (hit->did_hit == true)
-		return(s_rgb_to_int(apply_light(hit, scene)));
+		return(apply_light(hit, scene));
 	else 
-		return (BLACK_COLOR);
+		return (vec3_set(0, 0, 0));
 }

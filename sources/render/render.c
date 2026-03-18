@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/16 19:23:10 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/18 16:26:19 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <pthread.h>
 #include "minirt.h"
+
+#define NB_THREADS 24
+
+typedef struct s_thread_data
+{
+	int			start_y;
+	int			end_y;
+	t_scene		*scene;
+	t_mlx_data	*mlx;
+}	t_thread_data;
 
 /*
 void	render(t_mlx_data	*mlx)
@@ -37,35 +48,73 @@ bool	create_mlx_image(t_mlx_data *mlx)
 	return (1);
 }
 */
+
+void	*fill_zone(void *arg)
+{
+	t_rgb		colors[100];
+	t_ray		ray;
+	t_hit_data	hit;
+	int			j;
+	t_thread_data	*args;
+	int				y;
+	int				x;
+
+	args = (t_thread_data *)arg;
+	y = args->start_y;
+	while (y < args->end_y)
+	{
+		x = 0;
+		while (x < args->mlx->width)
+		{
+			memset(&hit, 0, sizeof(hit));
+			j = 0;
+			while (j < 100)
+			{
+				ray = generate_ray(&args->scene->camera, x, y);
+				hit_obj(ray, args->scene, &hit);
+				colors[j] = get_rgb(&hit, args->scene);
+				j++;
+			}
+			my_mlx_pixel_put(&args->mlx->img, x, y, sum_rgb(colors, j));
+			x++;
+		}
+		y++;
+	}
+	return (NULL);
+}
+
 void	render(t_scene *scene, t_mlx_data *mlx)
 {
-	int	x;
-	int	y;
-	t_ray ray;
-	t_hit_data hit;
+	pthread_t		threads[NB_THREADS];
+	t_thread_data	args[NB_THREADS];
+	int				i;
+	int				rows_per_thread;
 
-	memset(&hit, 0, sizeof(t_hit_data));
-	memset(&ray, 0, sizeof(ray));
-	//print_cam(scene->camera);
 	init_camera(&scene->camera, mlx->width, mlx->height);
 	if (mlx->img.img_ptr)
 		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
-	create_mlx_image(mlx);
-	y = -1;
-	while (++y < mlx->height)
+	if (!create_mlx_image(mlx))
+		return;
+	rows_per_thread = mlx->height / NB_THREADS;
+	i = 0;
+	while (i < NB_THREADS)
 	{
-		x = -1;
-		while (++x < mlx->width)
-		{
-			ray = generate_ray(&scene->camera, x, y);
-			hit_obj(ray, scene, &hit);
-			//if (x == 0 && y == 0)
-			// printf("ray dir:%f.2,%f.2,%f.2 traced\n ", ray.dir.x, ray.dir.y, ray.dir.z);
-			//tests d'intersection et tout le bazar
-			my_mlx_pixel_put(&mlx->img, x, y, get_rgb(&hit, scene));
-		}
+		args[i].scene = scene;
+		args[i].mlx = mlx;
+		args[i].start_y = i * rows_per_thread;
+		if (i == NB_THREADS - 1)
+			args[i].end_y = mlx->height;
+		else
+			args[i].end_y = (i + 1) * rows_per_thread;
+		pthread_create(&threads[i], NULL, fill_zone, &args[i]);
+		i++;
 	}
-	// ft_putstr_fd(1, "image pasted");
+	i = 0;
+	while (i < NB_THREADS)
+	{
+		pthread_join(threads[i], NULL);
+		i++;
+	}
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0, 0);
 }
 

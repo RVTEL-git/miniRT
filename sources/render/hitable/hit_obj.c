@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:22:49 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/11 17:07:45 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:07:56 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 			hit->obj = tmp;
 			hit->did_hit = true;
 			hit->t = t;
-			// ft_printf("hit\n");
+			hit->ray = &ray;
 		}
 		tmp = tmp->next;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_light.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 19:01:11 by ratel             #+#    #+#             */
-/*   Updated: 2026/03/16 22:09:00 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/18 14:03:01 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ t_rgb	init_diffuse(t_hit_data *hit, t_scene *scene)
 		ret = vec3_set(0, 0, 0);
 	else
 	{
-		ret.red = (hit->obj->rgb.red / 255) * scene->light.bright * fmax(0, dot_p);
-		ret.green = (hit->obj->rgb.green / 255) * scene->light.bright * fmax(0, dot_p);
-		ret.blue = (hit->obj->rgb.blue / 255) * scene->light.bright * fmax(0, dot_p);
+		ret.red = (hit->obj->rgb.red / 255) * (scene->light.rgb.red / 255) * scene->light.bright * fmax(0, dot_p);
+		ret.green = (hit->obj->rgb.green / 255) * (scene->light.rgb.green / 255) * scene->light.bright * fmax(0, dot_p);
+		ret.blue = (hit->obj->rgb.blue / 255) * (scene->light.rgb.blue / 255) * scene->light.bright * fmax(0, dot_p);
 	}
 	return (ret);
 }
@@ -71,18 +71,18 @@ t_rgb	init_specular(t_hit_data *hit, t_scene *scene)
 	double	ks;
 	double	shin;
 
-	ks = 0.008;
-	shin = 64;
+	ks = 0.0001;
+	shin = 180;
 	p_to_light = vec3_normalize(vec3_sub(scene->light.point, hit->p));
 	p_to_cam = vec3_normalize(vec3_sub(scene->camera.pos, hit->p));
 	ndotl = vec3_dot(hit->normal.compute, p_to_light);
 	if (ndotl <= 0 || is_in_shadow(scene, hit))
-		ret = vec3_set(scene->light.bright * 0, scene->light.bright * 0, scene->light.bright * 0);
+		ret = vec3_set(0, 0, 0);
 	else
 	{
 		r = vec3_sub(vec3_scale(hit->normal.compute, 2.0 * ndotl), p_to_light);
-		spec_tens = ks * scene->light.bright, pow(fmax(0, vec3_dot(vec3_normalize(r), vec3_normalize(p_to_cam))), shin);
-		ret = vec3_set(spec_tens, spec_tens, spec_tens);
+		spec_tens = ks * scene->light.bright * pow(fmax(0, vec3_dot(vec3_normalize(r), vec3_normalize(p_to_cam))), shin);
+		ret = vec3_set(spec_tens * scene->light.rgb.red / 255, spec_tens * scene->light.rgb.green / 255, spec_tens * scene->light.rgb.blue / 255);
 	}
 	return (ret);
 }

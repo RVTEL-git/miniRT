@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/16 22:09:42 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/18 14:30:01 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ typedef struct s_light
 {
 	char			id;
 	t_coor			point;
+	t_rgb			rgb;
 	double			bright;
 }					t_light;
 
@@ -190,8 +191,9 @@ double				hit_cylinder(t_obj *cy, t_ray ray);
 double				hit_plane(t_obj *pl, t_ray ray);
 t_normal			get_normal(t_hit_data *hit, t_obj *obj);
 t_normal			get_normal(t_hit_data *hit, t_obj *obj);
-int					get_rgb(t_hit_data *hit, t_scene *scene);
+t_rgb				get_rgb(t_hit_data *hit, t_scene *scene);
 int					s_rgb_to_int(t_vec3 rgb);
+int					sum_rgb(t_rgb *colors, size_t len);
 t_rgb				init_ambient(t_hit_data *hit, t_scene *scene);
 t_rgb				init_diffuse(t_hit_data *hit, t_scene *scene);
 t_rgb				init_specular(t_hit_data *hit, t_scene *scene);

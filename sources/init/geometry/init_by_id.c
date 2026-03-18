@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/13 15:42:57 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:58:31 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,28 @@ static void	init_light_line(char *line, t_scene *scene)
 {
 	int		index;
 	t_coor	*point;
+	t_rgb	*rgb;
 
 	index = 0;
 	point = &scene->light.point;
+	rgb = &scene->light.rgb;
 	scene->light.id = 'L';
 	convert_three_value(scene, line, true);
 	assign_three_value(&point->x, &point->y, &point->z, &scene->tmp);
 	pass_three_value(line, &index, true);
 	scene->light.bright = ft_atof(&line[index]);
 	if (scene->light.bright > 1.0 || scene->light.bright < 0.0)
+		errno = ERANGE;
+			index += ft_isdouble(&line[index], 0);
+	while (line[index] && ft_isspace(line[index]))
+		index++;
+	convert_three_value(scene, &line[index], false);
+	assign_three_value(&rgb->red, &rgb->green, &rgb->blue, &scene->tmp);
+	if (rgb->red > 255 || rgb->red < 0)
+		errno = ERANGE;
+	if (rgb->green > 255 || rgb->green < 0)
+		errno = ERANGE;
+	if (rgb->blue > 255 || rgb->blue < 0)
 		errno = ERANGE;
 }
 

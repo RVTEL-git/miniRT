@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:57:01 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/11 17:07:57 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 10:34:05 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,5 @@ bool	init_struct(char *rt_file, t_scene *scene)
 		return (false);
 	if (!check_full(scene))
 		return (false);
-	print_struct(scene);
 	return (true);
 }
