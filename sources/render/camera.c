@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:34:02 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/12 13:54:41 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 14:53:27 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,22 @@ t_vec3 mat4_apply_translation(t_mat4 m, t_vec3 v)
     return r;
 }
 
+/* generate a random floating point number from min to max */
+double randfrom(double min, double max)
+{
+    double range = (max - min); 
+    double div = RAND_MAX / range;
+    return min + (rand() / div);
+}
+
 t_ray generate_ray(t_cam *cam, int x, int y)
 {
     t_ray ray;
     double px;
     double py;
 
-    px = (2 * ((x + 0.5) / cam->scrn_width) - 1) * cam->aspect_ratio * cam->fov_scaled;
-    py = (1 - 2 * ((y + 0.5) / cam->scrn_height)) * cam->fov_scaled;
-
+    px = (2 * ((x + randfrom(-0.5, 0.5)) / cam->scrn_width) - 1) * cam->aspect_ratio * cam->fov_scaled;
+    py = (1 - 2 * ((y + randfrom(-0.5, 0.5)) / cam->scrn_height)) * cam->fov_scaled;
     ray.orig = mat4_apply(cam->transform, vec3_set(0, 0, 0));
     ray.dir = vec3_normalize(mat4_apply_translation(cam->transform, vec3_set(px, py, 1)));
 

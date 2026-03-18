@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:22:06 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/13 15:43:33 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:45:08 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	s_rgb_to_int(t_vec3 rgb)
 {
+	rgb.red = pow(rgb.red, 1.0 / 2.2);
+	rgb.green = pow(rgb.green, 1.0 / 2.2);
+	rgb.blue = pow(rgb.blue, 1.0 / 2.2);
 	rgb.red *= 255;
 	rgb.green *= 255;
 	rgb.blue *= 255;

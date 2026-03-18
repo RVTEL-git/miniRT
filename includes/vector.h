@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:56:53 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/13 15:40:05 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/18 10:45:38 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ double		vec3_magnitude(t_vec3 vec3);
 t_vec3		vec3_normalize(t_vec3 vec3);
 double		vec3_distance(t_vec3 a, t_vec3 b);
 t_vec3		vec3_scale(t_vec3 vec3, double n);
+void		vec3_print(char *message, t_vec3 print);
 
 #endif
