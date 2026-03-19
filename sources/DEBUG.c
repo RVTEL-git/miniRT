@@ -4,10 +4,10 @@ static void	print_amb(t_amb amb)
 {
 	printf("====AMB====\n");
 	printf("id = %c\n", amb.id);
-	printf("ratio = %f\n", amb.amb_ratio);
-	printf("r = %f\n", amb.rgb.red);
-	printf("g = %f\n", amb.rgb.green);
-	printf("b = %f\n", amb.rgb.blue);
+	printf("ratio = %f\n", amb.ratio);
+	printf("r = %f\n", amb.rgb.rd);
+	printf("g = %f\n", amb.rgb.grn);
+	printf("b = %f\n", amb.rgb.blu);
 }
 
 void	print_cam(t_cam cam)
@@ -49,9 +49,9 @@ static void	print_it(t_obj *obj)
 		printf("diameter = %f\n", obj->diameter);
 	if (obj->height)
 		printf("height = %f\n", obj->height);
-	printf("r = %f\n", obj->rgb.red);
-	printf("g = %f\n", obj->rgb.green);
-	printf("b = %f\n", obj->rgb.blue);
+	printf("r = %f\n", obj->rgb.rd);
+	printf("g = %f\n", obj->rgb.grn);
+	printf("b = %f\n", obj->rgb.blu);
 }
 
 void	print_obj(t_obj *objects)

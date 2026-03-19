@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/18 14:30:01 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:52:04 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@
 # include <errno.h>
 # include <math.h>
 # include <stdlib.h>
+# include <stdatomic.h> 
 # include <sys/stat.h>
 
 /*=== MATHS ===*/
+
 # define M_PI 3.14159265358979323846
 # define EPS 1e-6
 
@@ -35,87 +37,13 @@
 # define YELLOW_COLOR 0xffff00
 # define GRAY_COLOR 0x969696
 
+/*=== OTHER ===*/
+
+# define NB_THRDS 24
+# define TASKBAR_HEIGHT 69
+
 /*=== STRUCTURES ===*/
 /*DATA*/
-
-typedef struct s_id
-{
-	bool			a;
-	bool			l;
-	bool			c;
-}					t_id;
-
-typedef struct s_ray
-{
-	t_vec3			dir;
-	double			angle;
-	t_point			orig;
-	t_vec3			compute;
-}t_ray,	t_normal;
-
-typedef struct s_hit_data
-{
-	bool			did_hit;
-	double			t;
-	struct t_obj	*obj;
-	t_ray			*ray;
-	t_vec3			p;
-	t_normal		normal;
-}					t_hit_data;
-
-/*GEOMETRY*/
-
-typedef struct s_amb
-{
-	char			id;
-	double			amb_ratio;
-	t_rgb			rgb;
-}					t_amb;
-
-typedef struct s_cam
-{
-	t_mat4			transform;
-	t_coor			pos;
-	t_coor			look;
-	double			aspect_ratio;
-	double			fov_scaled;
-	double			scrn_height;
-	double			scrn_width;
-	int				fov;
-	char			id;
-}					t_cam;
-
-typedef struct s_light
-{
-	char			id;
-	t_coor			point;
-	t_rgb			rgb;
-	double			bright;
-}					t_light;
-
-typedef struct t_obj
-{
-	char			*id;
-	t_coor			pos;
-	t_coor			v;
-	t_rgb			rgb;
-	double			diameter;
-	double			rad;
-	double			height;
-	struct t_obj	*next;
-	struct t_obj	*prev;
-}					t_obj;
-
-typedef struct s_scene
-{
-	t_amb			a_light;
-	t_light			light;
-	t_cam			camera;
-	t_obj			*object;
-	t_coor			tmp;
-}					t_scene;
-
-/*MLX*/
 
 typedef struct s_mlx_img
 {
@@ -135,13 +63,106 @@ typedef struct s_mlx_data
 	t_mlx_img		img;
 }					t_mlx_data;
 
+typedef struct s_amb
+{
+	char			id;
+	double			ratio;
+	t_rgb			rgb;
+}t_amb;
+
+typedef struct s_cam
+{
+	t_mat4			trnsf;
+	t_coor			pos;
+	t_coor			look;
+	double			asp_ratio;
+	double			fov_scaled;
+	double			scrn_height;
+	double			scrn_width;
+	int				fov;
+	char			id;
+}t_cam;
+
+typedef struct s_light
+{
+	char			id;
+	t_coor			point;
+	t_rgb			rgb;
+	double			bright;
+}t_light;
+
+typedef struct t_obj
+{
+	char			*id;
+	t_coor			pos;
+	t_coor			v;
+	t_rgb			rgb;
+	double			diameter;
+	double			rad;
+	double			height;
+	struct t_obj	*next;
+	struct t_obj	*prev;
+}t_obj;
+
+typedef struct s_scene
+{
+	t_amb			a_light;
+	t_light			light;
+	t_cam			camera;
+	t_obj			*object;
+	t_coor			tmp;
+}t_scene;
+
+typedef struct s_thread_data
+{
+	int			start_y;
+	int			end_y;
+	t_scene		*scene;
+	t_mlx_data	*mlx;
+	atomic_int	*counter;
+}t_thread_data;
+
+typedef struct s_id
+{
+	bool			a;
+	bool			l;
+	bool			c;
+}t_id;
+
+typedef struct s_ray
+{
+	t_vec3			dir;
+	double			angle;
+	t_point			orig;
+	t_vec3			compute;
+}t_ray,	t_normal;
+
+typedef struct s_hit_data
+{
+	bool			did_hit;
+	double			t;
+	struct t_obj	*obj;
+	t_ray			*ray;
+	t_vec3			p;
+	t_normal		normal;
+}t_hit_data;
+
+typedef struct s_specular
+{
+	double	tens;
+	double	ks;
+	double	shin;
+	t_vec3	p_to_cam;
+	t_vec3	p_to_light;
+}t_spec;
+
 /*GLOBAAAAAL*/
 
 typedef struct s_global
 {
 	t_mlx_data		*mlx;
 	t_scene			scene;
-}					t_global;
+}t_global;
 
 /*=== FUNCTIONS ===*/
 /*PARSING*/
@@ -181,10 +202,13 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
+int					get_final_rgb(t_thread_data	*args, int x, int y);
+void				init_thrd_args(int i, t_scene *scene, \
+					t_mlx_data *mlx, t_thread_data *args);
 void				start_render(t_global *minirt);
 t_cam				*init_camera(t_cam *cam, int width, int height);
-t_ray				generate_ray(t_cam *cam, int x,
-						int y);
+t_ray				generate_ray(t_cam *cam, double x,
+						double y, bool fixed);
 void				hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit);
 double				hit_sphere(t_obj *sph, t_ray ray);
 double				hit_cylinder(t_obj *cy, t_ray ray);
@@ -197,6 +221,18 @@ int					sum_rgb(t_rgb *colors, size_t len);
 t_rgb				init_ambient(t_hit_data *hit, t_scene *scene);
 t_rgb				init_diffuse(t_hit_data *hit, t_scene *scene);
 t_rgb				init_specular(t_hit_data *hit, t_scene *scene);
+
+/*CARMERA*/
+
+t_vec3				mat4_apply_translation(t_mat4 m, t_vec3 v);
+t_vec3				mat4_apply(t_mat4 m, t_vec3 p);
+t_mat4				mat4_look_at(t_vec3 orig, t_vec3 dir);
+t_mat4				build_camera_matrix(t_cam *cam);
+
+/*COLOR*/
+
+t_vec3				vec3_clamp(t_vec3 to_clamp, double min, double max);
+t_rgb				get_final(t_rgb	diffuse, t_rgb specular, t_rgb ambient);
 
 /*MLX*/
 

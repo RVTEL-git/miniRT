@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:24:40 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 14:53:29 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/19 17:25:33 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	print_message(char *id)
 		ft_dprintf(2, "Error\nCheck range limits for %s element\n", elem);
 }
 
-void manage_extract_error(t_scene *scene, char *id, bool message)
+void	manage_extract_error(t_scene *scene, char *id, bool message)
 {
 	if (message)
 		print_message(id);

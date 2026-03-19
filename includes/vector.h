@@ -6,32 +6,39 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:56:53 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/18 10:45:38 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:11:05 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
 
-typedef struct s_vector3
+typedef struct s_vec3
 {
-	union {
-		double x;
-		double red;
-		double a;
+	union
+	{
+		double	x;
+		double	rd;
+		double	a;
 	};
-	union {
-		double y;
-		double green;
-		double b;
+	union
+	{
+		double	y;
+		double	grn;
+		double	b;
 	};
-	union {
-		double z;
-		double blue;
-		double c;
+	union
+	{
+		double	z;
+		double	blu;
+		double	c;
 	};
-}
-t_equ,	t_rgb,	t_vec3,	t_point,	t_coor;
+}t_vec3;
+
+typedef t_vec3	t_equ;
+typedef t_vec3	t_rgb;
+typedef t_vec3	t_point;
+typedef t_vec3	t_coor;
 
 /* METHODES */
 

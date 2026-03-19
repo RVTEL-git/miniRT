@@ -6,23 +6,23 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 23:39:01 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/18 10:45:23 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 15:06:45 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
 //calcule la magnitude du vecteur (sa taille)
-double vec3_magnitude(t_vec3 vec3)
+double	vec3_magnitude(t_vec3 vec3)
 {
-	return sqrt(vec3_dot(vec3, vec3));
+	return (sqrt(vec3_dot(vec3, vec3)));
 }
 
 //normalise le vecteur en le rendant de magnitude 1
 t_vec3	vec3_normalize(t_vec3 vec3)
 {
-	double mag;
-	t_vec3 new;
+	double	mag;
+	t_vec3	new;
 
 	mag = vec3_magnitude(vec3);
 	if (mag == 0)
@@ -38,7 +38,7 @@ double	vec3_distance(t_vec3 a, t_vec3 b)
 
 t_vec3	vec3_scale(t_vec3 vec3, double n)
 {
-	t_vec3 new;
+	t_vec3	new;
 
 	return (new = vec3_set(vec3.x * n, vec3.y * n, vec3.z * n));
 }

@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:41:48 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/08 15:55:11 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:49:07 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ t_gnl_list	*make_list(t_gnl_list **lst, char *buff)
 	curr->next = new;
 	return (*lst);
 }
-
 
 int	gnl_get_len(t_gnl_list *lst)
 {

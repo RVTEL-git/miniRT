@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mat4_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 01:58:37 by egiraud           #+#    #+#             */
-/*   Updated: 2026/02/07 16:40:44 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/19 17:28:26 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minirt.h"
+#include "minirt.h"
 
 t_mat4	mat4_identity(void)
 {
@@ -51,28 +51,26 @@ t_mat4	mat4_scale(double x, double y, double z)
 t_mat4	mat4_rotate(double n, t_axis axis)
 {
 	t_mat4	m;
-	double c;
-	double s;
+	double	c;
+	double	s;
 
 	ft_memset(&m, 0, sizeof(t_mat4));
 	c = cos(n);
-
 	s = sin(n);
 	if (axis == X)
 	{
 		return ((t_mat4){{{1.0, 0.0, 0.0, 0.0}, {0.0, c, -s, 0.0},
-			{0.0, s, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
-
+				{0.0, s, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
 	}
 	else if (axis == Y)
 	{
 		return ((t_mat4){{{c, 0.0, s, 0.0}, {0.0, 1.0, 0.0, 0.0},
-			{-s, 0.0, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
+				{-s, 0.0, c, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
 	}
 	else if (axis == Z)
 	{
 		return ((t_mat4){{{c, -s, 0.0, 0.0}, {s, c, 0.0,
-			0.0}, {0.0, 0.0, 1.0, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
+					0.0}, {0.0, 0.0, 1.0, 0.0}, {0.0, 0.0, 0.0, 1.0}}});
 	}
 	return (mat4_identity());
 }
@@ -96,74 +94,4 @@ t_mat4	mat4_mult(t_mat4 a, t_mat4 b)
 		i++;
 	}
 	return (m);
-}
-
-static float	compute_determinant(t_mat4 m)
-{
-	float	det;
-
-	det = m.m[0][0] * (m.m[1][1] * m.m[2][2] - m.m[1][2] * m.m[2][1])
-		- m.m[0][1] * (m.m[1][0] * m.m[2][2] - m.m[1][2] * m.m[2][0])
-		+ m.m[0][2] * (m.m[1][0] * m.m[2][1] - m.m[1][1] * m.m[2][0]);
-	return (det);
-}
-
-static t_mat4	inverse_submatrix(t_mat4 m, float det_inv)
-{
-	t_mat4	inv;
-
-	inv = mat4_identity();
-	inv.m[0][0] = (m.m[1][1] * m.m[2][2] - m.m[1][2] * m.m[2][1]) * det_inv;
-	inv.m[0][1] = -(m.m[0][1] * m.m[2][2] - m.m[0][2] * m.m[2][1]) * det_inv;
-	inv.m[0][2] = (m.m[0][1] * m.m[1][2] - m.m[0][2] * m.m[1][1]) * det_inv;
-	inv.m[1][0] = -(m.m[1][0] * m.m[2][2] - m.m[1][2] * m.m[2][0]) * det_inv;
-	inv.m[1][1] = (m.m[0][0] * m.m[2][2] - m.m[0][2] * m.m[2][0]) * det_inv;
-	inv.m[1][2] = -(m.m[0][0] * m.m[1][2] - m.m[0][2] * m.m[1][0]) * det_inv;
-	inv.m[2][0] = (m.m[1][0] * m.m[2][1] - m.m[1][1] * m.m[2][0]) * det_inv;
-	inv.m[2][1] = -(m.m[0][0] * m.m[2][1] - m.m[0][1] * m.m[2][0]) * det_inv;
-	inv.m[2][2] = (m.m[0][0] * m.m[1][1] - m.m[0][1] * m.m[1][0]) * det_inv;
-	return (inv);
-}
-
-/**
-
-	* @brief Build the inverse matrix with the affine transformation method (the fastest from my researchs).
- * First you extract the top left 3x3 matrix,
-	then compute the determinant of this A submatrix.
- * Checks if the matrix is invertible,
-	then invert the submatrix and in the end invert translation
- * TLDR :
- * the order to transform from object view to world is Transform -> Rotation z
-	-> R y -> R x -> Scale
- * and so the order to transform from world to object (inverse matrix) is Sc^-1
-	-> Rx^-1 -> Ry^-1 -> Rz^-1 -> Tr^-1
- *
- * @param m
- * @return
- */
-t_mat4	mat4_inverse(t_mat4 m)
-{
-	t_mat4	inv;
-	float	det;
-	float	det_inv;
-
-	det = compute_determinant(m);
-	if (fabsf(det) < 1e-8f)
-	{
-		return (mat4_identity());
-	}
-	det_inv = 1.0f / det;
-	inv = inverse_submatrix(m, det_inv);
-	m.m[0][3] = m.m[0][3];
-	m.m[1][3] = m.m[1][3];
-	m.m[2][3] = m.m[2][3];
-	inv.m[0][3] = -(inv.m[0][0] * m.m[0][3] + inv.m[0][1] * m.m[1][3]
-			+ inv.m[0][2] * m.m[2][3]);
-	inv.m[1][3] = -(inv.m[1][0] * m.m[0][3] + inv.m[1][1] * m.m[1][3]
-			+ inv.m[1][2] * m.m[2][3]);
-	inv.m[2][3] = -(inv.m[2][0] * m.m[0][3] + inv.m[2][1] * m.m[1][3]
-			+ inv.m[2][2] * m.m[2][3]);
-	return (inv);
-
-
 }

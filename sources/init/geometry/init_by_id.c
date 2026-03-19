@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:45:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/18 11:58:31 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:40:35 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ static void	init_ambl_line(char *line, t_scene *scene)
 	index = 0;
 	rgb = &scene->a_light.rgb;
 	scene->a_light.id = 'A';
-	scene->a_light.amb_ratio = ft_atof(line);
-	if (scene->a_light.amb_ratio > 1.0 || scene->a_light.amb_ratio < 0.0)
+	scene->a_light.ratio = ft_atof(line);
+	if (scene->a_light.ratio > 1.0 || scene->a_light.ratio < 0.0)
 		errno = ERANGE;
 	index = ft_isdouble(line, 0);
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);
-	assign_three_value(&rgb->red, &rgb->green, &rgb->blue, &scene->tmp);
-	if (rgb->red > 255 || rgb->red < 0)
+	assign_three_value(&rgb->rd, &rgb->grn, &rgb->blu, &scene->tmp);
+	if (rgb->rd > 255 || rgb->rd < 0)
 		errno = ERANGE;
-	if (rgb->green > 255 || rgb->green < 0)
+	if (rgb->grn > 255 || rgb->grn < 0)
 		errno = ERANGE;
-	if (rgb->blue > 255 || rgb->blue < 0)
+	if (rgb->blu > 255 || rgb->blu < 0)
 		errno = ERANGE;
 }
 
@@ -83,12 +83,12 @@ static void	init_light_line(char *line, t_scene *scene)
 	while (line[index] && ft_isspace(line[index]))
 		index++;
 	convert_three_value(scene, &line[index], false);
-	assign_three_value(&rgb->red, &rgb->green, &rgb->blue, &scene->tmp);
-	if (rgb->red > 255 || rgb->red < 0)
+	assign_three_value(&rgb->rd, &rgb->grn, &rgb->blu, &scene->tmp);
+	if (rgb->rd > 255 || rgb->rd < 0)
 		errno = ERANGE;
-	if (rgb->green > 255 || rgb->green < 0)
+	if (rgb->grn > 255 || rgb->grn < 0)
 		errno = ERANGE;
-	if (rgb->blue > 255 || rgb->blue < 0)
+	if (rgb->blu > 255 || rgb->blu < 0)
 		errno = ERANGE;
 }
 

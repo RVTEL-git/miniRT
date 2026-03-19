@@ -6,13 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:36:55 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/18 15:03:21 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 15:20:29 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-
-#define TASKBAR_HEIGHT 69
 
 static bool	init_window(t_global *minirt)
 {

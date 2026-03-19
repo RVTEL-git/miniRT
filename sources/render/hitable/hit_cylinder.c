@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 12:17:38 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/16 12:28:57 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:45:28 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,46 +74,51 @@ double	init_caps(t_obj *cy, t_ray ray, double ret)
 	return (ret);
 }
 
+t_equ	compute_cy_equ(t_obj *cy, t_ray ray)
+{
+	t_equ	ret;
+	t_vec3	oc;
+	t_proj	p;
+
+	oc = vec3_sub(ray.orig, cy->pos);
+	p.d_proj = vec3_dot(ray.dir, cy->v);
+	p.oc_proj = vec3_dot(oc, cy->v);
+	ret.a = vec3_dot(ray.dir, ray.dir) - p.d_proj * p.d_proj;
+	ret.b = 2.0 * (vec3_dot(oc, ray.dir) - p.oc_proj * p.d_proj);
+	ret.c = vec3_dot(oc, oc) - p.oc_proj * p.oc_proj - cy->rad * cy->rad;
+	return (ret);
+}
+
 // Caméra
 //   •───────────────────────► Rayon
 //   ↑                    ↑
 //   t=0               t=5.2  [Cylindre]
 //                            Intersection !
-	double  hit_cylinder(t_obj *cy, t_ray ray)
-	{
-	t_vec3	oc;
-	t_proj	p;
+double	hit_cylinder(t_obj *cy, t_ray ray)
+{
 	t_equ	equ;
-	double	delt;
+	t_equ	dsc;
 	double	t[2];
-	double	t_side;
-	double	t_caps;
 
-	oc = vec3_sub(ray.orig, cy->pos);
-	p.d_proj = vec3_dot(ray.dir, cy->v);
-	p.oc_proj = vec3_dot(oc, cy->v);
-	equ.a = vec3_dot(ray.dir, ray.dir) - p.d_proj * p.d_proj;
-	equ.b = 2.0 * (vec3_dot(oc, ray.dir) - p.oc_proj * p.d_proj);
-	equ.c = vec3_dot(oc, oc) - p.oc_proj * p.oc_proj - cy->rad * cy->rad;
-	t_side = -1.0;
+	equ = compute_cy_equ(cy, ray);
+	dsc.b = -1.0;
 	if (fabs(equ.a) > EPS)
 	{
-		delt = equ.b * equ.b - 4.0 * equ.a * equ.c;
-		if (delt >= 0.0)
+		dsc.a = equ.b * equ.b - 4.0 * equ.a * equ.c;
+		if (dsc.a >= 0.0)
 		{
-			t[0] = (-equ.b - sqrt(delt)) / (2.0 * equ.a);
-			t[1] = (-equ.b + sqrt(delt)) / (2.0 * equ.a);
+			t[0] = (-equ.b - sqrt(dsc.a)) / (2.0 * equ.a);
+			t[1] = (-equ.b + sqrt(dsc.a)) / (2.0 * equ.a);
 			if (t[0] > EPS && check_height(ray, cy, t[0]))
-				t_side = t[0];
+				dsc.b = t[0];
 			else if (t[1] > EPS && check_height(ray, cy, t[1]))
-				t_side = t[1];
+				dsc.b = t[1];
 		}
 	}
-	t_caps = init_caps(cy, ray, t_side);
-	if (t_side > EPS && t_caps > EPS)
-		return (fmin(t_side, t_caps));
-	if (t_side > EPS)
-		return (t_side);
-	return (t_caps);
+	dsc.c = init_caps(cy, ray, dsc.b);
+	if (dsc.b > EPS && dsc.c > EPS)
+		return (fmin(dsc.b, dsc.c));
+	if (dsc.b > EPS)
+		return (dsc.b);
+	return (dsc.c);
 }
-

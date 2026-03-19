@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:23:35 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/13 16:02:44 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:11:29 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	init_object(char *line, t_scene *scn, char *id)
 	if (!ft_strncmp(id, "cy", 2))
 		init_cy_obj(ob, line, &index);
 	convert_three_value(scn, &line[index], true);
-	assign_three_value(&ob->rgb.red, &ob->rgb.green, &ob->rgb.blue, &scn->tmp);
-	ft_check_limits(ob->rgb.red, ob->rgb.green, ob->rgb.blue, (double [2]){255, 0});
+	assign_three_value(&ob->rgb.rd, &ob->rgb.grn, &ob->rgb.blu, &scn->tmp);
+	ft_check_limits(ob->rgb.rd, ob->rgb.grn, ob->rgb.blu, (double [2]){255, 0});
 	ft_lstadd_back_obj(&scn->object, ob);
 }

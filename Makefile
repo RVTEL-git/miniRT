@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ratel <ratel@student.42.fr>                +#+  +:+       +#+         #
+#    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2026/03/16 19:17:17 by ratel            ###   ########.fr        #
+#    Updated: 2026/03/19 17:50:59 by barmarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,15 +53,19 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 REN_DIR = render
 HIT_DIR = hitable
 RGB_DIR = rgb
-REN = $(SRCS_DIR)/$(REN_DIR)/camera.c					\
-	  $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c		\
-	  $(SRCS_DIR)/$(REN_DIR)/render.c					\
-	  $(SRCS_DIR)/$(REN_DIR)/color_ray.c				\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c		\
-	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_obj.c		\
-	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color.c
+CAM_DIR = camera
+REN = $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/render.c						\
+	  $(SRCS_DIR)/$(REN_DIR)/render_utils.c						\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_sphere.c		\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_cylinder.c		\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_plane.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(HIT_DIR)/hit_obj.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/color_ray.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color_utils.c	\
+	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera_utils.c
 
 
 MATH_DIR = maths

@@ -6,13 +6,11 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:35:47 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/03 11:21:27 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/19 17:10:04 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-
-
 
 void	assign_three_value(double *fst, double *scn, double *thr, t_coor *tmp)
 {

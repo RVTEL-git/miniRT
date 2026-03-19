@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   obj_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ratel <ratel@student.42.fr>                +#+  +:+       +#+        */
+/*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:29:17 by barmarti          #+#    #+#             */
-/*   Updated: 2026/02/28 15:32:53 by ratel            ###   ########.fr       */
+/*   Updated: 2026/03/19 17:09:43 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ static void	ft_lstdelone_obj(t_obj *lst)
 	free(lst->id);
 	free(lst);
 }
-
 
 void	ft_lstclear_obj(t_obj *lst)
 {
