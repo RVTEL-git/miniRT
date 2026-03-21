@@ -6,11 +6,20 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 10:36:55 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/19 15:20:29 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/21 22:50:59 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+
+static void screen_sizing(t_mlx_data *d, t_global *minirt)
+{
+	if (mlx_get_screen_size(d->mlx_ptr, &d->width, &d->height) != 0)
+		ft_dprintf(2, "Warning\nUnexpected mlx render(mlx_get_screen)\n");
+	d->height -= TASKBAR_HEIGHT;
+	if (minirt->scene.fullscreen == false)
+		d->width = d->height;
+}
 
 static bool	init_window(t_global *minirt)
 {
@@ -23,9 +32,7 @@ static bool	init_window(t_global *minirt)
 		ft_dprintf(2, "Error\nmlx init failed\n");
 		return (false);
 	}
-	if (mlx_get_screen_size(d->mlx_ptr, &d->width, &d->height) != 0)
-		ft_dprintf(2, "Warning\nInexpected mlx render(mlx_get_screen)\n");
-	d->height -= TASKBAR_HEIGHT;
+	screen_sizing(d, minirt);
 	d->win_ptr = mlx_new_window(d->mlx_ptr, d->width, d->height, "minirt");
 	if (!d->win_ptr)
 	{

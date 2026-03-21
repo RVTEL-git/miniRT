@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:33:05 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/19 17:53:02 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/21 22:51:19 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ int	get_final_rgb(t_thread_data	*args, int x, int y)
 {
 	t_ray			ray;
 	t_hit_data		hit;
-	t_rgb			colors[30];
+	t_rgb			colors[DEFAULT_AA];
 	int				j;
+	int				nb_rays;
 
 	memset(&hit, 0, sizeof(hit));
 	j = 0;
-	while (j < 30)
+	nb_rays = 1;
+	if (args->scene->antialiasing == true)
+		nb_rays = DEFAULT_AA;
+	while (j < nb_rays)
 	{
 		ray = generate_ray(&args->scene->camera, (double)x, (double)y, j == 0);
 		hit_obj(ray, args->scene, &hit);

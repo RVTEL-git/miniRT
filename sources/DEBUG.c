@@ -78,3 +78,27 @@ void	print_struct(t_scene *scn)
 		print_light(scn->light);
 	print_obj(scn->object);
 }
+
+int	check_flags_debug(char **av)
+{
+	int	i;
+	int	f[2];
+	int	exit;
+
+	exit = 0;
+	i = 2;
+	f[0] = 0;
+	f[1] = 0;
+	while (av[i])
+	{
+		if (!ft_strcmp(av[i], "-fs"))
+			f[i - 2] = 1;
+		else if (!ft_strcmp(av[i], "-aa"))
+			f[i - 2] = 2;
+		else
+			return (1);
+		i++;
+	}
+	ft_printf("%d - %d", f[0], f[1]);
+	return (0);
+}

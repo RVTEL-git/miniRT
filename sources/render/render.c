@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/19 17:53:13 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/21 22:35:19 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	if (!create_mlx_image(mlx))
 		return ;
 	create_render_thread(scene, mlx);
-	printf("fini!!!!!\n");
+	printf("Image rendered, press h to show commands\n");
 }
 
 void	start_render(t_global *minirt)
