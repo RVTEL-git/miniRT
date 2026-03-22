@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mat4_operations.c                                  :+:      :+:    :+:   */
+/*   mat4_transform.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 01:58:37 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/19 17:28:26 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/22 23:37:48 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,23 +75,3 @@ t_mat4	mat4_rotate(double n, t_axis axis)
 	return (mat4_identity());
 }
 
-t_mat4	mat4_mult(t_mat4 a, t_mat4 b)
-{
-	t_mat4	m;
-	int		i;
-	int		j;
-
-	i = 0;
-	while (i < 4)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			m.m[i][j] = a.m[i][0] * b.m[0][j] + a.m[i][1] * b.m[1][j]
-				+ a.m[i][2] * b.m[2][j] + a.m[i][3] * b.m[3][j];
-			j++;
-		}
-		i++;
-	}
-	return (m);
-}

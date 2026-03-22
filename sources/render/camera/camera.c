@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:34:02 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/19 16:52:59 by barmarti         ###   ########.fr       */
+/*   Updated: 2026/03/22 23:03:48 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,20 @@ t_ray	generate_ray(t_cam *cm, double x, double y, bool fixed)
 	y += (randfrom(-0.5, 0.5) * !fixed) + (0.5 * fixed);
 	px = (2 * ((x) / cm->scrn_width) - 1) * cm->asp_ratio * cm->fov_scaled;
 	py = (1 - 2 * ((y) / cm->scrn_height)) * cm->fov_scaled;
-	ray.orig = mat4_apply(cm->trnsf, vec3_set(0, 0, 0));
+	ray.orig = mat4_apply_translation(cm->trnsf, vec3_set(0, 0, 0));
 	ray.dir = vec3_normalize \
-		(mat4_apply_translation(cm->trnsf, vec3_set(px, py, 1)));
+		(mat4_apply(cm->trnsf, vec3_set(px, py, 1)));
 	return (ray);
+}
+
+t_mat4	build_camera_matrix(t_cam *cam)
+{
+	t_vec3	orig;
+	t_vec3	dir;
+
+	orig = vec3_set(cam->pos.x, cam->pos.y, cam->pos.z);
+	dir = vec3_set(cam->look.x, cam->look.y, cam->look.z);
+	return (mat4_look_at(orig, dir));
 }
 
 t_cam	*init_camera(t_cam *cam, int width, int height)

@@ -6,13 +6,13 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 01:44:54 by egiraud           #+#    #+#             */
-/*   Updated: 2026/03/21 22:35:19 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/19 17:53:13 by barmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdatomic.h>
-#include <pthread.h>
 #include "minirt.h"
+#include <pthread.h>
+#include <stdatomic.h>
 
 void	*fill_zone(void *arg)
 {
@@ -34,7 +34,8 @@ void	*fill_zone(void *arg)
 		}
 		y++;
 	}
-	printf("thread: %d\n", atomic_fetch_add(args->counter, 1));
+	atomic_fetch_add(args->counter, 1);
+	// printf("thread: %d\n", atomic_fetch_add(args->counter, 1));
 	return (NULL);
 }
 
@@ -55,8 +56,8 @@ void	create_render_thread(t_scene *scene, t_mlx_data *mlx)
 		i++;
 	}
 	while (atomic_load(&cntr) < NB_THRDS)
-		mlx_put_image_to_window(mlx->mlx_ptr, \
-			mlx->win_ptr, mlx->img.img_ptr, 0, 0);
+		mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img.img_ptr, 0,
+			0);
 	i = 0;
 	while (i < NB_THRDS)
 	{
@@ -73,7 +74,8 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 	if (!create_mlx_image(mlx))
 		return ;
 	create_render_thread(scene, mlx);
-	printf("Image rendered, press h to show commands\n");
+	ft_printf("Image rendered, press h to show commands\nEsc \
+or cross to quit!\n");
 }
 
 void	start_render(t_global *minirt)

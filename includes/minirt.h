@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/21 22:49:36 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/22 23:25:39 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,22 @@
 # define NB_THRDS 24
 # define TASKBAR_HEIGHT 69
 # define DEFAULT_AA 67
+# define DEFAULT_ROT_ANG M_PI/6
+
+/*=== MESSAGES ===*/
+
 # define USAGE \
 	"Usage :\n\t./miniRT scene/<scene> [-fs] [-aa]\n\t-fs for \
 rendering on full screen and -aa to render with antialiasing so it's \
 smoother\n\n\tPress h when rendered to show commands and have fun !"
+# define COMMANDS \
+	"\n\tPress \"n\" and \"p\" to cycle between objects (next \
+or previous)\n\tPress \"t\" to go translation mode and \"r\" to go rotation\
+mode\n\tPress \"+\" to size up diameter and \"-\" to size down. For cylinders\
+\")\" to size up height and \"(\" to size down\n\tPress \"a\" or \"d\" to \
+apply selected transformation to axis X, \"w\" or \"s\" for axis Z \
+and \"q\" or \"e\" for axis Y.\n\tFinally press space to \
+re render!\n"
 
 /*=== STRUCTURES ===*/
 /*DATA*/
@@ -164,12 +176,19 @@ typedef struct s_specular
 	t_vec3			p_to_light;
 }					t_spec;
 
+typedef struct s_interface
+{
+	t_obj			*current_obj;
+	int				mode;
+}					t_interface;
+
 /*GLOBAAAAAL*/
 
 typedef struct s_global
 {
 	t_mlx_data		*mlx;
 	t_scene			scene;
+	t_interface		*interface;
 }					t_global;
 
 /*=== FUNCTIONS ===*/
@@ -210,8 +229,8 @@ bool				check_empty_line(char *line);
 
 /*RENDER*/
 
-int					get_final_rgb(t_thread_data *args, int x,
-						int y);
+void				render(t_scene *scene, t_mlx_data *mlx);
+int					get_final_rgb(t_thread_data *args, int x, int y);
 void				init_thrd_args(int i, t_scene *scene, t_mlx_data *mlx,
 						t_thread_data *args);
 void				start_render(t_global *minirt);
