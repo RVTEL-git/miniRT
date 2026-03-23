@@ -13,7 +13,7 @@
 #ifndef VECTOR_H
 # define VECTOR_H
 
-typedef struct s_vec3
+/*typedef struct s_vec3
 {
 	union
 	{
@@ -33,7 +33,32 @@ typedef struct s_vec3
 		double	blu;
 		double	c;
 	};
-}t_vec3;
+}t_vec3;*/
+
+typedef struct s_vec3
+{
+	union
+	{
+		struct
+		{
+			double x;
+			double y;
+			double z;
+		};
+		struct
+		{
+			double rd;
+			double grn;
+			double blu;
+		};
+		struct
+		{
+			double a;
+			double b;
+			double c;
+		};
+	};
+} t_vec3;
 
 typedef t_vec3	t_equ;
 typedef t_vec3	t_rgb;

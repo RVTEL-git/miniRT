@@ -38,7 +38,7 @@ The [books by Peter Shirley, Trevor David Black and Steve Hollasch](https://rayt
 Videos from the youtube channel [QuantitativeBytes](https://www.youtube.com/playlist?list=PL3WoIG-PLjSt54LvzY2SuBQDl-cXa11Tm) (what a nerd).  
 Also this serie of videos by [The Cherno](https://www.youtube.com/playlist?list=PLlrATfBNZ98edc5GshdBtREv5asFW3yXl)  
 Then a lot of articles for certain specific points like matrices with [this very usefull PDF](https://physique.cmaisonneuve.qc.ca/svezina/projet/ray_tracer/download/Conference-Le_ray_tracer-Les_calculs_matriciels_dans_le_ray_tracing.pdf) or [this StackOverflow discussion](https://stackoverflow.com/questions/2624422/efficient-4x4-matrix-inverse-affine-transform).  
-[This article](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-generating-camera-rays/generating-camera-rays.html) also for setup the camera was very usefull. 
+[This article](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-generating-camera-rays/generating-camera-rays.html) also for setup the camera was very usefull (the entire site is too). 
   
 We are also adept of talking with peers and getting help for notions we don't understand so shoutout to some other student like ldubois, acamargo and other !  
   

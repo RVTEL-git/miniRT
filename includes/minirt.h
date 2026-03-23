@@ -188,7 +188,7 @@ typedef struct s_global
 {
 	t_mlx_data		*mlx;
 	t_scene			scene;
-	t_interface		*interface;
+	t_interface		interface;
 }					t_global;
 
 /*=== FUNCTIONS ===*/
