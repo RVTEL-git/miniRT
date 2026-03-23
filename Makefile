@@ -66,8 +66,7 @@ REN = $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/color_ray.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color_utils.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera.c			\
-	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera_utils.c
+	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera.c			
 
 
 MATH_DIR = maths

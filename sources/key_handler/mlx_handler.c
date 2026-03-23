@@ -69,7 +69,7 @@ static void	translate_object(t_global *global, int keysym)
 		m = mat4_translate(0, 0, -1);
 	else if (keysym == XK_q)
 		m = mat4_translate(0, -1, 0);
-	else if (keysym == XK_e)
+	else
 		m = mat4_translate(0, 1, 0);
 	global->interface->current_obj->pos = mat4_apply_translation(m,
 			global->interface->current_obj->pos);
@@ -95,7 +95,7 @@ static void	rotate_object(t_global *global, int keysym)
 		r = mat4_rotate(DEFAULT_ROT_ANG, Z);
 	else if (keysym == XK_q)
 		r = mat4_rotate(-DEFAULT_ROT_ANG, Y);
-	else if (keysym == XK_e)
+	else
 		r = mat4_rotate(DEFAULT_ROT_ANG, Y);
 	tb = mat4_translate(obj->pos.x, obj->pos.y, obj->pos.z);
 	m = mat4_mult(tb, mat4_mult(r, to));
@@ -164,6 +164,7 @@ void	init_handler(t_global *minirt)
 
 	data = minirt->mlx;
 	interface.current_obj = minirt->scene.object;
+	interface.mode = 0;
 	mlx_hook(data->win_ptr, 17, 0, &close_mlx, minirt);
 	mlx_key_hook(data->win_ptr, &handle_input, minirt);
 }
