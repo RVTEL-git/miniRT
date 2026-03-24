@@ -14,6 +14,13 @@
 #include "matrices.h"
 #include "vector.h"
 
+/**
+ * @brief Build a look at matrix by processing first the axis based on normalized forward and the world up vector. From that build right and up then fill the matrix with the normalized axis vectors correctly, so that rays traced from the camera view are correctly materialized into world view
+ *
+ * @param orig Camera origin/point of view
+ * @param dir Towards where the camera is looking
+ * @return The built look at matrix
+ */
 t_mat4	mat4_look_at(t_vec3 orig, t_vec3 dir)
 {
 	t_vec3	forward;
@@ -30,16 +37,16 @@ t_mat4	mat4_look_at(t_vec3 orig, t_vec3 dir)
 	up = vec3_cross(forward, right);
 	m = mat4_identity();
 	m.m[0][0] = right.x;
-	m.m[0][1] = up.x;
-	m.m[0][2] = forward.x;
-	m.m[0][3] = orig.x;
 	m.m[1][0] = right.y;
-	m.m[1][1] = up.y;
-	m.m[1][2] = forward.y;
-	m.m[1][3] = orig.y;
 	m.m[2][0] = right.z;
+	m.m[0][1] = up.x;
+	m.m[1][1] = up.y;
 	m.m[2][1] = up.z;
+	m.m[0][2] = forward.x;
 	m.m[2][2] = forward.z;
+	m.m[1][2] = forward.y;
+	m.m[0][3] = orig.x;
+	m.m[1][3] = orig.y;
 	m.m[2][3] = orig.z;
 	return (m);
 }

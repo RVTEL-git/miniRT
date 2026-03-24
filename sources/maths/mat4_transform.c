@@ -28,11 +28,10 @@ t_mat4	mat4_translate(double x, double y, double z)
 {
 	t_mat4	m;
 
-	ft_memset(&m, 0, sizeof(t_mat4));
+	m = mat4_identity();
 	m.m[0][3] = x;
 	m.m[1][3] = y;
 	m.m[2][3] = z;
-	m.m[3][3] = 1.0;
 	return (m);
 }
 
@@ -47,7 +46,6 @@ t_mat4	mat4_scale(double x, double y, double z)
 	return (m);
 }
 
-// tout passer en comme z
 t_mat4	mat4_rotate(double n, t_axis axis)
 {
 	t_mat4	m;

@@ -23,48 +23,29 @@ void	print_status(t_global *data)
 %d,%d,%d\nTranformation Mode : Translation\n", obj->id, (int)obj->rgb.rd,
 			(int)obj->rgb.grn, (int)obj->rgb.blu);
 	else
-		ft_printf("Current Element : %s at \
-%d,%d,%d\nTranformation Mode : Rotation\n", obj->id, obj->rgb.rd,
-			obj->rgb.grn, obj->rgb.blu);
+		ft_printf("Current Element : %s color \
+%d,%d,%d\nTranformation Mode : Rotation\n", obj->id, (int)obj->rgb.rd,
+			(int)obj->rgb.grn, (int)obj->rgb.blu);
 }
 
 void	change_object(t_global *data, int keysym)
 {
-	t_obj	*obj;
-
-	obj = data->interface.current_obj;
 	if (keysym == XK_n)
 	{
-		obj = obj->next;
+		if (data->interface.current_obj->next)
+			data->interface.current_obj = data->interface.current_obj->next;
+		else
+			data->interface.current_obj = data->interface.first_obj;
 	}
 	else
 	{
-		obj = obj->prev;
+		if (data->interface.current_obj->prev)
+			data->interface.current_obj = data->interface.current_obj->prev;
+		else
+			data->interface.current_obj = ft_lstlast_obj(data->interface.current_obj);
 	}
 	print_status(data);
 }
-
-/*void	change_object(t_global *data, int keysym)
-{
-	t_obj	*obj;
-
-	obj = data->interface.current_obj;
-	if (keysym == XK_n)
-	{
-		if (obj->next)
-			obj = obj->next;
-		else
-			obj = data->interface.first_obj;
-	}
-	else
-	{
-		if (obj->prev)
-			obj = obj->prev;
-		else
-			obj = ft_lstlast_obj(obj);
-	}
-	print_status(data);
-}*/
 
 void	change_size(t_global *data, int keysym)
 {
@@ -119,13 +100,9 @@ static void	translate_object(t_global *global, int keysym)
 static void	rotate_object(t_global *global, int keysym)
 {
 	t_obj	*obj;
-	t_mat4	to;
-	t_mat4	tb;
 	t_mat4	r;
-	t_mat4	m;
 
 	obj = global->interface.current_obj;
-	to = mat4_translate(-obj->pos.x, -obj->pos.y, -obj->pos.z);
 	if (keysym == XK_a)
 		r = mat4_rotate(-DEFAULT_ROT_ANG, X);
 	else if (keysym == XK_d)
@@ -138,9 +115,7 @@ static void	rotate_object(t_global *global, int keysym)
 		r = mat4_rotate(-DEFAULT_ROT_ANG, Y);
 	else
 		r = mat4_rotate(DEFAULT_ROT_ANG, Y);
-	tb = mat4_translate(obj->pos.x, obj->pos.y, obj->pos.z);
-	m = mat4_mult(tb, mat4_mult(r, to));
-	obj->pos = mat4_apply_translation(m, obj->pos);
+	obj->v = mat4_apply(r, obj->v);
 	ft_printf("Object Rotated\n");
 }
 
@@ -176,6 +151,20 @@ int	close_mlx(t_global *data, int code)
 	exit(code);
 }
 
+static void change_transfo_mode(int keysym, t_global *data)
+{
+	if (keysym == XK_t)
+	{
+		data->interface.mode = 0;
+		print_status(data);
+	}
+	else if (keysym == XK_r)
+	{
+		data->interface.mode = 1;
+		print_status(data);
+	}
+}
+
 static int	handle_input(int keysym, t_global *data)
 {
 	//ft_printf("id2 %s\n", data->interface.current_obj->id);
@@ -186,9 +175,9 @@ static int	handle_input(int keysym, t_global *data)
 	else if (keysym == XK_n || keysym == XK_p)
 		change_object(data, keysym);
 	else if (keysym == XK_t)
-		data->interface.mode = 0;
+		change_transfo_mode(keysym, data);
 	else if (keysym == XK_r)
-		data->interface.mode = 1;
+		change_transfo_mode(keysym, data);
 	else if (keysym == XK_9 || keysym == XK_0
 		|| keysym == XK_equal || keysym == XK_minus)
 		change_size(data, keysym);
@@ -204,7 +193,7 @@ void	init_handler(t_global *minirt)
 {
 	t_mlx_data	*data;
 	t_interface	interface;
-
+	
 	data = minirt->mlx;
 	interface.first_obj = minirt->scene.object;
 	interface.current_obj = minirt->scene.object;
