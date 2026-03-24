@@ -12,6 +12,13 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Main render pipeline: Generate the pixel ray(s) with the help of
+ * the camera, then check for all primitives objects if the ray hit the objects,
+ * then get his rgb and do all the light calculations to get the final one 
+ *
+ * @return The final RGB of the pixel after all light compute
+ */
 int	get_final_rgb(t_thread_data	*args, int x, int y)
 {
 	t_ray			ray;
@@ -20,7 +27,7 @@ int	get_final_rgb(t_thread_data	*args, int x, int y)
 	int				j;
 	int				nb_rays;
 
-	memset(&hit, 0, sizeof(hit));
+	ft_memset(&hit, 0, sizeof(hit));
 	j = 0;
 	nb_rays = 1;
 	if (args->scene->antialiasing == true)
@@ -35,6 +42,9 @@ int	get_final_rgb(t_thread_data	*args, int x, int y)
 	return (sum_rgb(colors, j));
 }
 
+/**
+ * @brief Initialize threads data struct
+ */
 void	init_thrd_args(int i, t_scene *scene, t_mlx_data *mlx, \
 	t_thread_data *args)
 {

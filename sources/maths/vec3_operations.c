@@ -42,6 +42,9 @@ t_vec3	vec3_sub(t_vec3 a, t_vec3 b)
 	return (vec3);
 }
 
+/**
+ * @brief [french Produit Vectoriel] Similar to combine two vectors
+ */
 t_vec3	vec3_cross(t_vec3 a, t_vec3 b)
 {
 	t_vec3	vec3;
@@ -52,8 +55,9 @@ t_vec3	vec3_cross(t_vec3 a, t_vec3 b)
 	return (vec3);
 }
 
-// pas encore sur de l'utilisation
-// d'ailleurs transfo les doubles en double ?
+/**
+ * @brief [french Produit Scalaire] Take two vectors and return a double
+ */
 double	vec3_dot(t_vec3 a, t_vec3 b)
 {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);

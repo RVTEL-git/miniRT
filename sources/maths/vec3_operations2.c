@@ -12,13 +12,18 @@
 
 #include "minirt.h"
 
-//calcule la magnitude du vecteur (sa taille)
+/**
+ * @brief Calculate the magnitude of a vector (his lenght)
+ */
 double	vec3_magnitude(t_vec3 vec3)
 {
 	return (sqrt(vec3_dot(vec3, vec3)));
 }
 
-//normalise le vecteur en le rendant de magnitude 1
+/**
+ * @brief Get a vector that is identical to the one given in input except for 
+ * his norm that is set to 1
+ */
 t_vec3	vec3_normalize(t_vec3 vec3)
 {
 	double	mag;
@@ -31,21 +36,20 @@ t_vec3	vec3_normalize(t_vec3 vec3)
 	return (new);
 }
 
+/**
+ * @brief Calculate the distance between the two ends of two given vectors
+ */
 double	vec3_distance(t_vec3 a, t_vec3 b)
 {
 	return (sqrt(pow(b.x - a.x, 2) + pow(b.y - a.y, 2) + pow(b.z - a.z, 2)));
 }
 
+/**
+ * @brief Scale a vector with a given number
+ */
 t_vec3	vec3_scale(t_vec3 vec3, double n)
 {
 	t_vec3	new;
 
 	return (new = vec3_set(vec3.x * n, vec3.y * n, vec3.z * n));
-}
-
-void	vec3_print(char *message, t_vec3 print)
-{
-	printf("%s : 1 = %.1f\n", message, print.a);
-	printf("%s : 2 = %.1f\n", message, print.b);
-	printf("%s : 3 = %.1f\n", message, print.c);
 }

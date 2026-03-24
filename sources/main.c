@@ -12,6 +12,9 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Check which flags are used and toggle bools in struct
+ */
 static int	check_flags(char **av, t_global *global)
 {
 	int	i;
@@ -38,7 +41,6 @@ int	main(int ac, char **av)
 	{
 		ft_bzero(&minirt.scene, sizeof(t_scene));
 		ft_bzero(&minirt.mlx, sizeof(t_mlx_data));
-		//ft_bzero(&minirt.interface, sizeof(t_interface));
 		if (ac == 3 || ac == 4)
 			if (check_flags(av, &minirt) == 1)
 				return (ft_dprintf(2, "Error\nArguments or flags invalid\n%s",

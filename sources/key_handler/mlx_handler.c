@@ -76,7 +76,7 @@ void	change_size(t_global *data, int keysym)
 			ft_printf("Current Element is not a cylinder\n");
 }
 
-static void	translate_object(t_global *global, int keysym)
+void	translate_object(t_global *global, int keysym)
 {
 	t_mat4	m;
 
@@ -97,7 +97,7 @@ static void	translate_object(t_global *global, int keysym)
 	ft_printf("Object Moved\n");
 }
 
-static void	rotate_object(t_global *global, int keysym)
+void	rotate_object(t_global *global, int keysym)
 {
 	t_obj	*obj;
 	t_mat4	r;
@@ -135,6 +135,7 @@ void	apply_transformation(t_global *data, int keysym)
 		rotate_object(data, keysym);
 }
 
+//a move
 int	close_mlx(t_global *data, int code)
 {
 	t_mlx_data	*mlx;

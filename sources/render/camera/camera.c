@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include "minirt.h"
-#include "matrices.h"
-#include "vector.h"
 
 /**
- * @brief Build a look at matrix by processing first the axis based on normalized forward and the world up vector. From that build right and up then fill the matrix with the normalized axis vectors correctly, so that rays traced from the camera view are correctly materialized into world view
+ * @brief Build a look at matrix by processing first the axis based on 
+ * normalized forward and the world up vector. From that build right and up
+ * then fill the matrix with the normalized axis vectors correctly, so that
+ * rays traced from the camera view are correctly materialized into world view
  *
  * @param orig Camera origin/point of view
  * @param dir Towards where the camera is looking
@@ -51,7 +52,9 @@ t_mat4	mat4_look_at(t_vec3 orig, t_vec3 dir)
 	return (m);
 }
 
-/* generate a random floating point number from min to max */
+/**
+ * @brief Generate a random float between a min-max range 
+ */
 double	randfrom(double min, double max)
 {
 	double	range;
@@ -62,6 +65,13 @@ double	randfrom(double min, double max)
 	return (min + (rand() / div));
 }
 
+/**
+ * @brief Generate ray (an origin and a direction) from the pixel coords
+ * and using the camera look at matrix (camera->trnsf)
+ *
+ * @param fixed Random factor for anti-aliasing algo
+ * @return 
+ */
 t_ray	generate_ray(t_cam *cm, double x, double y, bool fixed)
 {
 	t_ray	ray;

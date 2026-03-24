@@ -40,21 +40,18 @@ static t_mat4	inverse_submatrix(t_mat4 m, float det_inv)
 }
 
 /**
-
-	* @brief Build the inverse matrix with the affine transformation method
-	(the fastest from my researchs).
+ * @brief Build the inverse matrix with the affine transformation method 
+ * (the fastest from my researchs).
  * First you extract the top left 3x3 matrix,
-	then compute the determinant of this A submatrix.
- * Checks if the matrix is invertible,
-	then invert the submatrix and in the end invert translation
+ * then compute the determinant of this A submatrix.
+ * Checks if the matrix is invertible, then invert the submatrix and in
+ * the end invert translation
+ * 
  * TLDR :
- * the order to transform from object view to world is Transform -> Rotation z
-	-> R y -> R x -> Scale
- * and so the order to transform from world to object (inverse matrix) is Sc^-1
-	-> Rx^-1 -> Ry^-1 -> Rz^-1 -> Tr^-1
- *
- * @param m
- * @return
+ * the order to transform from object view to world is 
+ * Transform -> Rotation z -> R y -> R x -> Scale
+ * and so the order to transform from world to object (inverse matrix) is 
+ * Sc^-1 -> Rx^-1 -> Ry^-1 -> Rz^-1 -> Tr^-1
  */
 t_mat4	mat4_inverse(t_mat4 m)
 {

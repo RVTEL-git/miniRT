@@ -14,6 +14,10 @@
 #include <pthread.h>
 #include <stdatomic.h>
 
+/**
+ * @brief Loop for each pixel of the thread's attributed screen zone and call 
+ * the function containing the main render pipeline
+ */
 void	*fill_zone(void *arg)
 {
 	t_thread_data	*args;
@@ -35,10 +39,13 @@ void	*fill_zone(void *arg)
 		y++;
 	}
 	atomic_fetch_add(args->counter, 1);
-	// printf("thread: %d\n", atomic_fetch_add(args->counter, 1));
 	return (NULL);
 }
 
+/**
+ * @brief Double loop to create threads then wait that all has finished 
+ * their routine to join them
+ */
 void	create_render_thread(t_scene *scene, t_mlx_data *mlx)
 {
 	int				i;
@@ -66,6 +73,10 @@ void	create_render_thread(t_scene *scene, t_mlx_data *mlx)
 	}
 }
 
+/**
+ * @brief Initialize camera, then call the function that will launch
+ * threads for multithreading 
+ */
 void	render(t_scene *scene, t_mlx_data *mlx)
 {
 	init_camera(&scene->camera, mlx->width, mlx->height);
@@ -78,6 +89,10 @@ void	render(t_scene *scene, t_mlx_data *mlx)
 or cross to quit!\n");
 }
 
+/**
+ * @brief Init what is needed for render, render one time then launch 
+ * mlx_loop that keep the window open and allow key hooks
+ */
 void	start_render(t_global *minirt)
 {
 	t_scene		scn;

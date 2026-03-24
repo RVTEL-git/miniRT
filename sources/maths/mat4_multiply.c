@@ -12,6 +12,9 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Multiply two matrices with each other, order is important! 
+ */
 t_mat4	mat4_mult(t_mat4 a, t_mat4 b)
 {
 	t_mat4	m;
@@ -49,7 +52,7 @@ t_vec3	mat4_apply_translation(t_mat4 m, t_vec3 p)
 
 /**
  * @brief Apply (multiply) the vector in the matrix so that I ignore 
- * translation for vectors like normals
+ * translation for vectors like normals or direction vectors
  */
 t_vec3	mat4_apply(t_mat4 m, t_vec3 v)
 {

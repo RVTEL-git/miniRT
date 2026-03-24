@@ -271,6 +271,12 @@ int					close_mlx(t_global *data, int code);
 bool				create_mlx_image(t_mlx_data *mlx);
 void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
+/* INPUT MANAGEMENT */
+
+void	translate_object(t_global *global, int keysym);
+void	rotate_object(t_global *global, int keysym);
+
+
 /*LIST*/
 
 t_obj				*ft_lstlast_obj(t_obj *lst);

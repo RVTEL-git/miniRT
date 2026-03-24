@@ -12,6 +12,9 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Build the "default" matrix
+ */
 t_mat4	mat4_identity(void)
 {
 	t_mat4	m;
@@ -24,6 +27,9 @@ t_mat4	mat4_identity(void)
 	return (m);
 }
 
+/**
+ * @brief Build a translation matrix (use for moving things)
+ */
 t_mat4	mat4_translate(double x, double y, double z)
 {
 	t_mat4	m;
@@ -35,6 +41,10 @@ t_mat4	mat4_translate(double x, double y, double z)
 	return (m);
 }
 
+/**
+ * @brief Build a scale matrix (use for modify size while
+ * keeping proportions - Homothety)
+ */
 t_mat4	mat4_scale(double x, double y, double z)
 {
 	t_mat4	m;
@@ -46,6 +56,9 @@ t_mat4	mat4_scale(double x, double y, double z)
 	return (m);
 }
 
+/**
+ * @brief Build a rotation matrix given an angle and the axis
+ */
 t_mat4	mat4_rotate(double n, t_axis axis)
 {
 	t_mat4	m;
