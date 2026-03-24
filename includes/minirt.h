@@ -44,6 +44,7 @@
 # define TASKBAR_HEIGHT 69
 # define DEFAULT_AA 67
 # define DEFAULT_ROT_ANG M_PI/6
+# define DEFAULT_SIZE_MOD 1
 
 /*=== MESSAGES ===*/
 
@@ -178,6 +179,7 @@ typedef struct s_specular
 
 typedef struct s_interface
 {
+	t_obj			*first_obj;
 	t_obj			*current_obj;
 	int				mode;
 }					t_interface;

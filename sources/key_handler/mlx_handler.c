@@ -19,46 +19,80 @@ void	print_status(t_global *data)
 
 	obj = data->interface.current_obj;
 	if (data->interface.mode == 0)
-		ft_printf("Current Element : %s at \
-			%f,%f,%f\nTranformation Mode : Translation\n", obj->id, obj->pos.x,
-			obj->pos.y, obj->pos.z);
+		ft_printf("Current Element : %s color \
+%d,%d,%d\nTranformation Mode : Translation\n", obj->id, (int)obj->rgb.rd,
+			(int)obj->rgb.grn, (int)obj->rgb.blu);
 	else
 		ft_printf("Current Element : %s at \
-			%f,%f,%f\nTranformation Mode : Rotation\n", obj->id, obj->pos.x,
-			obj->pos.y, obj->pos.z);
+%d,%d,%d\nTranformation Mode : Rotation\n", obj->id, obj->rgb.rd,
+			obj->rgb.grn, obj->rgb.blu);
 }
 
 void	change_object(t_global *data, int keysym)
 {
+	t_obj	*obj;
+
+	obj = data->interface.current_obj;
 	if (keysym == XK_n)
-		data->interface.current_obj = data->interface.current_obj->next;
+	{
+		obj = obj->next;
+	}
 	else
-		data->interface.current_obj = data->interface.current_obj->prev;
+	{
+		obj = obj->prev;
+	}
 	print_status(data);
 }
+
+/*void	change_object(t_global *data, int keysym)
+{
+	t_obj	*obj;
+
+	obj = data->interface.current_obj;
+	if (keysym == XK_n)
+	{
+		if (obj->next)
+			obj = obj->next;
+		else
+			obj = data->interface.first_obj;
+	}
+	else
+	{
+		if (obj->prev)
+			obj = obj->prev;
+		else
+			obj = ft_lstlast_obj(obj);
+	}
+	print_status(data);
+}*/
 
 void	change_size(t_global *data, int keysym)
 {
 	if (ft_strcmp(data->interface.current_obj->id, "cy")
-		|| ft_strcmp(data->interface.current_obj->id, "sp"))
+		&& ft_strcmp(data->interface.current_obj->id, "sp"))
 		return (ft_printf("Current Element is neither a cylinder or a sphere\n"),
 			print_status(data));
 	if (keysym == XK_minus)
-		data->interface.current_obj->diameter -= 1;
-	else if (keysym == XK_plus)
-		data->interface.current_obj->diameter += 1;
-	if (ft_strcmp(data->interface.current_obj->id, "cy"))
 	{
-		if (keysym == XK_parenleft)
-			data->interface.current_obj->height -= 1;
-		else if (keysym == XK_parenright)
-			data->interface.current_obj->height += 1;
+		data->interface.current_obj->diameter -= DEFAULT_SIZE_MOD;
+		ft_printf("Object size changed\n");
+	}
+	else if (keysym == XK_equal)
+	{
+		data->interface.current_obj->diameter += DEFAULT_SIZE_MOD;
+		ft_printf("Object size changed\n");
+	}
+	if (!ft_strcmp(data->interface.current_obj->id, "cy"))
+	{
+		if (keysym == XK_9)
+			data->interface.current_obj->height -= DEFAULT_SIZE_MOD;
+		else if (keysym == XK_0)
+			data->interface.current_obj->height += DEFAULT_SIZE_MOD;
+		ft_printf("Object size changed\n");
 	}
 	else
-	{
-		if (keysym == XK_parenright || keysym == XK_parenleft)
-			ft_printf("Current Element is not a cylinder");
-	}
+		if (keysym == XK_0 || keysym == XK_9)
+			ft_printf("Current Element is not a cylinder\n");
 }
 
 static void	translate_object(t_global *global, int keysym)
@@ -79,6 +113,7 @@ static void	translate_object(t_global *global, int keysym)
 		m = mat4_translate(0, 1, 0);
 	global->interface.current_obj->pos = mat4_apply_translation(m,
 			global->interface.current_obj->pos);
+	ft_printf("Object Moved\n");
 }
 
 static void	rotate_object(t_global *global, int keysym)
@@ -106,6 +141,7 @@ static void	rotate_object(t_global *global, int keysym)
 	tb = mat4_translate(obj->pos.x, obj->pos.y, obj->pos.z);
 	m = mat4_mult(tb, mat4_mult(r, to));
 	obj->pos = mat4_apply_translation(m, obj->pos);
+	ft_printf("Object Rotated\n");
 }
 
 void	apply_transformation(t_global *data, int keysym)
@@ -116,7 +152,7 @@ void	apply_transformation(t_global *data, int keysym)
 		ft_printf("Sphere cannot be rotated");
 		return ;
 	}
-	ft_printf("DEBUG transfo %s with mode %d", data->interface.current_obj->id,
+	ft_printf("DEBUG transfo %s with mode %d\n", data->interface.current_obj->id,
 		data->interface.mode);
 	if (data->interface.mode == 0)
 		translate_object(data, keysym);
@@ -153,8 +189,8 @@ static int	handle_input(int keysym, t_global *data)
 		data->interface.mode = 0;
 	else if (keysym == XK_r)
 		data->interface.mode = 1;
-	else if (keysym == XK_parenleft || keysym == XK_parenright
-		|| keysym == XK_plus || keysym == XK_minus)
+	else if (keysym == XK_9 || keysym == XK_0
+		|| keysym == XK_equal || keysym == XK_minus)
 		change_size(data, keysym);
 	else if (keysym == XK_q || keysym == XK_w || keysym == XK_e
 		|| keysym == XK_a || keysym == XK_s || keysym == XK_d)
@@ -170,6 +206,7 @@ void	init_handler(t_global *minirt)
 	t_interface	interface;
 
 	data = minirt->mlx;
+	interface.first_obj = minirt->scene.object;
 	interface.current_obj = minirt->scene.object;
 	interface.mode = 0;
 	minirt->interface = interface;
