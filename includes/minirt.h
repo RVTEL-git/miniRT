@@ -6,7 +6,7 @@
 /*   By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 10:48:12 by barmarti          #+#    #+#             */
-/*   Updated: 2026/03/22 23:25:39 by egiraud          ###   ########.fr       */
+/*   Updated: 2026/03/25 19:29:21 by egiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,22 @@
 
 # define NB_THRDS 24
 # define TASKBAR_HEIGHT 69
+/* Default number of rays launched per pixel for anti-aliasing*/
 # define DEFAULT_AA 67
-# define DEFAULT_ROT_ANG (M_PI / 6)
-# define DEFAULT_SIZE_MOD 1
+/* Default rotation angle currently equals Pi/6 */
+# define DEFAULT_ROT_ANG 0.52359877559 
+# define DEFAULT_SIZE_MOD 0.5
+
+/* Default values for specular coefficient calculation and shineness*/
+# define DEFAULT_KS 0.05
+# define DEFAULT_SN 100
 
 /*=== MESSAGES ===*/
 
-# define USAGE \
-	"Usage :\n\t./miniRT scene/<scene> [-fs] [-aa]\n\t-fs for \
+# define USAGE "Usage :\n\t./miniRT scene/<scene> [-fs] [-aa]\n\t-fs for \
 rendering on full screen and -aa to render with antialiasing so it's \
 smoother\n\n\tPress h when rendered to show commands and have fun !"
-# define COMMANDS \
-	"\n\tPress \"n\" and \"p\" to cycle between objects (next \
+# define COMMANDS "\n\tPress \"n\" and \"p\" to cycle between objects (next \
 or previous)\n\tPress \"t\" to go translation mode and \"r\" to go rotation\
 mode\n\tPress \"+\" to size up diameter and \"-\" to size down. For cylinders\
 \")\" to size up height and \"(\" to size down\n\tPress \"a\" or \"d\" to \
@@ -156,7 +160,7 @@ typedef struct s_ray
 	double			angle;
 	t_point			orig;
 	t_vec3			compute;
-} t_ray, t_normal;
+} t_ray,	t_normal;
 
 typedef struct s_hit_data
 {
@@ -256,7 +260,7 @@ t_rgb				init_specular(t_hit_data *hit, t_scene *scene);
 t_vec3				mat4_apply_translation(t_mat4 m, t_vec3 v);
 t_vec3				mat4_apply(t_mat4 m, t_vec3 p);
 t_mat4				mat4_look_at(t_vec3 orig, t_vec3 dir);
-t_mat4				build_camera_matrix(t_cam *cam);
+double				randfrom(double min, double max);
 
 /*COLOR*/
 
@@ -271,11 +275,14 @@ int					close_mlx(t_global *data, int code);
 bool				create_mlx_image(t_mlx_data *mlx);
 void				my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color);
 
-/* INPUT MANAGEMENT */
+/* TRANSFORM */
 
-void	translate_object(t_global *global, int keysym);
-void	rotate_object(t_global *global, int keysym);
-
+void				change_object(t_global *data, int keysym);
+void				apply_transformation(t_global *data, int keysym);
+void				translate_object(t_global *global, int keysym);
+void				rotate_object(t_global *global, int keysym);
+void				change_size(t_global *data, int keysym);
+void				print_status(t_global *data);
 
 /*LIST*/
 

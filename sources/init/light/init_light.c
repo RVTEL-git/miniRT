@@ -73,8 +73,8 @@ t_rgb	init_specular(t_hit_data *hit, t_scene *scene)
 	double	ndotl;
 	t_vec3	r;
 
-	spc.ks = 0.0001;
-	spc.shin = 180;
+	spc.ks = DEFAULT_KS;
+	spc.shin = DEFAULT_SN;
 	spc.p_to_light = vec3_normalize(vec3_sub(scene->light.point, hit->p));
 	spc.p_to_cam = vec3_normalize(vec3_sub(scene->camera.pos, hit->p));
 	ndotl = vec3_dot(hit->normal.compute, spc.p_to_light);

@@ -6,12 +6,12 @@
 #    By: barmarti <barmarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 10:46:18 by barmarti          #+#    #+#              #
-#    Updated: 2026/03/22 23:38:01 by egiraud          ###   ########.fr        #
+#    Updated: 2026/03/25 19:30:31 by egiraud          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = miniRT
 
@@ -51,6 +51,8 @@ INIT = $(SRCS_DIR)/$(INIT_DIR)/$(GEO_DIR)/init.c				\
 
 KEY_DIR = key_handler
 KEY = $(SRCS_DIR)/$(KEY_DIR)/mlx_handler.c	\
+	  $(SRCS_DIR)/$(KEY_DIR)/object_transform.c \
+	  $(SRCS_DIR)/$(KEY_DIR)/object_sizing.c
 
 REN_DIR = render
 HIT_DIR = hitable
@@ -66,7 +68,8 @@ REN = $(SRCS_DIR)/$(REN_DIR)/create_mlx_render.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/color_ray.c			\
 	  $(SRCS_DIR)/$(REN_DIR)/$(RGB_DIR)/get_color_utils.c	\
-	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera.c			
+	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera.c			\
+	  $(SRCS_DIR)/$(REN_DIR)/$(CAM_DIR)/camera_utils.c			
 
 
 MATH_DIR = maths

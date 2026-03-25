@@ -12,7 +12,7 @@
 
 #include "minirt.h"
 
-static void screen_sizing(t_mlx_data *d, t_global *minirt)
+static void	screen_sizing(t_mlx_data *d, t_global *minirt)
 {
 	if (mlx_get_screen_size(d->mlx_ptr, &d->width, &d->height) != 0)
 		ft_dprintf(2, "Warning\nUnexpected mlx render(mlx_get_screen)\n");
@@ -49,7 +49,7 @@ static bool	init_window(t_global *minirt)
 
 bool	init_mlx_struct(t_global *minirt)
 {
-	minirt->mlx = malloc(sizeof (t_mlx_data));
+	minirt->mlx = malloc(sizeof(t_mlx_data));
 	if (!minirt->mlx)
 		return (false);
 	if (!init_window(minirt))

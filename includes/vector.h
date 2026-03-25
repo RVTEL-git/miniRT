@@ -13,69 +13,47 @@
 #ifndef VECTOR_H
 # define VECTOR_H
 
-/*typedef struct s_vec3
-{
-	union
-	{
-		double	x;
-		double	rd;
-		double	a;
-	};
-	union
-	{
-		double	y;
-		double	grn;
-		double	b;
-	};
-	union
-	{
-		double	z;
-		double	blu;
-		double	c;
-	};
-}t_vec3;*/
-
 typedef struct s_vec3
 {
 	union
 	{
 		struct
 		{
-			double x;
-			double y;
-			double z;
+			double	x;
+			double	y;
+			double	z;
 		};
 		struct
 		{
-			double rd;
-			double grn;
-			double blu;
+			double	rd;
+			double	grn;
+			double	blu;
 		};
 		struct
 		{
-			double a;
-			double b;
-			double c;
+			double	a;
+			double	b;
+			double	c;
 		};
 	};
-} t_vec3;
+}					t_vec3;
 
-typedef t_vec3	t_equ;
-typedef t_vec3	t_rgb;
-typedef t_vec3	t_point;
-typedef t_vec3	t_coor;
+typedef t_vec3		t_equ;
+typedef t_vec3		t_rgb;
+typedef t_vec3		t_point;
+typedef t_vec3		t_coor;
 
 /* METHODES */
 
-t_vec3		vec3_set(double x, double y, double z);
-t_vec3		vec3_add(t_vec3 a, t_vec3 b);
-t_vec3		vec3_sub(t_vec3 a, t_vec3 b);
-t_vec3		vec3_cross(t_vec3 a, t_vec3 b);
-double		vec3_dot(t_vec3 a, t_vec3 b);
-double		vec3_magnitude(t_vec3 vec3);
-t_vec3		vec3_normalize(t_vec3 vec3);
-double		vec3_distance(t_vec3 a, t_vec3 b);
-t_vec3		vec3_scale(t_vec3 vec3, double n);
-void		vec3_print(char *message, t_vec3 print);
+t_vec3				vec3_set(double x, double y, double z);
+t_vec3				vec3_add(t_vec3 a, t_vec3 b);
+t_vec3				vec3_sub(t_vec3 a, t_vec3 b);
+t_vec3				vec3_cross(t_vec3 a, t_vec3 b);
+double				vec3_dot(t_vec3 a, t_vec3 b);
+double				vec3_magnitude(t_vec3 vec3);
+t_vec3				vec3_normalize(t_vec3 vec3);
+double				vec3_distance(t_vec3 a, t_vec3 b);
+t_vec3				vec3_scale(t_vec3 vec3, double n);
+void				vec3_print(char *message, t_vec3 print);
 
 #endif

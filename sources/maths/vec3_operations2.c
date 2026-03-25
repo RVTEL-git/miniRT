@@ -31,7 +31,7 @@ t_vec3	vec3_normalize(t_vec3 vec3)
 
 	mag = vec3_magnitude(vec3);
 	if (mag == 0)
-		ft_printf("flag normalising null vector");
+		ft_printf("A directional vector is NULL, check .rt file to fix\n");
 	new = vec3_set(vec3.x / mag, vec3.y / mag, vec3.z / mag);
 	return (new);
 }

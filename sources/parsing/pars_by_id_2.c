@@ -25,7 +25,6 @@ bool	check_spher_line(char *line)
 	int	index;
 	int	index_to_comp;
 
-	// printf("%s\n", line);
 	index_to_comp = three_follow_value(line, ',', true);
 	if (index_to_comp == 0)
 		return (false);

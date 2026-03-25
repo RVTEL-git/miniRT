@@ -55,6 +55,8 @@ void	clean_lst(t_gnl_list **list)
 	if (last->content[i] == '\n' && last->content[i + 1])
 	{
 		rem = dup_line(last->content + i + 1);
+		if (!rem)
+			return ;
 		n_node = new_node(rem);
 	}
 	free_lst(list, n_node, rem);

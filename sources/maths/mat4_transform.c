@@ -85,4 +85,3 @@ t_mat4	mat4_rotate(double n, t_axis axis)
 	}
 	return (mat4_identity());
 }
-

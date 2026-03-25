@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DEBUG.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egiraud <egiraud@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/25 19:22:24 by egiraud           #+#    #+#             */
+/*   Updated: 2026/03/25 19:22:26 by egiraud          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minirt.h"
 
-static void	print_amb(t_amb amb)
+/*static void	print_amb(t_amb amb)
 {
 	printf("====AMB====\n");
 	printf("id = %c\n", amb.id);
@@ -101,4 +113,4 @@ int	check_flags_debug(char **av)
 	}
 	ft_printf("%d - %d", f[0], f[1]);
 	return (0);
-}
+}*/
