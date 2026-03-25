@@ -1,0 +1,10 @@
+<map id="mat4_rotate" name="mat4_rotate">
+<area shape="rect" id="node1" title="Build a rotation matrix given an angle and the axis." alt="" coords="1091,5,1193,32"/>
+<area shape="rect" id="node2" href="$object__transform_8c.html#a5175457060d75ccc4235a6aab4644535" title="Apply rotation to current element." alt="" coords="935,5,1043,32"/>
+<area shape="rect" id="node3" href="$object__transform_8c.html#a05c17766e7f978d57b526431fbbc4d15" title="Distribute to the right transformation mode." alt="" coords="724,5,887,32"/>
+<area shape="rect" id="node4" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title="Main distribution input." alt="" coords="569,5,676,32"/>
+<area shape="rect" id="node5" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs." alt="" coords="423,5,521,32"/>
+<area shape="rect" id="node6" href="$sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" title=" " alt="" coords="275,5,375,32"/>
+<area shape="rect" id="node7" href="$sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" title=" " alt="" coords="108,5,227,32"/>
+<area shape="rect" id="node8" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,5,60,32"/>
+</map>

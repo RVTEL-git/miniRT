@@ -1,13 +1,13 @@
 <map id="s_global" name="s_global">
-<area shape="rect" id="node1" title=" " alt="" coords="333,291,409,317"/>
-<area shape="rect" id="node2" href="$structs__scene.html" title=" " alt="" coords="279,201,354,228"/>
-<area shape="rect" id="node3" href="$structt__obj.html" title=" " alt="" coords="95,111,149,137"/>
-<area shape="rect" id="node4" href="$structs__rgb.html" title=" " alt="" coords="49,5,107,32"/>
-<area shape="rect" id="node6" href="$structs__amb.html" title=" " alt="" coords="5,111,71,137"/>
-<area shape="rect" id="node5" href="$structs__vector3.html" title=" " alt="" coords="267,5,353,32"/>
-<area shape="rect" id="node7" href="$structs__cam.html" title=" " alt="" coords="399,111,463,137"/>
-<area shape="rect" id="node9" href="$structs__light.html" title=" " alt="" coords="231,111,296,137"/>
-<area shape="rect" id="node8" href="$structs__mat4.html" title=" " alt="" coords="417,5,488,32"/>
-<area shape="rect" id="node10" href="$structs__mlx__data.html" title=" " alt="" coords="439,201,536,228"/>
-<area shape="rect" id="node11" href="$structs__mlx__img.html" title=" " alt="" coords="487,111,581,137"/>
+<area shape="rect" id="node1" title=" " alt="" coords="424,320,500,347"/>
+<area shape="rect" id="node2" href="$structs__scene.html" title=" " alt="" coords="239,231,314,257"/>
+<area shape="rect" id="node3" href="$structs__vec3.html" title=" " alt="" coords="214,5,281,32"/>
+<area shape="rect" id="node4" href="$structt__obj.html" title=" " alt="" coords="304,125,359,152"/>
+<area shape="rect" id="node5" href="$structs__amb.html" title=" " alt="" coords="440,125,505,152"/>
+<area shape="rect" id="node6" href="$structs__cam.html" title=" " alt="" coords="47,125,111,152"/>
+<area shape="rect" id="node8" href="$structs__light.html" title=" " alt="" coords="215,125,280,152"/>
+<area shape="rect" id="node11" href="$structs__interface.html" title=" " alt="" coords="415,231,509,257"/>
+<area shape="rect" id="node7" href="$structs__mat4.html" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node9" href="$structs__mlx__data.html" title=" " alt="" coords="533,231,631,257"/>
+<area shape="rect" id="node10" href="$structs__mlx__img.html" title=" " alt="" coords="535,125,629,152"/>
 </map>

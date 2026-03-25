@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Get a vector that is identical to the one given in input except for his norm that is set to 1.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-228.5 0,-247.5 94,-247.5 94,-228.5 0,-228.5"/>
 <text text-anchor="middle" x="47" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">vec3_normalize</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" target="_top" xlink:title=" ">
+<g id="a_node23"><a xlink:href="vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" target="_top" xlink:title="Calculate the magnitude of a vector (his lenght)">
 <polygon fill="none" stroke="black" points="130,-228.5 130,-247.5 228,-247.5 228,-228.5 130,-228.5"/>
 <text text-anchor="middle" x="179" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">vec3_magnitude</text>
 </a>
@@ -431,7 +431,7 @@
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" target="_top" xlink:title=" ">
+<g id="a_node24"><a xlink:href="vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" target="_top" xlink:title="[french Produit Scalaire] Take two vectors and return a double">
 <polygon fill="none" stroke="black" points="264,-228.5 264,-247.5 325,-247.5 325,-228.5 264,-228.5"/>
 <text text-anchor="middle" x="294.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">vec3_dot</text>
 </a>

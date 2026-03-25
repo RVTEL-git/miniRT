@@ -1,0 +1,16 @@
+<map id="mat4_apply" name="mat4_apply">
+<area shape="rect" id="node1" title="Apply (multiply) the vector in the matrix so that I ignore translation for vectors like normals or di..." alt="" coords="1569,31,1668,57"/>
+<area shape="rect" id="node2" href="$camera_8c.html#a5ab04c162093782b2214199fe12ca1d3" title="Generate ray (an origin and a direction) from the pixel coords and using the camera look at matrix (c..." alt="" coords="1413,5,1521,32"/>
+<area shape="rect" id="node13" href="$object__transform_8c.html#a5175457060d75ccc4235a6aab4644535" title="Apply rotation to current element." alt="" coords="1413,56,1521,83"/>
+<area shape="rect" id="node3" href="$render__utils_8c.html#a2d32ca42d56eb4817e3a8a11880fc5eb" title="Main render pipeline: Generate the pixel ray(s) with the help of the camera, then check for all primi..." alt="" coords="1259,5,1365,32"/>
+<area shape="rect" id="node4" href="$render_8c.html#a8d502f25e96569571d0812dbd97b2b0a" title="Loop for each pixel of the thread&#39;s attributed screen zone and call the function containing the main ..." alt="" coords="1091,5,1167,32"/>
+<area shape="rect" id="node5" href="$render_8c.html#af2758997c21f106f775a924608795847" title="Double loop to create threads then wait that all has finished their routine to join them." alt="" coords="839,5,1000,32"/>
+<area shape="rect" id="node6" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title="Initialize camera, then call the function that will launch threads for multithreading." alt="" coords="727,5,791,32"/>
+<area shape="rect" id="node7" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title="Main distribution input." alt="" coords="572,56,679,83"/>
+<area shape="rect" id="node12" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title="Init what is needed for render, render one time then launch mlx_loop that keep the window open and al..." alt="" coords="423,5,524,32"/>
+<area shape="rect" id="node8" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs." alt="" coords="424,56,523,83"/>
+<area shape="rect" id="node9" href="$sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" title=" " alt="" coords="275,56,375,83"/>
+<area shape="rect" id="node10" href="$sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" title=" " alt="" coords="108,56,227,83"/>
+<area shape="rect" id="node11" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node14" href="$object__transform_8c.html#a05c17766e7f978d57b526431fbbc4d15" title="Distribute to the right transformation mode." alt="" coords="1048,56,1211,83"/>
+</map>

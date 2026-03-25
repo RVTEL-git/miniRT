@@ -1,4 +1,10 @@
 <map id="init_camera" name="init_camera">
-<area shape="rect" id="node1" title=" " alt="" coords="117,5,216,32"/>
-<area shape="rect" id="node2" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title=" " alt="" coords="5,5,69,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="839,31,937,57"/>
+<area shape="rect" id="node2" href="$render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" title="Initialize camera, then call the function that will launch threads for multithreading." alt="" coords="727,31,791,57"/>
+<area shape="rect" id="node3" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title="Main distribution input." alt="" coords="572,5,679,32"/>
+<area shape="rect" id="node8" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title="Init what is needed for render, render one time then launch mlx_loop that keep the window open and al..." alt="" coords="423,56,524,83"/>
+<area shape="rect" id="node4" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs." alt="" coords="424,5,523,32"/>
+<area shape="rect" id="node5" href="$sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" title=" " alt="" coords="275,5,375,32"/>
+<area shape="rect" id="node6" href="$sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" title=" " alt="" coords="108,5,227,32"/>
+<area shape="rect" id="node7" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,31,60,57"/>
 </map>

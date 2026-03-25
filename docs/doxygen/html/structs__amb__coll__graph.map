@@ -1,4 +1,4 @@
 <map id="s_amb" name="s_amb">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,71,121"/>
-<area shape="rect" id="node2" href="$structs__rgb.html" title=" " alt="" coords="9,5,67,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="6,95,71,121"/>
+<area shape="rect" id="node2" href="$structs__vec3.html" title=" " alt="" coords="5,5,72,32"/>
 </map>

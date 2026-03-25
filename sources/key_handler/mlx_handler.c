@@ -12,6 +12,10 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Display info about the currently selected element and 
+ * transformation mode
+ */
 void	print_status(t_global *data)
 {
 	t_obj	*obj;
@@ -25,22 +29,6 @@ void	print_status(t_global *data)
 		ft_printf("Current Element : %s color \
 %d,%d,%d\nTranformation Mode : Rotation\n", obj->id, (int)obj->rgb.rd,
 			(int)obj->rgb.grn, (int)obj->rgb.blu);
-}
-
-int	close_mlx(t_global *data, int code)
-{
-	t_mlx_data	*mlx;
-
-	mlx = data->mlx;
-	ft_lstclear_obj(data->scene.object);
-	if (mlx->img.img_ptr)
-		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
-	if (mlx->win_ptr)
-		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
-	mlx_destroy_display(mlx->mlx_ptr);
-	free(mlx->mlx_ptr);
-	free(mlx);
-	exit(code);
 }
 
 static void	change_transfo_mode(int keysym, t_global *data)
@@ -57,6 +45,9 @@ static void	change_transfo_mode(int keysym, t_global *data)
 	}
 }
 
+/**
+ * @brief Main distribution input
+ */
 static int	handle_input(int keysym, t_global *data)
 {
 	if (keysym == XK_Escape)
@@ -80,6 +71,26 @@ static int	handle_input(int keysym, t_global *data)
 	return (0);
 }
 
+int	close_mlx(t_global *data, int code)
+{
+	t_mlx_data	*mlx;
+
+	mlx = data->mlx;
+	ft_lstclear_obj(data->scene.object);
+	if (mlx->img.img_ptr)
+		mlx_destroy_image(mlx->mlx_ptr, mlx->img.img_ptr);
+	if (mlx->win_ptr)
+		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
+	mlx_destroy_display(mlx->mlx_ptr);
+	free(mlx->mlx_ptr);
+	free(mlx);
+	exit(code);
+}
+
+/**
+ * @brief Initialise mlx_data struct and interface, then call key hooks so 
+ * that they wait for user inputs 
+ */
 void	init_handler(t_global *minirt)
 {
 	t_mlx_data	*data;

@@ -1,0 +1,12 @@
+<map id="s_thread_data" name="s_thread_data">
+<area shape="rect" id="node1" title=" " alt="" coords="250,305,365,332"/>
+<area shape="rect" id="node2" href="$structs__scene.html" title=" " alt="" coords="215,216,290,243"/>
+<area shape="rect" id="node3" href="$structs__vec3.html" title=" " alt="" coords="151,5,218,32"/>
+<area shape="rect" id="node4" href="$structt__obj.html" title=" " alt="" coords="353,125,408,152"/>
+<area shape="rect" id="node5" href="$structs__amb.html" title=" " alt="" coords="5,125,71,152"/>
+<area shape="rect" id="node6" href="$structs__cam.html" title=" " alt="" coords="265,125,329,152"/>
+<area shape="rect" id="node8" href="$structs__light.html" title=" " alt="" coords="175,125,240,152"/>
+<area shape="rect" id="node7" href="$structs__mat4.html" title=" " alt="" coords="340,5,411,32"/>
+<area shape="rect" id="node9" href="$structs__mlx__data.html" title=" " alt="" coords="404,216,501,243"/>
+<area shape="rect" id="node10" href="$structs__mlx__img.html" title=" " alt="" coords="490,125,583,152"/>
+</map>

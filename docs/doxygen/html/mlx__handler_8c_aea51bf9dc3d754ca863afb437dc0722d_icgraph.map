@@ -1,0 +1,12 @@
+<map id="print_status" name="print_status">
+<area shape="rect" id="node1" title="Display info about the currently selected element and transformation mode." alt="" coords="1103,68,1201,95"/>
+<area shape="rect" id="node2" href="$object__transform_8c.html#ac719caec6d45ed4e1b663bd61c907f0b" title="Cycle between all element in the list, in a circular way." alt="" coords="724,5,840,32"/>
+<area shape="rect" id="node8" href="$object__sizing_8c.html#aa0d7a0b7ce16f7f836a08263019b827d" title="Change diameter or height size depending of the object type." alt="" coords="731,68,833,95"/>
+<area shape="rect" id="node9" href="$mlx__handler_8c.html#a52e3d2c49463307084b3fea175e0c7d0" title=" " alt="" coords="888,144,1055,171"/>
+<area shape="rect" id="node10" href="$object__sizing_8c.html#acb1e8d1f3c0bdbe163cfc16dc66699a1" title=" " alt="" coords="932,93,1011,120"/>
+<area shape="rect" id="node3" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title="Main distribution input." alt="" coords="569,68,676,95"/>
+<area shape="rect" id="node4" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs." alt="" coords="423,68,521,95"/>
+<area shape="rect" id="node5" href="$sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" title=" " alt="" coords="275,68,375,95"/>
+<area shape="rect" id="node6" href="$sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" title=" " alt="" coords="108,68,227,95"/>
+<area shape="rect" id="node7" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,68,60,95"/>
+</map>

@@ -92,6 +92,9 @@ static void	size_sph(t_global *data, int keysym)
 	}
 }
 
+/**
+ * @brief Change diameter or height size depending of the object type 
+ */
 void	change_size(t_global *data, int keysym)
 {
 	if (!ft_strcmp(data->interface.current_obj->id, "cy"))

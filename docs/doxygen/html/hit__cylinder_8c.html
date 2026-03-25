@@ -112,6 +112,12 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a11befb1cd2037ef93b6ae5f0fcddd18d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d">check_height</a> (<a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, <a class="el" href="structt__obj.html">t_obj</a> *cy, double ret)</td></tr>
 <tr class="separator:a11befb1cd2037ef93b6ae5f0fcddd18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8391ea11762717f81f58073a9f575bcb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__cylinder_8c.html#a8391ea11762717f81f58073a9f575bcb">hit_cap</a> (<a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> centre, <a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> normal, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, double rad)</td></tr>
+<tr class="separator:a8391ea11762717f81f58073a9f575bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50032f8660b76dac954d9b5b3cf53f4e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__cylinder_8c.html#a50032f8660b76dac954d9b5b3cf53f4e">init_caps</a> (<a class="el" href="structt__obj.html">t_obj</a> *cy, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, double ret)</td></tr>
+<tr class="separator:a50032f8660b76dac954d9b5b3cf53f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a6f13b9bdb4a45a1711321904baf6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a2c2d1b78a4a27f517212510146ed4894">t_equ</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__cylinder_8c.html#a04a6f13b9bdb4a45a1711321904baf6e">compute_cy_equ</a> (<a class="el" href="structt__obj.html">t_obj</a> *cy, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray)</td></tr>
+<tr class="separator:a04a6f13b9bdb4a45a1711321904baf6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92832e32f760612be362db5d2d527915"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__cylinder_8c.html#a92832e32f760612be362db5d2d527915">hit_cylinder</a> (<a class="el" href="structt__obj.html">t_obj</a> *cy, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray)</td></tr>
 <tr class="separator:a92832e32f760612be362db5d2d527915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -173,12 +179,105 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a11befb1cd2037ef93b6ae5f0fcddd18d_cgraph.svg" width="390" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a11befb1cd2037ef93b6ae5f0fcddd18d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a11befb1cd2037ef93b6ae5f0fcddd18d_icgraph.svg" width="492" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a11befb1cd2037ef93b6ae5f0fcddd18d_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a04a6f13b9bdb4a45a1711321904baf6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a6f13b9bdb4a45a1711321904baf6e">&#9670;&nbsp;</a></span>compute_cy_equ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector_8h.html#a2c2d1b78a4a27f517212510146ed4894">t_equ</a> compute_cy_equ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a04a6f13b9bdb4a45a1711321904baf6e_cgraph.svg" width="274" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a04a6f13b9bdb4a45a1711321904baf6e_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8391ea11762717f81f58073a9f575bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8391ea11762717f81f58073a9f575bcb">&#9670;&nbsp;</a></span>hit_cap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double hit_cap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>centre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>normal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a8391ea11762717f81f58073a9f575bcb_cgraph.svg" width="371" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a8391ea11762717f81f58073a9f575bcb_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -212,12 +311,59 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a92832e32f760612be362db5d2d527915_cgraph.svg" width="536" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a92832e32f760612be362db5d2d527915_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a92832e32f760612be362db5d2d527915_icgraph.svg" width="336" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a92832e32f760612be362db5d2d527915_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a50032f8660b76dac954d9b5b3cf53f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50032f8660b76dac954d9b5b3cf53f4e">&#9670;&nbsp;</a></span>init_caps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double init_caps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ret</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a50032f8660b76dac954d9b5b3cf53f4e_cgraph.svg" width="499" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__cylinder_8c_a50032f8660b76dac954d9b5b3cf53f4e_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 

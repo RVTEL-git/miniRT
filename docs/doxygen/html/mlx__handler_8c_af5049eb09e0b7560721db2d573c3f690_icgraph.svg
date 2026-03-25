@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs.">
 <polygon fill="#bfbfbf" stroke="black" points="313,-0.5 313,-19.5 387,-19.5 387,-0.5 313,-0.5"/>
 <text text-anchor="middle" x="350" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_handler</text>
 </a>

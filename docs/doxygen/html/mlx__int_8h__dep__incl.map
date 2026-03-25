@@ -42,11 +42,11 @@
 <area shape="rect" id="node41" href="$init__by__id__utils_8c.html" title=" " alt="" coords="6185,199,6349,240"/>
 <area shape="rect" id="node42" href="$init__by__id__utils__2_8c.html" title=" " alt="" coords="6373,199,6537,240"/>
 <area shape="rect" id="node43" href="$init__utils_8c.html" title=" " alt="" coords="6561,199,6725,240"/>
-<area shape="rect" id="node44" href="$mlx__handler_8c.html" title=" " alt="" coords="6749,199,6904,240"/>
-<area shape="rect" id="node45" href="$sources_2init_2mlx_2mlx__init_8c.html" title=" " alt="" coords="6928,199,7083,240"/>
-<area shape="rect" id="node46" href="$obj__list_8c.html" title=" " alt="" coords="7107,206,7266,233"/>
-<area shape="rect" id="node47" href="$sources_2main_8c.html" title=" " alt="" coords="7291,206,7411,233"/>
-<area shape="rect" id="node48" href="$get__normal_8c.html" title=" " alt="" coords="7435,206,7642,233"/>
-<area shape="rect" id="node49" href="$mat4__operations_8c.html" title=" " alt="" coords="7667,199,7821,240"/>
-<area shape="rect" id="node50" href="$vec3__operations_8c.html" title=" " alt="" coords="7845,199,7997,240"/>
+<area shape="rect" id="node44" href="$init__light_8c.html" title=" " alt="" coords="6749,199,6880,240"/>
+<area shape="rect" id="node45" href="$sources_2init_2mlx_2mlx__init_8c.html" title=" " alt="" coords="6904,199,7059,240"/>
+<area shape="rect" id="node46" href="$mlx__handler_8c.html" title=" " alt="" coords="7083,199,7237,240"/>
+<area shape="rect" id="node47" href="$object__sizing_8c.html" title=" " alt="" coords="7261,199,7416,240"/>
+<area shape="rect" id="node48" href="$object__transform_8c.html" title=" " alt="" coords="7440,199,7595,240"/>
+<area shape="rect" id="node49" href="$obj__list_8c.html" title=" " alt="" coords="7619,206,7778,233"/>
+<area shape="rect" id="node50" href="$sources_2main_8c.html" title=" " alt="" coords="7803,206,7923,233"/>
 </map>

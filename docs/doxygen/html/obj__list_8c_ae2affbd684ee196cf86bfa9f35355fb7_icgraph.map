@@ -4,8 +4,8 @@
 <area shape="rect" id="node3" href="$mlx__handler_8c.html#a89aaf8451f52c377da9668e037e4ca81" title=" " alt="" coords="802,81,890,108"/>
 <area shape="rect" id="node8" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,132,60,159"/>
 <area shape="rect" id="node9" href="$manage__error_8c.html#aa1a012266e54f8b24b1b1e33fe61ad96" title=" " alt="" coords="763,208,929,235"/>
-<area shape="rect" id="node4" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title=" " alt="" coords="591,5,698,32"/>
-<area shape="rect" id="node5" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title=" " alt="" coords="425,56,524,83"/>
+<area shape="rect" id="node4" href="$mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" title="Main distribution input." alt="" coords="591,5,698,32"/>
+<area shape="rect" id="node5" href="$mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs." alt="" coords="425,56,524,83"/>
 <area shape="rect" id="node6" href="$sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" title=" " alt="" coords="275,56,375,83"/>
 <area shape="rect" id="node7" href="$sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" title=" " alt="" coords="108,56,227,83"/>
 <area shape="rect" id="node10" href="$init_8c.html#abd340417bb5b18b52228a304625f9ef7" title="get the id of the element, then use it to store the datas in the correct struct" alt="" coords="605,208,684,235"/>

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 513;
+var viewWidth = 975;
 var viewHeight = 218;
 var sectionId = 'dynsection-15';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-15';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="408,-95.5 408,-114.5 505,-114.5 505,-95.5 408,-95.5"/>
-<text text-anchor="middle" x="456.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_new_image</text>
+<polygon fill="#bfbfbf" stroke="black" points="870,-95.5 870,-114.5 967,-114.5 967,-95.5 870,-95.5"/>
+<text text-anchor="middle" x="918.5" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_new_image</text>
 </a>
 </g>
 </g>
@@ -67,166 +67,238 @@ var sectionId = 'dynsection-15';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="create__mlx__render_8c.html#a05d95c3d579a903650bd4aaae16a3f91" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="256,-152.5 256,-171.5 363,-171.5 363,-152.5 256,-152.5"/>
-<text text-anchor="middle" x="309.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">create_mlx_image</text>
+<polygon fill="none" stroke="black" points="718,-152.5 718,-171.5 825,-171.5 825,-152.5 718,-152.5"/>
+<text text-anchor="middle" x="771.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">create_mlx_image</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M426.92,-119.1C410.97,-126.69 390.62,-135.92 372,-143 363.12,-146.38 353.36,-149.6 344.28,-152.41"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="428.73,-122.11 436.23,-114.62 425.7,-115.8 428.73,-122.11"/>
-</g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="289,-114.5 289,-133.5 330,-133.5 330,-114.5 289,-114.5"/>
-<text text-anchor="middle" x="309.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M397.52,-112.6C373.57,-115.74 347.41,-119.16 330.09,-121.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="398.16,-116.04 407.62,-111.27 397.25,-109.1 398.16,-116.04"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="mlx__xpm_8c.html#a871782ccd80945a2c6d2ae8a3e815bee" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="253,-76.5 253,-95.5 366,-95.5 366,-76.5 253,-76.5"/>
-<text text-anchor="middle" x="309.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_int_parse_xpm</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M397.46,-97.39C387.13,-96.04 376.39,-94.63 366.12,-93.29"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="397.25,-100.9 407.62,-98.73 398.16,-93.96 397.25,-100.9"/>
+<path fill="none" stroke="midnightblue" d="M888.92,-119.1C872.97,-126.69 852.62,-135.92 834,-143 825.12,-146.38 815.36,-149.6 806.28,-152.41"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="890.73,-122.11 898.23,-114.62 887.7,-115.8 890.73,-122.11"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="mlx__lib__xpm_8c.html#a5849ab9e0b0141f7963946b6010112f4" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="247,-38.5 247,-57.5 372,-57.5 372,-38.5 247,-38.5"/>
-<text text-anchor="middle" x="309.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_int_xpm_f_image</text>
+<g id="a_node10"><a xlink:href="includes_2minilibx-linux_2test_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="751,-114.5 751,-133.5 792,-133.5 792,-114.5 751,-114.5"/>
+<text text-anchor="middle" x="771.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
+<g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M426.92,-90.9C410.97,-83.31 390.62,-74.08 372,-67 363.12,-63.62 353.36,-60.4 344.28,-57.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="425.7,-94.2 436.23,-95.38 428.73,-87.89 425.7,-94.2"/>
+<path fill="none" stroke="midnightblue" d="M859.52,-112.6C835.57,-115.74 809.41,-119.16 792.09,-121.43"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="860.16,-116.04 869.62,-111.27 859.25,-109.1 860.16,-116.04"/>
+</g>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="mlx__xpm_8c.html#a871782ccd80945a2c6d2ae8a3e815bee" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="715,-76.5 715,-95.5 828,-95.5 828,-76.5 715,-76.5"/>
+<text text-anchor="middle" x="771.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_int_parse_xpm</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node11 -->
+<g id="edge12" class="edge">
+<title>Node1&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M859.46,-97.39C849.13,-96.04 838.39,-94.63 828.12,-93.29"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="859.25,-100.9 869.62,-98.73 860.16,-93.96 859.25,-100.9"/>
+</g>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="mlx__lib__xpm_8c.html#a5849ab9e0b0141f7963946b6010112f4" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="709,-38.5 709,-57.5 834,-57.5 834,-38.5 709,-38.5"/>
+<text text-anchor="middle" x="771.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_int_xpm_f_image</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge15" class="edge">
+<title>Node1&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M888.92,-90.9C872.97,-83.31 852.62,-74.08 834,-67 825.12,-63.62 815.36,-60.4 806.28,-57.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="887.7,-94.2 898.23,-95.38 890.73,-87.89 887.7,-94.2"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="120,-190.5 120,-209.5 168,-209.5 168,-190.5 120,-190.5"/>
-<text text-anchor="middle" x="144" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">render</text>
+<g id="a_node3"><a xlink:href="render_8c.html#a58819fe9e35a8bb7e462c16c041a375a" target="_top" xlink:title="Initialize camera, then call the function that will launch threads for multithreading.">
+<polygon fill="none" stroke="black" points="582,-190.5 582,-209.5 630,-209.5 630,-190.5 582,-190.5"/>
+<text text-anchor="middle" x="606" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">render</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M257.37,-173.88C227.46,-180.84 191.15,-189.27 168.06,-194.64"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="258.29,-177.26 267.24,-171.59 256.71,-170.44 258.29,-177.26"/>
+<path fill="none" stroke="midnightblue" d="M719.37,-173.88C689.46,-180.84 653.15,-189.27 630.06,-194.64"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="720.29,-177.26 729.24,-171.59 718.71,-170.44 720.29,-177.26"/>
+</g>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" target="_top" xlink:title="Init what is needed for render, render one time then launch mlx_loop that keep the window open and al...">
+<polygon fill="none" stroke="black" points="425,-152.5 425,-171.5 501,-171.5 501,-152.5 425,-152.5"/>
+<text text-anchor="middle" x="463" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">start_render</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node9 -->
+<g id="edge10" class="edge">
+<title>Node2&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M707.72,-162C645.52,-162 552.33,-162 501.08,-162"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="707.81,-165.5 717.81,-162 707.81,-158.5 707.81,-165.5"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="106,-152.5 106,-171.5 182,-171.5 182,-152.5 106,-152.5"/>
-<text text-anchor="middle" x="144" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">start_render</text>
+<g id="a_node4"><a xlink:href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" target="_top" xlink:title="Main distribution input.">
+<polygon fill="none" stroke="black" points="423,-190.5 423,-209.5 503,-209.5 503,-190.5 423,-190.5"/>
+<text text-anchor="middle" x="463" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">handle_input</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node4 -->
+<!-- Node3&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
-<title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M245.8,-162C224.25,-162 200.84,-162 182,-162"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="245.87,-165.5 255.87,-162 245.87,-158.5 245.87,-165.5"/>
+<title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M571.56,-200C551,-200 524.56,-200 503.05,-200"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="571.72,-203.5 581.72,-200 571.72,-196.5 571.72,-203.5"/>
+</g>
+<!-- Node3&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node3&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M571.93,-191.09C550.18,-185.22 521.72,-177.55 499.48,-171.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="571.15,-194.5 581.72,-193.73 572.97,-187.74 571.15,-194.5"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="0,-152.5 0,-171.5 41,-171.5 41,-152.5 0,-152.5"/>
-<text text-anchor="middle" x="20.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
+<g id="a_node5"><a xlink:href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" target="_top" xlink:title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs.">
+<polygon fill="none" stroke="black" points="313,-190.5 313,-209.5 387,-209.5 387,-190.5 313,-190.5"/>
+<text text-anchor="middle" x="350" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_handler</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M95.85,-162C76.82,-162 55.9,-162 41.12,-162"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="95.89,-165.5 105.89,-162 95.89,-158.5 95.89,-165.5"/>
+<path fill="none" stroke="midnightblue" d="M412.59,-200C404.04,-200 395.3,-200 387.18,-200"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="412.87,-203.5 422.87,-200 412.87,-196.5 412.87,-203.5"/>
+</g>
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="sources_2init_2mlx_2mlx__init_8c.html#a2330f44f3bb980ce6a50923b2e03543d" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="202,-190.5 202,-209.5 277,-209.5 277,-190.5 202,-190.5"/>
+<text text-anchor="middle" x="239.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_window</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M302.68,-200C294.17,-200 285.39,-200 277.21,-200"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="302.87,-203.5 312.87,-200 302.87,-196.5 302.87,-203.5"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="sources_2init_2mlx_2mlx__init_8c.html#a2bdc7aa8aec9eaa59c7a71c03c55cbbf" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="77,-190.5 77,-209.5 166,-209.5 166,-190.5 77,-190.5"/>
+<text text-anchor="middle" x="121.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_mlx_struct</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M191.75,-200C183.34,-200 174.6,-200 166.27,-200"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="191.8,-203.5 201.8,-200 191.8,-196.5 191.8,-203.5"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="mlx__xpm_8c.html#a612f7c983ac561fa88fd804bd514240b" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="77,-114.5 77,-133.5 211,-133.5 211,-114.5 77,-114.5"/>
-<text text-anchor="middle" x="144" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_file_to_image</text>
+<g id="a_node8"><a xlink:href="sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="0,-171.5 0,-190.5 41,-190.5 41,-171.5 0,-171.5"/>
+<text text-anchor="middle" x="20.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M257.32,-97.9C234.33,-103.24 207.59,-109.45 185.96,-114.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="258.29,-101.26 267.24,-95.59 256.71,-94.44 258.29,-101.26"/>
+<path fill="none" stroke="midnightblue" d="M66.84,-189.7C57.68,-187.94 48.72,-186.22 41.21,-184.78"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="66.31,-193.16 76.79,-191.61 67.63,-186.29 66.31,-193.16"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="mlx__xpm_8c.html#acb1544b5d178b3325d2bc7281e310fc7" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="87.5,-76.5 87.5,-95.5 200.5,-95.5 200.5,-76.5 87.5,-76.5"/>
-<text text-anchor="middle" x="144" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_to_image</text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M242.66,-86C228.7,-86 214.09,-86 200.56,-86"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="242.69,-89.5 252.69,-86 242.69,-82.5 242.69,-89.5"/>
-</g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="mlx__lib__xpm_8c.html#ab9d4fad56fc2b42d78dc5b01d229e1f3" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="77,-38.5 77,-57.5 211,-57.5 211,-38.5 77,-38.5"/>
-<text text-anchor="middle" x="144" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_file_to_image</text>
-</a>
-</g>
-</g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge10" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M236.53,-48C228.13,-48 219.59,-48 211.27,-48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="236.69,-51.5 246.69,-48 236.69,-44.5 236.69,-51.5"/>
+<!-- Node9&#45;&gt;Node8 -->
+<g id="edge9" class="edge">
+<title>Node9&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M414.59,-164.04C319.13,-168.16 107.22,-177.3 41.4,-180.14"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="414.98,-167.53 424.82,-163.6 414.68,-160.54 414.98,-167.53"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="mlx__lib__xpm_8c.html#a3925c6de0c0f3cefc1a418d45ca9cb15" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="87.5,-0.5 87.5,-19.5 200.5,-19.5 200.5,-0.5 87.5,-0.5"/>
-<text text-anchor="middle" x="144" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_to_image</text>
+<g id="a_node12"><a xlink:href="mlx__xpm_8c.html#a612f7c983ac561fa88fd804bd514240b" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="539,-114.5 539,-133.5 673,-133.5 673,-114.5 539,-114.5"/>
+<text text-anchor="middle" x="606" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_file_to_image</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node12 -->
-<g id="edge11" class="edge">
-<title>Node10&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M257.32,-36.1C234.33,-30.76 207.59,-24.55 185.96,-19.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="256.71,-39.56 267.24,-38.41 258.29,-32.74 256.71,-39.56"/>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge13" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M719.32,-97.9C696.33,-103.24 669.59,-109.45 647.96,-114.48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="720.29,-101.26 729.24,-95.59 718.71,-94.44 720.29,-101.26"/>
+</g>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="mlx__xpm_8c.html#acb1544b5d178b3325d2bc7281e310fc7" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="549.5,-76.5 549.5,-95.5 662.5,-95.5 662.5,-76.5 549.5,-76.5"/>
+<text text-anchor="middle" x="606" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_to_image</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node13 -->
+<g id="edge14" class="edge">
+<title>Node11&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M704.66,-86C690.7,-86 676.09,-86 662.56,-86"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="704.69,-89.5 714.69,-86 704.69,-82.5 704.69,-89.5"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="mlx__lib__xpm_8c.html#ab9d4fad56fc2b42d78dc5b01d229e1f3" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="539,-38.5 539,-57.5 673,-57.5 673,-38.5 539,-38.5"/>
+<text text-anchor="middle" x="606" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_file_to_image</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node15 -->
+<g id="edge16" class="edge">
+<title>Node14&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M698.53,-48C690.13,-48 681.59,-48 673.27,-48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="698.69,-51.5 708.69,-48 698.69,-44.5 698.69,-51.5"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="mlx__lib__xpm_8c.html#a3925c6de0c0f3cefc1a418d45ca9cb15" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="549.5,-0.5 549.5,-19.5 662.5,-19.5 662.5,-0.5 549.5,-0.5"/>
+<text text-anchor="middle" x="606" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">mlx_xpm_to_image</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node16 -->
+<g id="edge17" class="edge">
+<title>Node14&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M719.32,-36.1C696.33,-30.76 669.59,-24.55 647.96,-19.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="718.71,-39.56 729.24,-38.41 720.29,-32.74 718.71,-39.56"/>
 </g>
 </g>
 </svg>

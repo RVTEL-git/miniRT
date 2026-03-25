@@ -96,7 +96,7 @@ var sectionId = 'dynsection-2';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" target="_top" xlink:title="Main distribution input.">
 <polygon fill="none" stroke="black" points="423,-57.5 423,-76.5 503,-76.5 503,-57.5 423,-57.5"/>
 <text text-anchor="middle" x="463" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">handle_input</text>
 </a>
@@ -111,7 +111,7 @@ var sectionId = 'dynsection-2';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" target="_top" xlink:title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs.">
 <polygon fill="none" stroke="black" points="313,-38.5 313,-57.5 387,-57.5 387,-38.5 313,-38.5"/>
 <text text-anchor="middle" x="350" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_handler</text>
 </a>

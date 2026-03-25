@@ -1,6 +1,6 @@
 <map id="mlx_loop" name="mlx_loop">
 <area shape="rect" id="node1" title=" " alt="" coords="257,31,340,57"/>
 <area shape="rect" id="node2" href="$new__win_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="131,5,186,32"/>
-<area shape="rect" id="node3" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title=" " alt="" coords="108,56,209,83"/>
+<area shape="rect" id="node3" href="$render_8c.html#aa41d06a60a10afc0dd8036aaa31b53d7" title="Init what is needed for render, render one time then launch mlx_loop that keep the window open and al..." alt="" coords="108,56,209,83"/>
 <area shape="rect" id="node4" href="$sources_2main_8c.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,56,60,83"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniRT: sources/init/mlx/mlx_handler.c File Reference</title>
+<title>MiniRT: sources/key_handler/mlx_handler.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,14 +98,69 @@ Include dependency graph for mlx_handler.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aea51bf9dc3d754ca863afb437dc0722d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#aea51bf9dc3d754ca863afb437dc0722d">print_status</a> (<a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *data)</td></tr>
+<tr class="memdesc:aea51bf9dc3d754ca863afb437dc0722d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display info about the currently selected element and transformation mode.  <a href="mlx__handler_8c.html#aea51bf9dc3d754ca863afb437dc0722d">More...</a><br /></td></tr>
+<tr class="separator:aea51bf9dc3d754ca863afb437dc0722d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e3d2c49463307084b3fea175e0c7d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#a52e3d2c49463307084b3fea175e0c7d0">change_transfo_mode</a> (int keysym, <a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *data)</td></tr>
+<tr class="separator:a52e3d2c49463307084b3fea175e0c7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0752429176018321125b6506597cb5d4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4">handle_input</a> (int keysym, <a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *data)</td></tr>
+<tr class="memdesc:a0752429176018321125b6506597cb5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main distribution input.  <a href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4">More...</a><br /></td></tr>
+<tr class="separator:a0752429176018321125b6506597cb5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89aaf8451f52c377da9668e037e4ca81"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#a89aaf8451f52c377da9668e037e4ca81">close_mlx</a> (<a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *data, int code)</td></tr>
 <tr class="separator:a89aaf8451f52c377da9668e037e4ca81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0752429176018321125b6506597cb5d4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4">handle_input</a> (int keysym, <a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *data)</td></tr>
-<tr class="separator:a0752429176018321125b6506597cb5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5049eb09e0b7560721db2d573c3f690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690">init_handler</a> (<a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *minirt)</td></tr>
+<tr class="memdesc:af5049eb09e0b7560721db2d573c3f690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs.  <a href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690">More...</a><br /></td></tr>
 <tr class="separator:af5049eb09e0b7560721db2d573c3f690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a52e3d2c49463307084b3fea175e0c7d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e3d2c49463307084b3fea175e0c7d0">&#9670;&nbsp;</a></span>change_transfo_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void change_transfo_mode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>keysym</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a52e3d2c49463307084b3fea175e0c7d0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a52e3d2c49463307084b3fea175e0c7d0_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a89aaf8451f52c377da9668e037e4ca81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89aaf8451f52c377da9668e037e4ca81">&#9670;&nbsp;</a></span>close_mlx()</h2>
 
@@ -139,7 +194,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a89aaf8451f52c377da9668e037e4ca81_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a89aaf8451f52c377da9668e037e4ca81_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -177,15 +233,19 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Main distribution input. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a0752429176018321125b6506597cb5d4_cgraph.svg" width="635" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a0752429176018321125b6506597cb5d4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a0752429176018321125b6506597cb5d4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_a0752429176018321125b6506597cb5d4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -205,15 +265,51 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_af5049eb09e0b7560721db2d573c3f690_cgraph.svg" width="100%" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_af5049eb09e0b7560721db2d573c3f690_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_af5049eb09e0b7560721db2d573c3f690_icgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_af5049eb09e0b7560721db2d573c3f690_icgraph.svg" width="527" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aea51bf9dc3d754ca863afb437dc0722d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea51bf9dc3d754ca863afb437dc0722d">&#9670;&nbsp;</a></span>print_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a2685a6b8542bd1e4e4b88ab448fc5ecb">t_global</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display info about the currently selected element and transformation mode. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_aea51bf9dc3d754ca863afb437dc0722d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mlx__handler_8c_aea51bf9dc3d754ca863afb437dc0722d_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
@@ -223,7 +319,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_08d237fc27d4ecd563f71c5d52f2fecc.html">sources</a></li><li class="navelem"><a class="el" href="dir_efa1a13bc36cc4d04352330f2e809ccb.html">init</a></li><li class="navelem"><a class="el" href="dir_dd618b660835c0087bdcdd07d8e6c34c.html">mlx</a></li><li class="navelem"><a class="el" href="mlx__handler_8c.html">mlx_handler.c</a></li>
+    <li class="navelem"><a class="el" href="dir_08d237fc27d4ecd563f71c5d52f2fecc.html">sources</a></li><li class="navelem"><a class="el" href="dir_ea400720ecc44ba0cc8b0418ebadb983.html">key_handler</a></li><li class="navelem"><a class="el" href="mlx__handler_8c.html">mlx_handler.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

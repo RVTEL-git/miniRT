@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localhost_1193',['LOCALHOST',['../mlx__int_8h.html#acfc12278a87672861e438f8841a7a713',1,'mlx_int.h']]]
+  ['gray_5fcolor_1336',['GRAY_COLOR',['../minirt_8h.html#a8220d3bc4fa3963c49695400ec3b791e',1,'minirt.h']]]
 ];

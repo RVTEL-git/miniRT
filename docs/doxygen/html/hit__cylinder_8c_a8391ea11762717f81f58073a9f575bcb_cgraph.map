@@ -1,0 +1,9 @@
+<map id="hit_cap" name="hit_cap">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,75,133"/>
+<area shape="rect" id="node2" href="$vec3__operations_8c.html#ac762403cdda087d9e011ac56733f8634" title=" " alt="" coords="138,5,222,32"/>
+<area shape="rect" id="node3" href="$vec3__operations2_8c.html#ac3622ee0206f3d7a8726319c75a182ad" title="Calculate the distance between the two ends of two given vectors." alt="" coords="123,56,237,83"/>
+<area shape="rect" id="node4" href="$vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" title="[french Produit Scalaire] Take two vectors and return a double" alt="" coords="139,107,221,133"/>
+<area shape="rect" id="node5" href="$vec3__operations2_8c.html#a7482e60cc484292361134b98712a3956" title="Scale a vector with a given number." alt="" coords="133,157,227,184"/>
+<area shape="rect" id="node7" href="$vec3__operations_8c.html#ad683aab1791d8bb7ecf36007d08ebd95" title=" " alt="" coords="139,208,221,235"/>
+<area shape="rect" id="node6" href="$vec3__operations_8c.html#aecc37a3cc55907972ef5bb143eb28105" title=" " alt="" coords="285,157,365,184"/>
+</map>

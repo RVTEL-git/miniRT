@@ -86,31 +86,33 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>a
-: <a class="el" href="structs__equ.html#a8e9b1ba65eb55863829db5bbc1957027">s_equ</a>
-, <a class="el" href="structs__id.html#a23103302ee1973f61e9580f2f4d9d349">s_id</a>
+: <a class="el" href="structs__id.html#a23103302ee1973f61e9580f2f4d9d349">s_id</a>
+, <a class="el" href="structs__vec3.html#adb0c05fc0c67f94904a61f274939d063">s_vec3</a>
 </li>
 <li>a_light
 : <a class="el" href="structs__scene.html#a88bde73cd84cf34d93d29e16649586be">s_scene</a>
 </li>
-<li>amb_ratio
-: <a class="el" href="structs__amb.html#af3568fbe0f767e5f73a94c32267eedb3">s_amb</a>
-</li>
 <li>angle
 : <a class="el" href="structs__ray.html#ad6b250715dce42e0f0576f8725e3275d">s_ray</a>
 </li>
-<li>aspect_ratio
-: <a class="el" href="structs__cam.html#a55fcf5a233a14a504660210f453e1b03">s_cam</a>
+<li>antialiasing
+: <a class="el" href="structs__scene.html#add8f474b440ccc7fbdfbd63ac93bbffc">s_scene</a>
+</li>
+<li>asp_ratio
+: <a class="el" href="structs__cam.html#a75735514a938398b6b3bc487518d19c6">s_cam</a>
 </li>
 </ul>
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>b
-: <a class="el" href="structs__equ.html#ad35b267d2e2b7a1c3e575651a5e37857">s_equ</a>
-, <a class="el" href="structs__rgb.html#a5911a5d7e2d877a5b89f5b63b571a33f">s_rgb</a>
+: <a class="el" href="structs__vec3.html#ae8621c8a0e7b9229e4b7e7ef9bee64ce">s_vec3</a>
 </li>
 <li>bits_per_pixel
 : <a class="el" href="structs__mlx__img.html#a22969eff2a1a0731ef060624018ec312">s_mlx_img</a>
+</li>
+<li>blu
+: <a class="el" href="structs__vec3.html#a093c7056269d5072a0fa13758c24e059">s_vec3</a>
 </li>
 <li>bpp
 : <a class="el" href="structs__img.html#ad4f83302a8f09b18b7b70c94e80b6b77">s_img</a>
@@ -123,8 +125,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>c
-: <a class="el" href="structs__equ.html#ae29867b2ff57eaddf85181ccbfe8ab5f">s_equ</a>
-, <a class="el" href="structs__id.html#afceabeb426ae7c4181cd1cc5185a48cc">s_id</a>
+: <a class="el" href="structs__id.html#afceabeb426ae7c4181cd1cc5185a48cc">s_id</a>
+, <a class="el" href="structs__vec3.html#a16b88356611c351a2457201441b3c6ab">s_vec3</a>
 </li>
 <li>camera
 : <a class="el" href="structs__scene.html#a5f0466d89700318a06e95a5c29e29856">s_scene</a>
@@ -138,8 +140,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>color
 : <a class="el" href="structs__col__name.html#a994337a5c9b74d1ae1ead5cf5df09d6f">s_col_name</a>
 </li>
+<li>compute
+: <a class="el" href="structs__ray.html#a5b135cb8f34f3374e8f6b599e76e7d9d">s_ray</a>
+</li>
 <li>content
 : <a class="el" href="structs__gnl__list.html#a705411ca1f2dc607f6b6dccb7de1f941">s_gnl_list</a>
+</li>
+<li>counter
+: <a class="el" href="structs__thread__data.html#a36ebe84d90177766bb2c48d75e43f85f">s_thread_data</a>
+</li>
+<li>current_obj
+: <a class="el" href="structs__interface.html#ade27760f98d9a3ae766a6d51ca98f21a">s_interface</a>
 </li>
 </ul>
 
@@ -180,6 +191,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>end_loop
 : <a class="el" href="structs__xvar.html#a717ebe8cf970d6c1ab24979e2e38f2b0">s_xvar</a>
 </li>
+<li>end_y
+: <a class="el" href="structs__thread__data.html#a39428f6ab43438d566f3477f95567bfc">s_thread_data</a>
+</li>
 <li>endian
 : <a class="el" href="structs__mlx__img.html#a7f59b11c10e054916da7a0c9912a5da3">s_mlx_img</a>
 </li>
@@ -193,6 +207,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>first_obj
+: <a class="el" href="structs__interface.html#a2d8eb261d5ffea96521bd246ea1ed7ca">s_interface</a>
+</li>
 <li>format
 : <a class="el" href="structs__img.html#aa3737eb1e7cd8d1089d1897a908a3d40">s_img</a>
 </li>
@@ -202,16 +219,19 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>fov_scaled
 : <a class="el" href="structs__cam.html#a9ae04d3dee15abac35c72e5a78ae8ce1">s_cam</a>
 </li>
+<li>fullscreen
+: <a class="el" href="structs__scene.html#a52a6f0e00b366e86b0ece91310bd63dd">s_scene</a>
+</li>
 </ul>
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>g
-: <a class="el" href="structs__rgb.html#a27fa2cd0f60e09b0d37d38ebe0c8e58c">s_rgb</a>
-</li>
 <li>gc
 : <a class="el" href="structs__img.html#ae16c025aa32c9ecdd174631b6d9ea933">s_img</a>
 , <a class="el" href="structs__win__list.html#a897bf3f976042ad6c9cc27004fb8c070">s_win_list</a>
+</li>
+<li>grn
+: <a class="el" href="structs__vec3.html#ac5c853d9ee42e3391737046a62817b91">s_vec3</a>
 </li>
 </ul>
 
@@ -250,6 +270,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>img_ptr
 : <a class="el" href="structs__mlx__img.html#aa5c0b5385b6f1f536457c1fd60757323">s_mlx_img</a>
 </li>
+<li>interface
+: <a class="el" href="structs__global.html#af5f1f1b1c177d7d68e70b8bf2f420658">s_global</a>
+</li>
 </ul>
 
 
@@ -259,6 +282,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>key_param
 : <a class="el" href="structs__win__list.html#a81fef161bbcbe740020633fb8a57bb75">s_win_list</a>
+</li>
+<li>ks
+: <a class="el" href="structs__specular.html#a43f255201db83ae9c67375f0ad67977b">s_specular</a>
 </li>
 </ul>
 
@@ -294,9 +320,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>mlx
 : <a class="el" href="structs__global.html#ace26c93f55d1fe8d4ef01fd67fdd50ac">s_global</a>
+, <a class="el" href="structs__thread__data.html#a169d64c4fc31150ccf0bd012fb9ed175">s_thread_data</a>
 </li>
 <li>mlx_ptr
 : <a class="el" href="structs__mlx__data.html#a33e73d1f51b80f1ce270ba355b373e23">s_mlx_data</a>
+</li>
+<li>mode
+: <a class="el" href="structs__interface.html#a61494da6f654ece5e3896d3547acb3c0">s_interface</a>
 </li>
 <li>mouse_hook
 : <a class="el" href="structs__win__list.html#a5ce1a537798a6fff79962bf727c36146">s_win_list</a>
@@ -319,7 +349,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="structt__obj.html#a61e2994b9ee396bf0d9c3c96f881e4cf">t_obj</a>
 </li>
 <li>normal
-: <a class="el" href="structs__hit__data.html#a0529694a17e1bcf2e53aca65f5195082">s_hit_data</a>
+: <a class="el" href="structs__hit__data.html#ac0fbd4618063de04095e0296b18657c7">s_hit_data</a>
 </li>
 </ul>
 
@@ -343,6 +373,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>p
 : <a class="el" href="structs__hit__data.html#a93489c3be00f26bdd837dc50a72050ac">s_hit_data</a>
+</li>
+<li>p_to_cam
+: <a class="el" href="structs__specular.html#a3af7915e8f36ab337ab00b6605c7bd75">s_specular</a>
+</li>
+<li>p_to_light
+: <a class="el" href="structs__specular.html#a4a3af2ab2606c035958a5caaac8bc00a">s_specular</a>
 </li>
 <li>param
 : <a class="el" href="structs__event__list.html#aa531ef2687924beb5ffea7719ccb5c7f">s_event_list</a>
@@ -373,14 +409,21 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
-<li>r
-: <a class="el" href="structs__rgb.html#afb17b8189055ca8e7000f9747bef9784">s_rgb</a>
-</li>
 <li>rad
 : <a class="el" href="structt__obj.html#aaaec087f0b44755f7ea5b565108ebb6d">t_obj</a>
 </li>
+<li>ratio
+: <a class="el" href="structs__amb.html#a7be25fb9dd75546b697a89740f2c8a4c">s_amb</a>
+</li>
+<li>ray
+: <a class="el" href="structs__hit__data.html#acff3a31949614caa889fc4146aab639a">s_hit_data</a>
+</li>
+<li>rd
+: <a class="el" href="structs__vec3.html#a0edd786490923f5ed0c4cfb6d2d14d7f">s_vec3</a>
+</li>
 <li>rgb
 : <a class="el" href="structs__amb.html#a639e5606740c90a3ec91aa1f699301c6">s_amb</a>
+, <a class="el" href="structs__light.html#a611571d96f9a15a2c32f12c00a6df44e">s_light</a>
 , <a class="el" href="structt__obj.html#a1df123b41078d37facb8ebb0cc40e18a">t_obj</a>
 </li>
 <li>root
@@ -392,6 +435,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>scene
 : <a class="el" href="structs__global.html#a61934f0eb51eba04265914aa3c8eaeff">s_global</a>
+, <a class="el" href="structs__thread__data.html#a80af5c05b671b517a04253f3b29aa97e">s_thread_data</a>
 </li>
 <li>screen
 : <a class="el" href="structs__xvar.html#a16449e1686cf30a3b7c27bfe6e62b9f4">s_xvar</a>
@@ -402,11 +446,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>scrn_width
 : <a class="el" href="structs__cam.html#ad5ed2bd72cfb927170d7c74d81fb8923">s_cam</a>
 </li>
+<li>shin
+: <a class="el" href="structs__specular.html#ac59292cb6521fbf7c2c23f2f466b5c74">s_specular</a>
+</li>
 <li>shm
 : <a class="el" href="structs__img.html#aee2ff6fe48990e8ca91c0140890de4c9">s_img</a>
 </li>
 <li>size_line
 : <a class="el" href="structs__img.html#a35d0d6f880d48b406d2a76adff3d0a33">s_img</a>
+</li>
+<li>start_y
+: <a class="el" href="structs__thread__data.html#a5a2cf958b2d68168bc789ea9d7c5c93d">s_thread_data</a>
 </li>
 </ul>
 
@@ -415,11 +465,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>t
 : <a class="el" href="structs__hit__data.html#a8837730cee11f6b05f39592fa575cc58">s_hit_data</a>
 </li>
+<li>tens
+: <a class="el" href="structs__specular.html#ab9859bed18999b45b3f96b3e9fb874d9">s_specular</a>
+</li>
 <li>tmp
 : <a class="el" href="structs__scene.html#a4f07e4965f35a171cbd60d670b357c5d">s_scene</a>
 </li>
-<li>transform
-: <a class="el" href="structs__cam.html#a68231f93731b157b6f083961736fe6b0">s_cam</a>
+<li>trnsf
+: <a class="el" href="structs__cam.html#a406ac6ec9ed177bc38341dd4fa0e2abb">s_cam</a>
 </li>
 <li>type
 : <a class="el" href="structs__img.html#aa1cc860830b58c8d7d5a106ebc3125aa">s_img</a>
@@ -469,21 +522,21 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_x"></a>- x -</h3><ul>
 <li>x
-: <a class="el" href="structs__vector3.html#aa9134e69954533179577c0e5ca4a9886">s_vector3</a>
+: <a class="el" href="structs__vec3.html#af0e908b39c6726b8ec0127e2d4ff578d">s_vec3</a>
 </li>
 </ul>
 
 
 <h3><a id="index_y"></a>- y -</h3><ul>
 <li>y
-: <a class="el" href="structs__vector3.html#a25d34d7966354ed1f413bd584b63da90">s_vector3</a>
+: <a class="el" href="structs__vec3.html#a8d76867b9284d3738f0bda6f34c24b27">s_vec3</a>
 </li>
 </ul>
 
 
 <h3><a id="index_z"></a>- z -</h3><ul>
 <li>z
-: <a class="el" href="structs__vector3.html#a538deff81cc427bcc63682dacbda94f7">s_vector3</a>
+: <a class="el" href="structs__vec3.html#a91ce8f8e3e4d26c1eaf2af372ebeef1a">s_vec3</a>
 </li>
 </ul>
 </div><!-- contents -->

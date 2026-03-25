@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MiniRT: sources/render/camera.c File Reference</title>
+<title>MiniRT: sources/render/camera/camera.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,66 +88,70 @@ $(document).ready(function(){initNavTree('camera_8c.html',''); initResizable(); 
 <div class="title">camera.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="minirt_8h_source.html">../../includes/minirt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="matrices_8h_source.html">matrices.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="vector_8h_source.html">vector.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="minirt_8h_source.html">minirt.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for camera.c:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c__incl.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c__incl.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a00aafb34db9d578766be0aea223135e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a00aafb34db9d578766be0aea223135e7">mat4_look_at</a> (<a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> orig, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> dir)</td></tr>
+<tr class="memitem:a05d67a98d51e0e2c53508063628a3980"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a05d67a98d51e0e2c53508063628a3980">mat4_look_at_fill</a> (<a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> forward, <a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> right, <a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> up, <a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> orig)</td></tr>
+<tr class="separator:a05d67a98d51e0e2c53508063628a3980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aafb34db9d578766be0aea223135e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a00aafb34db9d578766be0aea223135e7">mat4_look_at</a> (<a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> orig, <a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> dir)</td></tr>
+<tr class="memdesc:a00aafb34db9d578766be0aea223135e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a look at matrix by processing first the axis based on normalized forward and the world up vector. From that build right and up then fill the matrix with the normalized axis vectors correctly, so that rays traced from the camera view are correctly materialized into world view.  <a href="camera_8c.html#a00aafb34db9d578766be0aea223135e7">More...</a><br /></td></tr>
 <tr class="separator:a00aafb34db9d578766be0aea223135e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a5c9d05d164fc0070bb26042bdb922"><td class="memItemLeft" align="right" valign="top"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#ad7a5c9d05d164fc0070bb26042bdb922">build_camera_matrix</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam)</td></tr>
-<tr class="separator:ad7a5c9d05d164fc0070bb26042bdb922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af27e39de17bd31c1d87a0dd0cc401c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#af27e39de17bd31c1d87a0dd0cc401c50">mat4_apply</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> p)</td></tr>
-<tr class="memdesc:af27e39de17bd31c1d87a0dd0cc401c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply (multiply) the vector in the matrix so that I get rid of translation.  <a href="camera_8c.html#af27e39de17bd31c1d87a0dd0cc401c50">More...</a><br /></td></tr>
-<tr class="separator:af27e39de17bd31c1d87a0dd0cc401c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a8589481fe36ab4bb6d05cd98f4368fe9">mat4_apply_translation</a> (<a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> m, <a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> v)</td></tr>
-<tr class="memdesc:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply (multiply) the vector in the matrix so that I keep translation.  <a href="camera_8c.html#a8589481fe36ab4bb6d05cd98f4368fe9">More...</a><br /></td></tr>
-<tr class="separator:a8589481fe36ab4bb6d05cd98f4368fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c51ac054edcbf278016fa793c8711b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a26c51ac054edcbf278016fa793c8711b">generate_ray</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam, int x, int y)</td></tr>
-<tr class="separator:a26c51ac054edcbf278016fa793c8711b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab04c162093782b2214199fe12ca1d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a5ab04c162093782b2214199fe12ca1d3">generate_ray</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cm, double x, double y, bool fixed)</td></tr>
+<tr class="memdesc:a5ab04c162093782b2214199fe12ca1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate ray (an origin and a direction) from the pixel coords and using the camera look at matrix (camera-&gt;trnsf)  <a href="camera_8c.html#a5ab04c162093782b2214199fe12ca1d3">More...</a><br /></td></tr>
+<tr class="separator:a5ab04c162093782b2214199fe12ca1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab078b2794f2547bbaa966b2c06212a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#a3ab078b2794f2547bbaa966b2c06212a">build_camera_matrix</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam)</td></tr>
+<tr class="separator:a3ab078b2794f2547bbaa966b2c06212a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7941b4db5f2301a9dfce62834c6b3ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camera_8c.html#ab7941b4db5f2301a9dfce62834c6b3ac">init_camera</a> (<a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *cam, int width, int height)</td></tr>
 <tr class="separator:ab7941b4db5f2301a9dfce62834c6b3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad7a5c9d05d164fc0070bb26042bdb922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7a5c9d05d164fc0070bb26042bdb922">&#9670;&nbsp;</a></span>build_camera_matrix()</h2>
+<a id="a3ab078b2794f2547bbaa966b2c06212a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab078b2794f2547bbaa966b2c06212a">&#9670;&nbsp;</a></span>build_camera_matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> build_camera_matrix </td>
+          <td class="memname">static <a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> build_camera_matrix </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td>
           <td class="paramname"><em>cam</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_ad7a5c9d05d164fc0070bb26042bdb922_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a3ab078b2794f2547bbaa966b2c06212a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_ad7a5c9d05d164fc0070bb26042bdb922_icgraph.svg" width="430" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a3ab078b2794f2547bbaa966b2c06212a_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a26c51ac054edcbf278016fa793c8711b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26c51ac054edcbf278016fa793c8711b">&#9670;&nbsp;</a></span>generate_ray()</h2>
+<a id="a5ab04c162093782b2214199fe12ca1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab04c162093782b2214199fe12ca1d3">&#9670;&nbsp;</a></span>generate_ray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,19 +160,25 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> generate_ray </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="minirt_8h.html#a8905fd765c7012f54601e8e784fa1a63">t_cam</a> *&#160;</td>
-          <td class="paramname"><em>cam</em>, </td>
+          <td class="paramname"><em>cm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fixed</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -177,16 +187,25 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate ray (an origin and a direction) from the pixel coords and using the camera look at matrix (camera-&gt;trnsf) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fixed</td><td>Random factor for anti-aliasing algo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a26c51ac054edcbf278016fa793c8711b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a5ab04c162093782b2214199fe12ca1d3_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a26c51ac054edcbf278016fa793c8711b_icgraph.svg" width="231" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a5ab04c162093782b2214199fe12ca1d3_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -232,79 +251,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_ab7941b4db5f2301a9dfce62834c6b3ac_icgraph.svg" width="222" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="af27e39de17bd31c1d87a0dd0cc401c50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af27e39de17bd31c1d87a0dd0cc401c50">&#9670;&nbsp;</a></span>mat4_apply()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td>
-          <td class="paramname"><em>m</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Apply (multiply) the vector in the matrix so that I get rid of translation. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_af27e39de17bd31c1d87a0dd0cc401c50_icgraph.svg" width="378" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a8589481fe36ab4bb6d05cd98f4368fe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8589481fe36ab4bb6d05cd98f4368fe9">&#9670;&nbsp;</a></span>mat4_apply_translation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> mat4_apply_translation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a>&#160;</td>
-          <td class="paramname"><em>m</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Apply (multiply) the vector in the matrix so that I keep translation. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a8589481fe36ab4bb6d05cd98f4368fe9_icgraph.svg" width="455" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_ab7941b4db5f2301a9dfce62834c6b3ac_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -319,13 +266,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> mat4_look_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
           <td class="paramname"><em>orig</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
           <td class="paramname"><em>dir</em>&#160;</td>
         </tr>
         <tr>
@@ -335,6 +282,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build a look at matrix by processing first the axis based on normalized forward and the world up vector. From that build right and up then fill the matrix with the normalized axis vectors correctly, so that rays traced from the camera view are correctly materialized into world view. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">orig</td><td>Camera origin/point of view </td></tr>
+    <tr><td class="paramname">dir</td><td>Towards where the camera is looking </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The built look at matrix </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -344,7 +301,67 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a00aafb34db9d578766be0aea223135e7_icgraph.svg" width="588" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a00aafb34db9d578766be0aea223135e7_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a05d67a98d51e0e2c53508063628a3980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d67a98d51e0e2c53508063628a3980">&#9670;&nbsp;</a></span>mat4_look_at_fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="matrices_8h.html#a6ec4d2194b78fe12cf3c2c85fa88e77c">t_mat4</a> mat4_look_at_fill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>forward</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>up</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td>
+          <td class="paramname"><em>orig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8c_a05d67a98d51e0e2c53508063628a3980_cgraph.svg" width="447" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8c_a05d67a98d51e0e2c53508063628a3980_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 
@@ -355,7 +372,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_08d237fc27d4ecd563f71c5d52f2fecc.html">sources</a></li><li class="navelem"><a class="el" href="dir_7770b9e86bf89318f667f8a8dd59c1ce.html">render</a></li><li class="navelem"><a class="el" href="camera_8c.html">camera.c</a></li>
+    <li class="navelem"><a class="el" href="dir_08d237fc27d4ecd563f71c5d52f2fecc.html">sources</a></li><li class="navelem"><a class="el" href="dir_7770b9e86bf89318f667f8a8dd59c1ce.html">render</a></li><li class="navelem"><a class="el" href="dir_a87bca19b5aa94c38a885b9854e696b2.html">camera</a></li><li class="navelem"><a class="el" href="camera_8c.html">camera.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

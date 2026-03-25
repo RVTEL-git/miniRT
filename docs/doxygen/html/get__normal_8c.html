@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('get__normal_8c.html',''); initResizabl
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">get_normal.c File Reference</div>  </div>
 </div><!--header-->
@@ -93,7 +95,206 @@ Include dependency graph for get_normal.c:</div>
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c__incl.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab12a05210067044f9ec0527c660ea22c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__normal_8c.html#ab12a05210067044f9ec0527c660ea22c">init_normal</a> (<a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit, <a class="el" href="structt__obj.html">t_obj</a> *obj)</td></tr>
+<tr class="separator:ab12a05210067044f9ec0527c660ea22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94c6e2662bc50b88434e7d3e7a0486f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__normal_8c.html#af94c6e2662bc50b88434e7d3e7a0486f">compute_normal_plane</a> (<a class="el" href="structt__obj.html">t_obj</a> *plane)</td></tr>
+<tr class="separator:af94c6e2662bc50b88434e7d3e7a0486f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46648e1427a670bd185c133a9eb96a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__normal_8c.html#ae46648e1427a670bd185c133a9eb96a0">compute_normal_sphere</a> (<a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit, <a class="el" href="structt__obj.html">t_obj</a> *sphere)</td></tr>
+<tr class="separator:ae46648e1427a670bd185c133a9eb96a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee23fd721fbd57cfd3a2a630cdae6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__normal_8c.html#a0ee23fd721fbd57cfd3a2a630cdae6fe">compute_normal_cylinder</a> (<a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit, <a class="el" href="structt__obj.html">t_obj</a> *cylinder)</td></tr>
+<tr class="separator:a0ee23fd721fbd57cfd3a2a630cdae6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453b726bc19e82ecb4fe33e7d3179e59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__normal_8c.html#a453b726bc19e82ecb4fe33e7d3179e59">get_normal</a> (<a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit, <a class="el" href="structt__obj.html">t_obj</a> *obj)</td></tr>
+<tr class="separator:a453b726bc19e82ecb4fe33e7d3179e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a0ee23fd721fbd57cfd3a2a630cdae6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee23fd721fbd57cfd3a2a630cdae6fe">&#9670;&nbsp;</a></span>compute_normal_cylinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> compute_normal_cylinder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>cylinder</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_a0ee23fd721fbd57cfd3a2a630cdae6fe_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_a0ee23fd721fbd57cfd3a2a630cdae6fe_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af94c6e2662bc50b88434e7d3e7a0486f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af94c6e2662bc50b88434e7d3e7a0486f">&#9670;&nbsp;</a></span>compute_normal_plane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> compute_normal_plane </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>plane</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_af94c6e2662bc50b88434e7d3e7a0486f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_af94c6e2662bc50b88434e7d3e7a0486f_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae46648e1427a670bd185c133a9eb96a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46648e1427a670bd185c133a9eb96a0">&#9670;&nbsp;</a></span>compute_normal_sphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> compute_normal_sphere </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>sphere</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_ae46648e1427a670bd185c133a9eb96a0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_ae46648e1427a670bd185c133a9eb96a0_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a453b726bc19e82ecb4fe33e7d3179e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453b726bc19e82ecb4fe33e7d3179e59">&#9670;&nbsp;</a></span>get_normal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a> get_normal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_a453b726bc19e82ecb4fe33e7d3179e59_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_a453b726bc19e82ecb4fe33e7d3179e59_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab12a05210067044f9ec0527c660ea22c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12a05210067044f9ec0527c660ea22c">&#9670;&nbsp;</a></span>init_normal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a> init_normal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="get__normal_8c_ab12a05210067044f9ec0527c660ea22c_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

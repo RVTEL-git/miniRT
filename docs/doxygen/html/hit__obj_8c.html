@@ -98,18 +98,62 @@ Include dependency graph for hit_obj.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1811e518dcf4cbbcae25bd9a369257a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__obj_8c.html#a1811e518dcf4cbbcae25bd9a369257a8">hit_obj</a> (<a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, <a class="el" href="minirt_8h.html#a82a03b320e25492edcc920f31af81f83">t_scene</a> *scn, <a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit)</td></tr>
-<tr class="separator:a1811e518dcf4cbbcae25bd9a369257a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20538b6824aa7c2dfabbe8502912ad81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__obj_8c.html#a20538b6824aa7c2dfabbe8502912ad81">update_hit</a> (<a class="el" href="structt__obj.html">t_obj</a> *obj, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, double t, <a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit)</td></tr>
+<tr class="separator:a20538b6824aa7c2dfabbe8502912ad81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0509c3092ceb1ca3e75148c45890217"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__obj_8c.html#ac0509c3092ceb1ca3e75148c45890217">final_hit_data</a> (<a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit, <a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray)</td></tr>
+<tr class="separator:ac0509c3092ceb1ca3e75148c45890217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165091a1d34a7e91a6f603dec6ec92fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hit__obj_8c.html#a165091a1d34a7e91a6f603dec6ec92fc">hit_obj</a> (<a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> ray, <a class="el" href="minirt_8h.html#a82a03b320e25492edcc920f31af81f83">t_scene</a> *scn, <a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *hit)</td></tr>
+<tr class="separator:a165091a1d34a7e91a6f603dec6ec92fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1811e518dcf4cbbcae25bd9a369257a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1811e518dcf4cbbcae25bd9a369257a8">&#9670;&nbsp;</a></span>hit_obj()</h2>
+<a id="ac0509c3092ceb1ca3e75148c45890217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0509c3092ceb1ca3e75148c45890217">&#9670;&nbsp;</a></span>final_hit_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a>* hit_obj </td>
+          <td class="memname">void final_hit_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_ac0509c3092ceb1ca3e75148c45890217_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_ac0509c3092ceb1ca3e75148c45890217_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a165091a1d34a7e91a6f603dec6ec92fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165091a1d34a7e91a6f603dec6ec92fc">&#9670;&nbsp;</a></span>hit_obj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hit_obj </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
           <td class="paramname"><em>ray</em>, </td>
@@ -136,13 +180,59 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_a1811e518dcf4cbbcae25bd9a369257a8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_a165091a1d34a7e91a6f603dec6ec92fc_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_a1811e518dcf4cbbcae25bd9a369257a8_icgraph.svg" width="190" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_a165091a1d34a7e91a6f603dec6ec92fc_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a20538b6824aa7c2dfabbe8502912ad81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20538b6824aa7c2dfabbe8502912ad81">&#9670;&nbsp;</a></span>update_hit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_hit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__obj.html">t_obj</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="minirt_8h.html#a8aecadfd8e5796fffabcc0057805456c">t_hit_data</a> *&#160;</td>
+          <td class="paramname"><em>hit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="hit__obj_8c_a20538b6824aa7c2dfabbe8502912ad81_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 

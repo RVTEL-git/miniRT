@@ -48,7 +48,7 @@ if (edges && edges.length) {
 <script type="text/javascript">
 var viewWidth = 613;
 var viewHeight = 94;
-var sectionId = 'dynsection-28';
+var sectionId = 'dynsection-34';
 </script>
 <script xlink:href="svgpan.js"/>
 <svg id="graph" class="graph">
@@ -66,7 +66,7 @@ var sectionId = 'dynsection-28';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="mlx__handler_8c.html#a0752429176018321125b6506597cb5d4" target="_top" xlink:title="Main distribution input.">
 <polygon fill="none" stroke="black" points="423,-66.5 423,-85.5 503,-85.5 503,-66.5 423,-66.5"/>
 <text text-anchor="middle" x="463" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">handle_input</text>
 </a>
@@ -81,7 +81,7 @@ var sectionId = 'dynsection-28';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="mlx__handler_8c.html#af5049eb09e0b7560721db2d573c3f690" target="_top" xlink:title="Initialise mlx_data struct and interface, then call key hooks so that they wait for user inputs.">
 <polygon fill="none" stroke="black" points="313,-28.5 313,-47.5 387,-47.5 387,-28.5 313,-28.5"/>
 <text text-anchor="middle" x="350" y="-35.5" font-family="Helvetica,sans-Serif" font-size="10.00">init_handler</text>
 </a>

@@ -1,7 +1,7 @@
 <map id="vec3_normalize" name="vec3_normalize">
-<area shape="rect" id="node1" title=" " alt="" coords="5,180,131,207"/>
+<area shape="rect" id="node1" title="Get a vector that is identical to the one given in input except for his norm that is set to 1." alt="" coords="5,180,131,207"/>
 <area shape="rect" id="node2" href="$ft__printf_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e" title=" " alt="" coords="207,130,281,156"/>
-<area shape="rect" id="node23" href="$vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" title=" " alt="" coords="179,180,309,207"/>
+<area shape="rect" id="node23" href="$vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" title="Calculate the magnitude of a vector (his lenght)" alt="" coords="179,180,309,207"/>
 <area shape="rect" id="node25" href="$vec3__operations_8c.html#aecc37a3cc55907972ef5bb143eb28105" title=" " alt="" coords="204,231,284,258"/>
 <area shape="rect" id="node3" href="$ft__printf_8c.html#a3405fc8c14988dfacb1adb5b5c415f98" title=" " alt="" coords="360,130,436,156"/>
 <area shape="rect" id="node4" href="$ft__putchar__fd_8c.html#ae54b488501b5183426fccd79db9f9f7f" title=" " alt="" coords="979,79,1085,106"/>
@@ -23,5 +23,5 @@
 <area shape="rect" id="node17" href="$utils_8c.html#a360d0d61647491d7b257e97bec3cacb8" title=" " alt="" coords="835,180,908,207"/>
 <area shape="rect" id="node20" href="$utils_8c.html#a9e33b5b3b6df9fac201aaba8b0e01f6e" title=" " alt="" coords="812,484,931,511"/>
 <area shape="rect" id="node22" href="$utils_8c.html#a22701b95daf4c95098e59dbcf0038d36" title=" " alt="" coords="830,332,913,359"/>
-<area shape="rect" id="node24" href="$vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" title=" " alt="" coords="357,180,439,207"/>
+<area shape="rect" id="node24" href="$vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" title="[french Produit Scalaire] Take two vectors and return a double" alt="" coords="357,180,439,207"/>
 </map>

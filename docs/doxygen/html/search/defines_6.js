@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['return_1201',['RETURN',['../mlx__xpm_8c.html#a6a0e6b80dd3d5ca395cf58151749f5e2',1,'mlx_xpm.c']]]
+  ['localhost_1341',['LOCALHOST',['../mlx__int_8h.html#acfc12278a87672861e438f8841a7a713',1,'mlx_int.h']]]
 ];

@@ -1,5 +1,5 @@
 <map id="s_cam" name="s_cam">
-<area shape="rect" id="node1" title=" " alt="" coords="59,109,123,136"/>
-<area shape="rect" id="node2" href="$structs__mat4.html" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" id="node3" href="$structs__vector3.html" title=" " alt="" coords="101,5,186,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="53,109,117,136"/>
+<area shape="rect" id="node2" href="$structs__vec3.html" title=" " alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node3" href="$structs__mat4.html" title=" " alt="" coords="97,5,167,32"/>
 </map>

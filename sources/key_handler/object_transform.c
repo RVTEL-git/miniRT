@@ -12,6 +12,9 @@
 
 #include "minirt.h"
 
+/**
+ * @brief Cycle between all element in the list, in a circular way
+ */
 void	change_object(t_global *data, int keysym)
 {
 	t_interface	*itf;
@@ -36,6 +39,9 @@ void	change_object(t_global *data, int keysym)
 	print_status(data);
 }
 
+/**
+ * @brief Apply translation to current element (move object)
+ */
 void	translate_object(t_global *global, int keysym)
 {
 	t_mat4	m;
@@ -57,6 +63,9 @@ void	translate_object(t_global *global, int keysym)
 	ft_printf("Object Moved\n");
 }
 
+/**
+ * @brief Apply rotation to current element
+ */
 void	rotate_object(t_global *global, int keysym)
 {
 	t_obj	*obj;
@@ -79,6 +88,9 @@ void	rotate_object(t_global *global, int keysym)
 	ft_printf("Object Rotated\n");
 }
 
+/**
+ * @brief Distribute to the right transformation mode
+ */
 void	apply_transformation(t_global *data, int keysym)
 {
 	if (!ft_strcmp(data->interface.current_obj->id, "sp")
@@ -87,8 +99,6 @@ void	apply_transformation(t_global *data, int keysym)
 		ft_printf("Sphere cannot be rotated");
 		return ;
 	}
-	ft_printf("DEBUG transfo %s with mode %d\n",
-		data->interface.current_obj->id, data->interface.mode);
 	if (data->interface.mode == 0)
 		translate_object(data, keysym);
 	else

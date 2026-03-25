@@ -1,9 +1,36 @@
 <map id="hit_cylinder" name="hit_cylinder">
-<area shape="rect" id="node1" title=" " alt="" coords="5,69,104,96"/>
-<area shape="rect" id="node2" href="$hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d" title=" " alt="" coords="152,69,260,96"/>
-<area shape="rect" id="node4" href="$vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" title=" " alt="" coords="315,5,396,32"/>
-<area shape="rect" id="node7" href="$vec3__operations_8c.html#ad683aab1791d8bb7ecf36007d08ebd95" title=" " alt="" coords="314,157,397,184"/>
-<area shape="rect" id="node3" href="$vec3__operations_8c.html#ac762403cdda087d9e011ac56733f8634" title=" " alt="" coords="313,56,397,83"/>
-<area shape="rect" id="node5" href="$vec3__operations2_8c.html#a7482e60cc484292361134b98712a3956" title=" " alt="" coords="308,107,403,133"/>
-<area shape="rect" id="node6" href="$vec3__operations_8c.html#aecc37a3cc55907972ef5bb143eb28105" title=" " alt="" coords="451,107,531,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,104,209"/>
+<area shape="rect" id="node2" href="$hit__cylinder_8c.html#a11befb1cd2037ef93b6ae5f0fcddd18d" title=" " alt="" coords="292,309,400,336"/>
+<area shape="rect" id="node31" href="$hit__cylinder_8c.html#a04a6f13b9bdb4a45a1711321904baf6e" title=" " alt="" coords="280,56,412,83"/>
+<area shape="rect" id="node32" href="$hit__cylinder_8c.html#a50032f8660b76dac954d9b5b3cf53f4e" title=" " alt="" coords="152,183,232,209"/>
+<area shape="rect" id="node3" href="$vec3__operations_8c.html#ac762403cdda087d9e011ac56733f8634" title=" " alt="" coords="481,208,565,235"/>
+<area shape="rect" id="node4" href="$vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" title="[french Produit Scalaire] Take two vectors and return a double" alt="" coords="812,208,893,235"/>
+<area shape="rect" id="node5" href="$vec3__operations2_8c.html#aece2686d74f4d89a97c3925fc5d69b94" title="Get a vector that is identical to the one given in input except for his norm that is set to 1." alt="" coords="460,360,585,387"/>
+<area shape="rect" id="node29" href="$vec3__operations2_8c.html#a7482e60cc484292361134b98712a3956" title="Scale a vector with a given number." alt="" coords="475,259,570,285"/>
+<area shape="rect" id="node30" href="$vec3__operations_8c.html#ad683aab1791d8bb7ecf36007d08ebd95" title=" " alt="" coords="481,56,564,83"/>
+<area shape="rect" id="node6" href="$ft__printf_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e" title=" " alt="" coords="662,411,735,437"/>
+<area shape="rect" id="node27" href="$vec3__operations2_8c.html#a25f20b44a7d976e98479e36ccca59526" title="Calculate the magnitude of a vector (his lenght)" alt="" coords="633,360,764,387"/>
+<area shape="rect" id="node28" href="$vec3__operations_8c.html#aecc37a3cc55907972ef5bb143eb28105" title=" " alt="" coords="659,259,739,285"/>
+<area shape="rect" id="node7" href="$ft__printf_8c.html#a3405fc8c14988dfacb1adb5b5c415f98" title=" " alt="" coords="815,411,891,437"/>
+<area shape="rect" id="node8" href="$ft__putchar__fd_8c.html#ae54b488501b5183426fccd79db9f9f7f" title=" " alt="" coords="1433,411,1540,437"/>
+<area shape="rect" id="node9" href="$ft__printf_8h.html#af29dc335f4bec333dd094f728dbed242" title=" " alt="" coords="941,284,1084,311"/>
+<area shape="rect" id="node10" href="$print__alpha_8c.html#a2ea448ba44b40c51e2f57cbf40e425b6" title=" " alt="" coords="1132,385,1219,412"/>
+<area shape="rect" id="node11" href="$print__numerals_8c.html#ad8a0a2e8f704f3e61fa57f371f831f68" title=" " alt="" coords="1282,107,1370,133"/>
+<area shape="rect" id="node19" href="$print__alpha_8c.html#a274ecc29567e3f09dfed8b445b495e6e" title=" " alt="" coords="1137,259,1214,285"/>
+<area shape="rect" id="node22" href="$print__alpha_8c.html#a655acf7b940358263742a5cd25320c91" title=" " alt="" coords="1439,5,1535,32"/>
+<area shape="rect" id="node23" href="$print__numerals_8c.html#a7f1bbbd7509918fa898e6d7d1253da17" title=" " alt="" coords="1133,157,1217,184"/>
+<area shape="rect" id="node25" href="$print__numerals_8c.html#a22834cd20b2b265c651ddca592399e75" title=" " alt="" coords="1142,309,1209,336"/>
+<area shape="rect" id="node12" href="$ft__putnbr__fd_8c.html#aefeaea4471b82ac562928b55fec4da3c" title=" " alt="" coords="1437,107,1537,133"/>
+<area shape="rect" id="node18" href="$utils_8c.html#a7f88a9fc8bd1da879b09f8f3a12c3e3f" title=" " alt="" coords="1449,157,1525,184"/>
+<area shape="rect" id="node13" href="$ft__itoa_8c.html#ae5e08fbfd5d8129c2bf3a6c42fc7734c" title=" " alt="" coords="1605,107,1667,133"/>
+<area shape="rect" id="node17" href="$ft__putstr__fd_8c.html#a2c0d915a8579fdf1d3a383a358b23357" title=" " alt="" coords="1588,157,1684,184"/>
+<area shape="rect" id="node14" href="$ft__strdup_8c.html#ad10f516982133d7c72bfbf4ae150dbf0" title=" " alt="" coords="1743,56,1822,83"/>
+<area shape="rect" id="node16" href="$ft__itoa_8c.html#a1e8e028a284928bdb68527df9b0da5ad" title=" " alt="" coords="1732,107,1833,133"/>
+<area shape="rect" id="node15" href="$ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1881,56,1956,83"/>
+<area shape="rect" id="node20" href="$utils_8c.html#a34f85bf1b5e1d7fefd8ca540d87b8fe3" title=" " alt="" coords="1275,360,1377,387"/>
+<area shape="rect" id="node21" href="$utils_8c.html#a360d0d61647491d7b257e97bec3cacb8" title=" " alt="" coords="1289,259,1363,285"/>
+<area shape="rect" id="node24" href="$utils_8c.html#a9e33b5b3b6df9fac201aaba8b0e01f6e" title=" " alt="" coords="1267,56,1385,83"/>
+<area shape="rect" id="node26" href="$utils_8c.html#a22701b95daf4c95098e59dbcf0038d36" title=" " alt="" coords="1285,309,1367,336"/>
+<area shape="rect" id="node33" href="$hit__cylinder_8c.html#a8391ea11762717f81f58073a9f575bcb" title=" " alt="" coords="311,157,381,184"/>
+<area shape="rect" id="node34" href="$vec3__operations2_8c.html#ac3622ee0206f3d7a8726319c75a182ad" title="Calculate the distance between the two ends of two given vectors." alt="" coords="465,157,580,184"/>
 </map>

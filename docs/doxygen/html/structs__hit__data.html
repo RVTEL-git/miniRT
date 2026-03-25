@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('structs__hit__data.html',''); initResi
 <div class="dynheader">
 Collaboration diagram for s_hit_data:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structs__hit__data__coll__graph.svg" width="198" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structs__hit__data__coll__graph.svg" width="234" height="263"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -106,10 +106,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a8837730cee11f6b05f39592fa575cc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3f8837bdd6fd8ea1b3b72da6aeea34"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structt__obj.html">t_obj</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#a6f3f8837bdd6fd8ea1b3b72da6aeea34">obj</a></td></tr>
 <tr class="separator:a6f3f8837bdd6fd8ea1b3b72da6aeea34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93489c3be00f26bdd837dc50a72050ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#a93489c3be00f26bdd837dc50a72050ac">p</a></td></tr>
+<tr class="memitem:acff3a31949614caa889fc4146aab639a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#acff3a31949614caa889fc4146aab639a">ray</a></td></tr>
+<tr class="separator:acff3a31949614caa889fc4146aab639a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93489c3be00f26bdd837dc50a72050ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#a93489c3be00f26bdd837dc50a72050ac">p</a></td></tr>
 <tr class="separator:a93489c3be00f26bdd837dc50a72050ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0529694a17e1bcf2e53aca65f5195082"><td class="memItemLeft" align="right" valign="top"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#a0529694a17e1bcf2e53aca65f5195082">normal</a></td></tr>
-<tr class="separator:a0529694a17e1bcf2e53aca65f5195082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0fbd4618063de04095e0296b18657c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__hit__data.html#ac0fbd4618063de04095e0296b18657c7">normal</a></td></tr>
+<tr class="separator:ac0fbd4618063de04095e0296b18657c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="ac1c004c78f892317b72d31da5c6dae5e"></a>
@@ -126,14 +128,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0529694a17e1bcf2e53aca65f5195082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0529694a17e1bcf2e53aca65f5195082">&#9670;&nbsp;</a></span>normal</h2>
+<a id="ac0fbd4618063de04095e0296b18657c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0fbd4618063de04095e0296b18657c7">&#9670;&nbsp;</a></span>normal</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> s_hit_data::normal</td>
+          <td class="memname"><a class="el" href="minirt_8h.html#a1abea4fbcd48ee0da6de0d8fcea69596">t_normal</a> s_hit_data::normal</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,7 +163,21 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="vector_8h.html#a74595fa2733473a90fcb73a282a3180a">t_vec3</a> s_hit_data::p</td>
+          <td class="memname"><a class="el" href="vector_8h.html#ad2e48456682a5f2c2029dc117a7e62d0">t_vec3</a> s_hit_data::p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acff3a31949614caa889fc4146aab639a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff3a31949614caa889fc4146aab639a">&#9670;&nbsp;</a></span>ray</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="minirt_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a>* s_hit_data::ray</td>
         </tr>
       </table>
 </div><div class="memdoc">

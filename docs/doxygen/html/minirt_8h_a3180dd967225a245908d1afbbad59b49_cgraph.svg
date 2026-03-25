@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="vec3__operations_8c.html#ae82e06fbbd79679f33ccd6af10c1ce58" target="_top" xlink:title="[french Produit Scalaire] Take two vectors and return a double">
 <polygon fill="none" stroke="black" points="104.5,-38.5 104.5,-57.5 165.5,-57.5 165.5,-38.5 104.5,-38.5"/>
 <text text-anchor="middle" x="135" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">vec3_dot</text>
 </a>

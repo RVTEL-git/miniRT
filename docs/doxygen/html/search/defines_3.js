@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['im1_5fsx_1189',['IM1_SX',['../includes_2minilibx-linux_2test_2main_8c.html#aa3f119a0a92fc4a84f6b51b97dec8dc5',1,'main.c']]],
-  ['im1_5fsy_1190',['IM1_SY',['../includes_2minilibx-linux_2test_2main_8c.html#af44b71dced176e96d7ab05aadb113a05',1,'main.c']]],
-  ['im3_5fsx_1191',['IM3_SX',['../includes_2minilibx-linux_2test_2main_8c.html#ac38d231ea75c4b3159234fbf13e60330',1,'main.c']]],
-  ['im3_5fsy_1192',['IM3_SY',['../includes_2minilibx-linux_2test_2main_8c.html#af85d7207c61fd155936037ab8fea3fa9',1,'main.c']]]
+  ['env_5fdisplay_1333',['ENV_DISPLAY',['../mlx__int_8h.html#a6f1475abb244e1868fd515a8dc84f0c2',1,'mlx_int.h']]],
+  ['eps_1334',['EPS',['../minirt_8h.html#a6ebf6899d6c1c8b7b9d09be872c05aae',1,'minirt.h']]],
+  ['err_5fno_5ftruecolor_1335',['ERR_NO_TRUECOLOR',['../mlx__int_8h.html#ab60cf452b47b9b600c048a088548bb51',1,'mlx_int.h']]]
 ];

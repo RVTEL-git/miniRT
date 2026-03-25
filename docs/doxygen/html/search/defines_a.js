@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yellow_5fcolor_1208',['YELLOW_COLOR',['../minirt_8h.html#a35a34f2f8dca5dd35f23c60054b18887',1,'minirt.h']]]
+  ['taskbar_5fheight_1351',['TASKBAR_HEIGHT',['../minirt_8h.html#afd70dc3d78f28068d0950df575329bb1',1,'minirt.h']]]
 ];
