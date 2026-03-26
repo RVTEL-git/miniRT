@@ -50,6 +50,8 @@ bool	check_file_format(char *rt_file)
 {
 	size_t	len;
 
+	if (is_dir(rt_file))
+		return (false);
 	len = ft_strlen(rt_file);
 	if (len < 3)
 		return (false);
