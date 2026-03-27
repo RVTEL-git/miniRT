@@ -19,7 +19,7 @@ static bool	is_in_shadow(t_scene *scene, t_hit_data *hit)
 	double		light_dist;
 	t_vec3		to_light;
 
-	memset(&shadow_hit, 0, sizeof(t_hit_data));
+	ft_memset(&shadow_hit, 0, sizeof(t_hit_data));
 	to_light = vec3_sub(scene->light.point, hit->p);
 	light_dist = vec3_distance(scene->light.point, hit->p);
 	sha_r.orig = vec3_add(hit->p, vec3_scale(hit->normal.compute, EPS * 10.0));

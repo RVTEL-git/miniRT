@@ -22,12 +22,3 @@ int	s_rgb_to_int(t_vec3 rgb)
 	rgb.blu *= 255;
 	return ((int)rgb.rd << 16 | (int)rgb.grn << 8 | (int)rgb.blu);
 }
-
-//t_rgb	ray_color(t_ray ray)
-//{
-//	t_did_hit	hit;
-//
-//	ft_bzero(&hit, sizeof(t_did_hit));
-//	hit.t = -1;
-//	hit = 
-//}

@@ -34,7 +34,7 @@ void	hit_obj(t_ray ray, t_scene *scn, t_hit_data *hit)
 	double	t;
 
 	tmp = scn->object;
-	memset(hit, 0, sizeof(t_hit_data));
+	ft_memset(hit, 0, sizeof(t_hit_data));
 	hit->t = -1;
 	while (tmp)
 	{

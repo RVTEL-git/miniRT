@@ -49,12 +49,13 @@
 # define DEFAULT_SIZE_MOD 0.5
 
 /* Default values for specular coefficient calculation and shineness*/
-# define DEFAULT_KS 0.05
-# define DEFAULT_SN 100
-/*
-# define DEFAULT_KS 100
-# define DEFAULT_SN 1000
-*/
+# ifndef DEFAULT_KS
+#  define DEFAULT_KS 0.05
+# endif
+# ifndef DEFAULT_SN
+#  define DEFAULT_SN 100
+# endif
+
 /*=== MESSAGES ===*/
 
 # define USAGE "Usage :\n\t./miniRT scene/<scene> [-fs] [-aa]\n\t-fs for \

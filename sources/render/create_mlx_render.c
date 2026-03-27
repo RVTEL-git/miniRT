@@ -33,11 +33,6 @@ bool	create_mlx_image(t_mlx_data *mlx)
 	return (true);
 }
 
-/*Ne serais-ce pas une bonne idee de mettre un protectio ici aussi type:
-
-if (x < 0 || y < 0 || x >= mlx->width || y >= mlx->height)
-	return;
-*/
 void	my_mlx_pixel_put(t_mlx_img *img, int x, int y, int color)
 {
 	int	offset;
